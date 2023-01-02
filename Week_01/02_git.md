@@ -1,0 +1,18 @@
+`pwd` (print working directory): 현재 디렉토리 출력 </br>
+`cd` 디렉토리 이름 (change diretory): 디렉토리 이동 </br>
+`.`: 현재 디렉토리, `..`: 상위 디렉토리 </br>
+`ls` (list): 목록 </br>
+`mkdir` (make directory): 디렉토리 생성 </br>
+`touch`: 파일 생성 </br>
+`rm 파일명`: 파일 삭제하기 </br>
+`rm -r 폴더명`: 폴더 삭제하기
+
+`git init`: 로컬 저장소 생성 </br>
+`git add <file>`: 특정 파일/폴더의 변경사항 추가 </br>
+`git commit -m '<커밋메시지>'`: 커밋(버전기록)
+
+`git status`: 상태 확인 </br>
+`git log`: 버전 확인
+
+`git config --global user.name "username"` </br>
+`git config --global user.email "my@email.com"`
