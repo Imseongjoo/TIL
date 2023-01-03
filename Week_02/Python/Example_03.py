@@ -87,7 +87,6 @@ if is_end:
     print(1)
 else:
     print(0)
-
 for char in word:
     if char == 'e':
         print(1)
