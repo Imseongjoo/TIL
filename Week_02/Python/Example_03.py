@@ -71,7 +71,7 @@ for char in word:
         continue
     print(char)
 for char in word:
-    if char !== 'a':
+    if char != 'a':              
         print(char)
 
 word = 'mango'
