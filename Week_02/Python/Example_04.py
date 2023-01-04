@@ -2,11 +2,9 @@ a = 1
 b = 1
 print(a < b) # False
 
-
 a = bool("")
 b = False
 print(a == b) # True
-
 
 a = 1
 result = ""
@@ -17,7 +15,6 @@ else:
     result = False
 
 print(result) # True
-
 
 a = 90 
 
@@ -37,7 +34,6 @@ a = a + 10
 
 print(a) # 110
 
-
 string = "hello world!"
 
 for element in string:
@@ -47,18 +43,18 @@ for element in string:
 예측을 작성하세요.
 ?
 """
-h
-e
-l
-l
-o
+# h
+# e
+# l
+# l
+# o
 
-w
-o
-r
-l
-d
-!
+# w
+# o
+# r
+# l
+# d
+# !
 
 list_variable = [0, 1, 2, 3, 4, 5, 6]
 
@@ -69,8 +65,7 @@ for element in list_variable:
 예측을 작성하세요.
 ?
 """
-0 1 2 3 4 5 6
-
+# 0 1 2 3 4 5 6
 
 n = 10
 
@@ -81,8 +76,7 @@ for element in range(-n, n):
 예측을 작성하세요.
 ?
 """
--10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 
-
+# -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 
 
 n = 10
 
@@ -93,8 +87,7 @@ for element in range(1, n + 1, 3):
 예측을 작성하세요.
 ?
 """
-1 4 7 10
-
+# 1 4 7 10
 
 list_variable = [6, 5, 4, 3, 2, 1, 0] 
 
@@ -106,14 +99,13 @@ for index, element in enumerate(list_variable):
 예측을 작성하세요.
 ?
 """
-0 6
-1 5
-2 4
-3 3
-4 2
-5 1
-6 0
-
+# 0 6
+# 1 5
+# 2 4
+# 3 3
+# 4 2
+# 5 1
+# 6 0
 
 n = 10
 
@@ -125,8 +117,7 @@ for element in range(n, -n, -1):
 예측을 작성하세요.
 ?
 """
-10 9 8 7 6 5 4 3 2 1 0 -1 -2 -3 -4 -5 -6 -7 -8 -9 
-
+# 10 9 8 7 6 5 4 3 2 1 0 -1 -2 -3 -4 -5 -6 -7 -8 -9 
 
 list_variable = [-1, 3, 5, -2, 1, 9, 21, -3, -5]
 
@@ -140,8 +131,7 @@ for element in list_variable:
 예측을 작성하세요.
 ?
 """
-3 5 1 9 21 
-
+# 3 5 1 9 21 
 
 N = 3
 M = 4
@@ -153,15 +143,15 @@ for n in range(N):
 예측을 작성하세요.
 ?
 """
-0, 0
-0, 1
-0, 2
-0, 3
-1, 0
-1, 1
-1, 2
-1, 3
-2, 0
-2, 1
-2, 2
-2, 3
+# 0, 0
+# 0, 1
+# 0, 2
+# 0, 3
+# 1, 0
+# 1, 1
+# 1, 2
+# 1, 3
+# 2, 0
+# 2, 1
+# 2, 2
+# 2, 3
