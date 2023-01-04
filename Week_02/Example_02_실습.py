@@ -17,7 +17,7 @@ print((-1) * number)
 
 num1 = int(input('첫 번째 숫자를 입력해주세요 >'))
 num2 = int(input('두 번째 숫자를 입력해주세요 >'))
-print(num1 + 13, num1 -7, numb1*30, num1//3, num1%1)
+print(num1 + 13, num1 -7, num1*30, num1//3, num1%1)
 print(num2 + 13, num2 -7, num2*30, num2//3, num2%1)
 
 num1 = int(input('첫 번째 숫자를 입력해주세요 >'))

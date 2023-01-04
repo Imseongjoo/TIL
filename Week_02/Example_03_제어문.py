@@ -59,7 +59,7 @@ if 'a' in word:
 word = 'banana'
 # a를 만나면 1을 출력하고 종료하세요
 # break: 반복 종료
-for  char in word:
+for char in word:
     if char == 'a':
         print(1)
         break
