@@ -48,3 +48,10 @@ print(name) # 임성주
 age = int(input('너의 나이는?')) 
 print('올해 나이 : ', age) # 30
 print('내년 나이 : ', age + 1) # 31
+
+name = '하니'
+age = 19.9
+
+print(name + '는 ' + str(age) + '살입니다.')
+print('{}는 {}살입니다.'.format(name, age))
+print(f'{name}는 {age}살입니다.') # 3.6+
