@@ -14,6 +14,6 @@ print(result)
 # 숫자통
 target_number = 10
 result = 0
-for n in range(1, target_number+1)
+for n in range(1, target_number+1):
     result = n + result
 print(result)
