@@ -4,7 +4,6 @@ if 5 < 3:
 else: 
     print('작다!')
 
-
     # 홀수/짝수 
 n = int(input())
 
@@ -18,7 +17,6 @@ else:
 # else:
 #     print('짝수')
 
-
 a = range(4)
 print(a) # range(0, 4)
 print(list(a)) # [0, 1, 2, 3]
@@ -26,7 +24,6 @@ print(list(a)) # [0, 1, 2, 3]
 b = range(0, -6, -1)
 print(b)
 print(list(b))
-
 
 a = 'apple'
 
@@ -43,7 +40,6 @@ for name in l:
 
 for num in range(3):
     print(num**2)
-
 
     a = 'pineapple'
 
@@ -65,7 +61,6 @@ print('=================')
 for i in range(len(a)):
     print(i, a[i])
 
-
 word = 'banana'
 
 # a가 있으면, 1을 출력
@@ -77,7 +72,6 @@ for char in word:
 print('===============')
 if 'a' in word:
     print(1)
-
 
 word = 'banana'
 
@@ -101,7 +95,6 @@ for char in word:
     if char != 'a':
         print(char)
 
-
 word = 'emango'
 
 # 'e' 있으면 1을 출력
@@ -116,7 +109,6 @@ if is_end:
     print(1)
 else:
     print(0)
-
 
 for char in word:
     if char == 'e':
