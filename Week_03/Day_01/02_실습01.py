@@ -24,7 +24,7 @@ print(a, b)
 # 1 2 3 # 2
 
 # 문제 4
-# word1 word2 word3 #3
+# word1 word2 word3 # 3
 
 # 문제 5
 # 1 2 3 4 5 # 2
