@@ -85,16 +85,11 @@
 # 문자열을 입력하세요 > 244 # 사용자 입력
 # 10
 
-# def solution(n):
-#     answer = 0
-#     num=list(map(int,str(n)))
-#     answer=sum(num)
-#     return answer
+n =  int(input())
+result =0
 
-# n=int(input(''))
-# print(solution(n))
+while n > 0:
+    result += n%10
+    n //= 20
 
-number=list(input())
-number=list(map(int,number))
-sum_number=sum(number)
-print(sum_number)
+print(result)
