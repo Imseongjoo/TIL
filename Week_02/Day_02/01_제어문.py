@@ -4,9 +4,8 @@ if 5 < 3:
 else: 
     print('작다!')
 
-    # 홀수/짝수 
+# 홀수/짝수 
 n = int(input())
-
 if n%2 == 1:
     print('홀수')
 else:
