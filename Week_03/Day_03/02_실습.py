@@ -145,14 +145,14 @@
 # 1
 # 2
 
-test_case,number = map(int,input().split())
-print(test_case,number)
-for i in range(test_case):
-    for j in range(number):
-        numbers = list(map(int,input().split()))
-        for n in numbers:
-            print(n,end=" ")
-        print()
+# test_case,number = map(int,input().split())
+# print(test_case,number)
+# for i in range(test_case):
+#     for j in range(number):
+#         numbers = list(map(int,input().split()))
+#         for n in numbers:
+#             print(n,end=" ")
+#         print()
 
 # 문제 8
 # 테스트 케이스 수와 입력 줄 수가 주어지는 입력
@@ -162,6 +162,15 @@ for i in range(test_case):
 # 1 2
 # 3 4
 # 5 9
+
+# test_case,number = map(int,input().split())
+# print(test_case,number)
+# for i in range(test_case):
+#     for j in range(number):
+#         numbers = list(map(int,input().split()))
+#         for n in numbers:
+#             print(n,end=" ")
+#         print()
 
 # 문제 9
 # 테스트 케이스 수와 입력 줄 수가 주어지는 입력
@@ -173,3 +182,12 @@ for i in range(test_case):
 # 1 3 9
 # 4 93 1
 # 2 4 2
+
+# test_case,number = map(int,input().split())
+# print(test_case,number)
+# for i in range(test_case):
+#     for j in range(number):
+#         numbers = list(map(int,input().split()))
+#         for n in numbers:
+#             print(n,end=" ")
+#         print()
