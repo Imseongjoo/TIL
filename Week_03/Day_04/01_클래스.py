@@ -13,7 +13,7 @@ def get_lotto(n):
 
 # # 사용하는 사람..
 # print(get_lotto(2))
-# (2000, [[3, 4, 24, 29, 41, 45], [18, 20, 26, 33, 39, 45]]) 
+# (2000, [[3, 4, 24, 29, 41, 45], [18, 20, 26, 33, 39, 45]])   
 
 import random
 
@@ -32,7 +32,6 @@ def get_lotto_price_1(n):
 # print(get_lotto_price(2))
 # [[5, 17, 19, 33, 41, 42], [3, 12, 26, 27, 37, 39]]            
 # 2000 
-
 # Input : 
     # n 로또 번호 세트 수
 # Output :
@@ -67,7 +66,7 @@ class Lotto:
             print('=================')
 
     def get_price(self):
-        return self.n * 1000 
+        return self.n * 1000
 
 from lotto import get_lotto
 from lotto_1 import get_lotto_1, get_lotto_price_1
@@ -102,18 +101,14 @@ print(requests.get('https://www.dhlottery.co.kr/common.do?method=getLottoNumber&
 
 value = num if num >= 0 else -num
 
-
 if num >= 0:
     value = num
 else:
-    value = -num
-    
-value = num if num >= 0 else -num
+    value = -num    
 
-if num >= 0:
-    value = num
-else:
-    value = -num
+members = ['홍엽', '세정']
+print(enumerate(members))
+print(list(enumerate(members, 1)))
 
 numbers = ['1', '2', '3']
 # [1, 2, 3]으로 바꾸고 싶다면?
@@ -145,4 +140,3 @@ def f(x, y):
 
 def g(x :int, y :asdf) -> int:
     return x + y 
-
