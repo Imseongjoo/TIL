@@ -4,12 +4,12 @@ URL = 'https://api.bithumb.com/public/ticker/ALL_KRW'
 
 while True:
     response = requests.get(URL)
-    # print(response)
-    # print(type(response))
-    # print(dir(response))
+# print(response)
+# print(type(response))
+# print(dir(response))
     data = response.json()
 
-print(data.get('data').get('BTC').get('closing_price'))
+    print(data.get('data').get('BTC').get('closing_price'))
 
 # 반드시 터미널에서 
 # pip install requests
