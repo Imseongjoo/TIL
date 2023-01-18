@@ -8,11 +8,11 @@
 # 출력
 # 각 테스트 케이스에 대해서 주어진 자연수의 합을 한 줄에 하나씩 출력한다.
 
-# T = int(input())
-# for i in range(T):
-#     N = int(input())
-#     A = list(map(int, input().split()))
-#     print(sum(A))
+T = int(input())
+for i in range(T):
+    N = int(input())
+    A = list(map(int, input().split()))
+    print(sum(A))
 
 # 10824 네 수
 # 문제
@@ -26,11 +26,11 @@
 # 출력
 # A와 B를 붙인 수와 C와 D를 붙인 수의 합을 출력한다.
 
-# A, B, C, D = input().split()
-# E = A+B
-# F = C+D
-# G = int(E) + int(F)
-# print(G)
+A, B, C, D = input().split()
+E = A+B
+F = C+D
+G = int(E) + int(F)
+print(G)
 
 # 3009 네 번째 점
 # 문제
@@ -42,27 +42,27 @@
 # 출력
 # 직사각형의 네 번째 점의 좌표를 출력한다.
 
-# a, b = map(int, input().split())
-# c, d = map(int, input().split())
-# e, f = map(int, input().split())
-# g = 0
-# h = 0
+a, b = map(int, input().split())
+c, d = map(int, input().split())
+e, f = map(int, input().split())
+g = 0
+h = 0
 
-# if a == c:
-#     g += e
-# elif c == e:
-#     g += a
-# elif a == e:
-#     g += c
+if a == c:
+    g += e
+elif c == e:
+    g += a
+elif a == e:
+    g += c
 
-# if b == d:
-#     h += f
-# elif d == f:
-#     h += b
-# elif b == f:
-#     h += d
+if b == d:
+    h += f
+elif d == f:
+    h += b
+elif b == f:
+    h += d
 
-# print(g, h)
+print(g, h)
 
 # 10952 A+B - 5	
 # 문제
@@ -78,12 +78,12 @@
 # 출력
 # 각 테스트 케이스마다 A+B를 출력한다.
 
-# while True:
-#     a, b = map(int, input().split())
-#     if (a == 0 and b == 0):
-#         break
-#     else:
-#         print(a + b)
+while 1:
+    a, b = map(int, input().split())
+    if (a == 0 and b == 0):
+        break
+    else:
+        print(a + b)
 
 # 1110 더하기 사이클	
 # 문제
@@ -101,15 +101,12 @@
 # 출력
 # 첫째 줄에 N의 사이클 길이를 출력한다.
 
-n = int(input())        
-num = n
-cnt = 0                 
-while True:             
-    a = num // 10      
-    b = num % 10         
-    c = (a + b) % 10   
-    num = (b * 10) + c   
-    cnt = cnt + 1       
-    if(num == n):        
+N = int(input())
+result = 0
+while N < 0:
+    N *= 10
+    K = (N%10 + N//10)
+    result += 1
+    if K == N:
         break
-print(cnt)
+    print(result)
