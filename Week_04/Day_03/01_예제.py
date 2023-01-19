@@ -17,6 +17,31 @@ for i in 'CAMBRIDGE':
     T = T.replace(i,'')
 print(T)
 
+# string = "KARIJERA"
+
+# compare_word = "CAMBRIDGE" # 비교 알파벳
+
+# # 새로운 결과 문자열
+# result = ""
+
+# # 한 글자씩 비교
+# # 인덱스 활용 순회
+# for index in range(len(string)):
+#     # print(string[index])
+#     char = string[index]
+    
+#     # 포함되지 않은 문자 찾기
+#     # print(char, char not in compare_word)
+#     if char not in compare_word:
+#         # 포함되지 않은 문자라면
+#         # 방법 1. end 속성을 활용
+#         # print(char, end="")
+        
+#         # 방법 2. 새로운 문자열 만들기 (추천)
+#         result += char
+
+# print(result)
+
 # 2675 문자열 반복	
 # 문제
 # 문자열 S를 입력받은 후에, 각 문자를 R번 반복해 새 문자열 P를 만든 후 출력하는 프로그램을 작성하시오. 즉, 첫 번째 문자를 R번 반복하고, 두 번째 문자를 R번 반복하는 식으로 P를 만들면 된다. S에는 QR Code "alphanumeric" 문자만 들어있다.
@@ -130,6 +155,6 @@ S = input()
 A ='abcdefghijklmnopqrstuvwxyz'
 for i in A:
     if i in S:
-        print(S.index(i), end ='')
+        print(S.index(i), end =' ')
     else:
-        print(-1, end ='')
+        print(-1, end =' ')
