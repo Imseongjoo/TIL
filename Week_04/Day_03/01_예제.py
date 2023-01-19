@@ -83,6 +83,46 @@ if W == W[::-1]:
 else:
     print(0)
 
+# word = 'tomato'
+# print(int(word == word[::-1]))
+
+# https://www.acmicpc.net/problem/10988
+# 팰린드롬 
+
+# 1. Input
+# word = '토마무우마토'
+word = input()
+
+# 2. 값 초기화(단어의 인덱스)
+# start(시작) : 0
+# end(끝) : len(word) - 1
+start = 0 
+end = len(word) - 1
+is_pal = True
+
+# 3. while
+# start 값이 end보다 작을 때....
+while start < end:
+    # word[start], word[end] 비교해서 
+    # 다르면, 팰린드롬이 아니다!
+    if word[start] != word[end]:
+        is_pal = False
+        break
+    # 매 반복이 끝나면
+    # start는 1씩 증가하고
+    # end는 1씩 감소
+    start += 1
+    end -= 1
+
+# 4. 출력 
+# 팰린드롬이면 1, 아니면 0을 출력한다.
+if is_pal:
+    print(1)
+else: 
+    print(0)
+
+# print(int(is_pal))
+
 # 17249 태보태보 총난타
 # 문제
 # 태보(TaeBo)란, 태권도와 복싱을 조합한 운동이다. 복싱의 공격 기술로는 민첩하게 앞주먹을 뻗으면서 가볍게 치는 잽, 옆으로 치는 펀치인 훅이 있다.
