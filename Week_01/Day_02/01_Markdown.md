@@ -32,4 +32,4 @@
 [구글](https://www.google.com) </br> </br> 
 
 `Image` </br> 
-![프로필](Profile_Image.jpg)
+![프로필](02_Profile_Image.jpg)
