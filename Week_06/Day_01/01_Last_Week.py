@@ -58,7 +58,6 @@ for _ in range(N):
     # print(word)
     word_len[word] = len(word)
 
-
 # 단어와 단어의 길이를 저장한 딕셔너리
 # print(word_len)
 
