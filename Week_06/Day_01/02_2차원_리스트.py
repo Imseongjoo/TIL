@@ -13,7 +13,6 @@ print(matrix2)
 matrix2[0][0] = 1
 print(matrix2)
 
-
 # 리스트 복사
 a = [1, 2, 3]
 b = list(a) # a[:]
@@ -72,7 +71,7 @@ matrix = [list(input()) for _ in range(8)]
 # 2. 3X3
 # line = '1 2 3'
 # [1, 2, 3]
-matrix = [ list(map(int, input().split())) for _ in range(3)]
+matrix = [list(map(int, input().split())) for _ in range(3)]
 
 # matrix = []
 # for _ in range(3):

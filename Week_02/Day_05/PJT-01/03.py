@@ -1,11 +1,10 @@
 f = open('data/fruits.txt', 'r', encoding='UTF8')
 text = f.read() 
-list = set(text.split('\n'))
+ls = set(text.split('\n'))
 k = []
-if 'berry' in list:
+if 'berry' in ls:
         k.append()
         print(len(k))
-for i in list:
+for i in ls:
     if 'berry' in i:
         print(i)
-

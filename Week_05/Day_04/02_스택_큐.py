@@ -5,7 +5,6 @@ for number in numbers:
         numbers.pop()
     print(number)
 
-
 # 1. number 10 => pop => [10, 2, 5]
 # 2. number 2 => pop => [10, 2]
 

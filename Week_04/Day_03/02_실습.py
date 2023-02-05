@@ -73,7 +73,6 @@ for i in range(0, len(N), 10):
 
 T = list(map(int, input().split()))
 answer = [1, 2, 3, 4, 5]
-
 while True:
     for i in range(len(T)-1):
         if T[i] > T[i+1]:

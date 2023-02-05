@@ -26,9 +26,9 @@ print(cnt)
 # 단, count() 함수는 사용하지마세요.
 
 str = input("문자열을 입력하세요 > ")
-list = list(str)
+ls = list(str)
 cnt = 0
-for x in list:
+for x in ls:
     if "a" in x:
         cnt += 1
     elif "A" in x:
@@ -69,7 +69,6 @@ print(cnt)
 #         or char == "U"
 #     ):
 #         count += 1
-
 # print(count)
 
 # 문제 3

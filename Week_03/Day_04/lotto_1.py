@@ -9,7 +9,6 @@ def get_lotto_1(n):
 def get_lotto_price_1(n):
     return n*1000
 
-
 # 사용하는 사람.. 
 # NUM_OF_LOTTO = 2
 # print(get_lotto(2))

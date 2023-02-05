@@ -47,7 +47,7 @@ print(cnt)
 number_list = [1, 2, 3, 4, 5]
 result = 0
 for number in number_list:
-    result += int(number)
+    result += number
 print(result)
 
 # number_list = [1, 2, 3, 4, 5]

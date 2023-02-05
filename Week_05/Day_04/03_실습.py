@@ -74,6 +74,7 @@ for i in range(T):
 
 # 출력
 # 첫째 줄에 거절당하는 사람의 수를 출력한다.
+
 N = int(input())
 K = list(map(int, input().split()))
 ls = []
@@ -101,6 +102,7 @@ print(N -len(S))
 
 # 출력
 # 재민이가 최종적으로 적어 낸 수의 합을 출력한다. 최종적으로 적어낸 수의 합은 231-1보다 작거나 같은 정수이다.
+
 k = int(input())
 ls = []
 for i in range(k):

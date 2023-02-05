@@ -16,8 +16,8 @@ count_items = count.items()
 print(count_items)
 
 from collections import Counter 
-new_count_itmes = Counter(members)
-print(new_count_itmes)
+new_count_items = Counter(members)
+print(new_count_items)
 
 from collections import Counter 
 

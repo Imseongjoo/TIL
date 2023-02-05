@@ -30,7 +30,6 @@ for _ in range(N):
         elif len(number_list) != 0:
             pass
         
-
     # heappush
     elif number != 0:
         # (절대값, 원본값) push

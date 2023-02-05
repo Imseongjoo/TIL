@@ -11,7 +11,7 @@ if n%2 == 1:
 else:
     print('짝수')
 
-# if n%2:
+# if n%2 != 0:
 #     print('홀수')
 # else:
 #     print('짝수')
@@ -21,8 +21,8 @@ print(a) # range(0, 4)
 print(list(a)) # [0, 1, 2, 3]
 
 b = range(0, -6, -1)
-print(b)
-print(list(b))
+print(b) # range(0, -6, -1)
+print(list(b)) # [0, -1, -2, -3, -4, -5]
 
 a = 'apple'
 
@@ -40,7 +40,7 @@ for name in l:
 for num in range(3):
     print(num**2)
 
-    a = 'pineapple'
+a = 'pineapple'
 
 # 'apple' => 0 ~ 4 : len('apple')-1
 # 'pineapple' => 0 ~ 8 : len('pineapple')-1

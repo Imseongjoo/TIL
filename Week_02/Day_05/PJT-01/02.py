@@ -4,4 +4,3 @@ with open('data/fruits.txt', 'r', encoding='UTF8') as file:
         if len(i.strip('\n')):
             count += 1
     print(count)
-
