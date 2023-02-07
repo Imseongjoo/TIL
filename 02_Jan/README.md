@@ -1,3 +1,4 @@
+## 1월
 ### [2주차](https://github.com/Imseongjoo/TIL/tree/master/02_Jan/Week_02)
 파이썬 기초
 ### [3주차](https://github.com/Imseongjoo/TIL/tree/master/02_Jan/Week_03)
