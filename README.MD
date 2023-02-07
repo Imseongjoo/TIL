@@ -1,4 +1,8 @@
 ## 풀스택 개발자 취업캠프(Python)
+### [12월]
+### [1월]
+### [2월]
+
 ### [1주차](https://github.com/Imseongjoo/TIL/tree/master/Week_01)
 Git/Github 기초
 ### [2주차](https://github.com/Imseongjoo/TIL/tree/master/Week_02)
