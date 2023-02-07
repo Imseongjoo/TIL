@@ -20,7 +20,6 @@ dict_ = {
     'F' : 4,
 }
 
-
 input_string = 'WA'
 
 # 회사에 있는 사람
@@ -76,7 +75,6 @@ Artem enter
 
 # for name in enter_name_list:
 #     print(name)
-
 
 dict_ = {
     3: ['x','cc'],
@@ -189,6 +187,5 @@ print(result_score)
 # 이 문제에서 우리가 배워야할 점? 얻어야할 점? 얻어야할 스킬?
 # 반복문 내부에서 값을 변화 
 # 하나의 값이 아니라 두 개 이상의 값을 변화(갱신)
-
 
 # 숫자 리스트가 있을 때 가장 큰 숫자와 그 숫자의 위치(index)는?
