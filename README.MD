@@ -7,3 +7,9 @@ Git/Github 기초, 심화
 코딩테스트 기초 알고리즘, 데이터베이스 기본, SQL 기초/심화, HTML/css 기초/심화
 ### [3월](https://github.com/Imseongjoo/TIL/tree/master/04_Mar)
 HTML/CSS 심화/활용, 프론트엔드 총합, JS 기초 활용, Django 기초/CRUD
+### [4월](https://github.com/Imseongjoo/TIL/tree/master/05_Apr)
+Django 심화, DB 모델링
+### [5월](https://github.com/Imseongjoo/TIL/tree/master/06_May)
+실무 프로젝트
+### [6월](https://github.com/Imseongjoo/TIL/tree/master/07_Jun)
+실무 프로젝트
