@@ -1,9 +1,0 @@
-## 4월
-### [15주차](https://github.com/Imseongjoo/TIL/tree/master/05_Apr/Week_11)
-Django 심화
-### [16주차](https://github.com/Imseongjoo/TIL/tree/master/05_Apr/Week_11)
-DB 모델링
-### [17주차](https://github.com/Imseongjoo/TIL/tree/master/05_Apr/Week_11)
-Django 심화
-### [18주차](https://github.com/Imseongjoo/TIL/tree/master/05_Apr/Week_11)
-Django 심화
