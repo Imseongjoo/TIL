@@ -1,4 +1,4 @@
-# 1208 [S/W 문제해결 기본] 1일차 - Flatten
+# 1288 [S/W 문제해결 기본] 1일차 - Flatten
 
 for i in range(1, 11) :
     N = int(input())
