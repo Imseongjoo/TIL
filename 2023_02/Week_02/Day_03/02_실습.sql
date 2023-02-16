@@ -53,6 +53,8 @@ ORDER BY customerNumber DESC;
 -- 문제 5
 -- 문제 2, 문제 3, 문제 4 의 조회 결과가 다른 이유를 작성하시오.
 
+표시되는 영역의 기준이 다르기 때문에
+
 -- 문제 6
 -- 테이블 customers 와 테이블 offices 를 city 기준으로 FULL OUTER JOIN 한 데이터를 조회하시오.
 -- MySQL에서 FULL OUTER JOIN 은 지원하지 않는 기능이므로 MySQL FULL OUTER JOIN 키워드를 검색하여 구현하시오.
