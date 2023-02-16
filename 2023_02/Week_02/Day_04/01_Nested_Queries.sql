@@ -1,4 +1,4 @@
--- SELECT customeㄱNumber, amount
+-- SELECT customerNumber, amount
 -- FROM payments
 -- WHERE amount = 위에서 찾은 최대 값
 SELECT customerNumber, amount
