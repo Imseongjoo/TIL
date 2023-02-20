@@ -1,4 +1,4 @@
--- SELECT customeㄱNumber, amount
+-- SELECT customerNumber, amount
 -- FROM payments
 -- WHERE amount = 위에서 찾은 최대 값
 SELECT customerNumber, amount
@@ -20,7 +20,6 @@ WHERE officeCode IN
 		WHERE country = 'USA'
     );
     
-
 -- orders에는 주문한 고객들만 들어있음 -> NOT IN
 -- orders에서 고객 주문 목록을 가져와서
 -- customers의 모든 정보와 위에서 가져온 고객 주문 목록을 비교 
