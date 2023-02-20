@@ -29,7 +29,7 @@ SELECT * FROM offices WHERE city = 'paris';
 
 -- 단, customerName 기준 내림차순으로 정렬하세요.
 
-SELECT customerNumber , customerName , country , state FROM customers WHERE country = 'usa' and state = 'CA'
+SELECT customerNumber, customerName, country, state FROM customers WHERE country = 'usa' and state = 'CA'
 ORDER BY customerName DESC;
 
 -- 문제 6
@@ -37,7 +37,7 @@ ORDER BY customerName DESC;
 
 -- 단, customerNumber 기준 내림차순으로 정렬하세요.
 
-SELECT customerNumber , customerName , country , state FROM customers WHERE country = 'usa' and state = 'CA' or 'NY'
+SELECT customerNumber, customerName, country, state FROM customers WHERE country = 'usa' and state = 'CA' or 'NY'
 ORDER BY customerNumber DESC;
 
 -- 문제 7
@@ -45,7 +45,7 @@ ORDER BY customerNumber DESC;
 
 -- 단, customerNumber 기준 내림차순으로 정렬하세요.
 
-SELECT customerNumber , customerName, state FROM customers WHERE state = 'CA' or 'NY' or 'CT' or 'PA'
+SELECT customerNumber, customerName, state FROM customers WHERE state = 'CA' or 'NY' or 'CT' or 'PA'
 ORDER BY customerNumber DESC;
 
 -- 문제 8
@@ -53,7 +53,7 @@ ORDER BY customerNumber DESC;
 
 -- 단, quantityInStock 기준 오름차순으로 정렬하세요.
 
-SELECT productCode , productName , quantityInStock FROM products WHERE quantityInStock < 1000 ORDER BY quantityInStock ASC;
+SELECT productCode, productName, quantityInStock FROM products WHERE quantityInStock < 1000 ORDER BY quantityInStock ASC;
 
 -- 문제 9
 -- 테이블 products 에서 quantityInStock 가 2000 과 3000 사이인 productCode , productName , quantityInStock 필드의 데이터를 조회하시오.
@@ -93,7 +93,7 @@ SELECT country, COUNT(*) FROM customers GROUP BY country ORDER BY COUNT(*) DESC,
 
 -- 단, quantityOrdered * priceEach 의 합 기준 내림차순으로 정렬하세요.
 
-SELECT orderNumber,sum(quantityOrdered * priceEach) AS total FROM orderdetails
+SELECT orderNumber, sum(quantityOrdered * priceEach) AS total FROM orderdetails
 GROUP BY orderNumber ORDER BY total DESC;
 
 -- 문제 15
