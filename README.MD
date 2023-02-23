@@ -1,4 +1,4 @@
-## :date:풀스택 개발자 취업캠프(Python)
+## :date: 풀스택 개발자 취업캠프(Python)
 ### [12월](https://github.com/Imseongjoo/TIL/tree/master/2022_12)
 Git/Github 기초, 심화
 ### [1월](https://github.com/Imseongjoo/TIL/tree/master/2023_01)
