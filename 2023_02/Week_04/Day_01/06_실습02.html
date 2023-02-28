@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>우측 하단 고정 버튼</title>
+  <style>
+  .container {
+      text-align: center;
+  } 
+
+  .img {
+      margin: auto;
+      display: block;
+      width: 720px;
+      height: auto;
+  }
+
+  .link {
+      border: 1px solid black;
+      border-radius: 5%;
+      background-color: lightgray;
+      width: 70px;
+      height: 40px;
+      text-align: left;
+      text-decoration: none;
+      margin-top: 0px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 150%;
+  }
+
+  .link-position {
+      position: fixed;
+      left: 90%;
+      top: 80%;
+      transform: translate(-50%, -50%);
+  }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img class="img" src="https://source.unsplash.com/random/?developer">
+    <img class="img" src="https://source.unsplash.com/random/?algorithm">
+    <img class="img" src="https://source.unsplash.com/random/?database">
+    <img class="img" src="https://source.unsplash.com/random/?html">
+    <img class="img" src="https://source.unsplash.com/random/?css">
+  </div>
+  <a href="#" class="link link-position">버튼</a>
+</body>
+</html>
