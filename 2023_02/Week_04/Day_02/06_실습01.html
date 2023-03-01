@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>flex 활용 Navbar 레이아웃</title>
+  <style>
+    .container {
+      height: 5rem;
+      background-color: rgb(207, 244, 252);
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .post {
+      margin: 3rem;
+    }
+
+    .item {
+        font-weight: bold;
+        font-size: 150%;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="post item">
+      <p>로고</p>
+    </div>
+    <div class="post item">
+      <p>로그인</p>
+    </div>
+  </div>
+</body>
+
+</html>
