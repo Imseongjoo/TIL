@@ -1,49 +1,31 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Modal 활용 반응형 앨범 페이지</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 </head>
+
 <body>
 
-<div class="container row border-bottom p-2">
+  <div class="container row border-bottom p-2">
     <div class="container col-12 col-lg-6">
-        <div class="row">
-          <div class="card p-0" style="width: auto;">
-            <img src="Images/01.avif" alt="1" class="img-fluid" style="height: 100%">
-            <div class="card-body">
-              <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#primaryModal1">자세히 보기</button>
-              <div class="modal fade" id="primaryModal1" tabindex="-1" aria-labelledby="primaryModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h1 class="modal-title fs-5"><img src="Images/01.avif" alt="1" class="img-fluid" style="height: 100%"></h1>
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-    </div>
-  
-    <div class="container col-12 col-lg-6">
-    <div class="row">
-      <div class="col-3 col-lg-6">
+      <div class="row">
         <div class="card p-0" style="width: auto;">
-          <img src="Images/02.avif" alt="2" class="img-fluid" style="height: 100%">
+          <img src="Images/01.avif" alt="1" class="img-fluid" style="height: 100%">
           <div class="card-body">
-            <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#primaryModal2">자세히 보기</button>
-            <div class="modal fade" id="primaryModal2" tabindex="-1" aria-labelledby="primaryModalLabel" aria-hidden="true">
+            <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+              data-bs-target="#primaryModal1">자세히 보기</button>
+            <div class="modal fade" id="primaryModal1" tabindex="-1" aria-labelledby="primaryModalLabel"
+              aria-hidden="true">
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <h1 class="modal-title fs-5"><img src="Images/02.avif" alt="2" class="img-fluid"></h1>
+                    <h1 class="modal-title fs-5"><img src="Images/01.avif" alt="1" class="img-fluid"
+                        style="height: 100%"></h1>
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
@@ -54,32 +36,62 @@
           </div>
         </div>
       </div>
-      <div class="col-3 col-lg-6">
-        <div class="card p-0" style="width: auto;">
-          <img src="Images/03.avif" alt="3" class="img-fluid">
-          <div class="card-body">
-            <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#primaryModal3">자세히 보기</button>
-            <div class="modal fade" id="primaryModal3" tabindex="-1" aria-labelledby="primaryModalLabel" aria-hidden="true">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h1 class="modal-title fs-5"><img src="Images/03.avif" alt="3" class="img-fluid"></h1>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
+    </div>
+
+    <div class="container col-12 col-lg-6">
+      <div class="row">
+        <div class="col-3 col-lg-6">
+          <div class="card p-0" style="width: auto;">
+            <img src="Images/02.avif" alt="2" class="img-fluid" style="height: 100%">
+            <div class="card-body">
+              <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+                data-bs-target="#primaryModal2">자세히 보기</button>
+              <div class="modal fade" id="primaryModal2" tabindex="-1" aria-labelledby="primaryModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5"><img src="Images/02.avif" alt="2" class="img-fluid"></h1>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        </div> 
+        <div class="col-3 col-lg-6">
+          <div class="card p-0" style="width: auto;">
+            <img src="Images/03.avif" alt="3" class="img-fluid">
+            <div class="card-body">
+              <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+                data-bs-target="#primaryModal3">자세히 보기</button>
+              <div class="modal fade" id="primaryModal3" tabindex="-1" aria-labelledby="primaryModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5"><img src="Images/03.avif" alt="3" class="img-fluid"></h1>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
         <div class="col-3 col-lg-6">
           <div class="card p-0" style="width: auto;">
             <img src="Images/04.avif" alt="4" class="img-fluid" style="height: 100%">
             <div class="card-body">
-              <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#primaryModal4">자세히 보기</button>
-              <div class="modal fade" id="primaryModal4" tabindex="-1" aria-labelledby="primaryModalLabel" aria-hidden="true">
+              <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+                data-bs-target="#primaryModal4">자세히 보기</button>
+              <div class="modal fade" id="primaryModal4" tabindex="-1" aria-labelledby="primaryModalLabel"
+                aria-hidden="true">
                 <div class="modal-dialog">
                   <div class="modal-content">
                     <div class="modal-header">
@@ -98,8 +110,10 @@
           <div class="card p-0" style="width: auto;">
             <img src="Images/05.avif" alt="5" class="img-fluid">
             <div class="card-body">
-              <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#primaryModal5">자세히 보기</button>
-              <div class="modal fade" id="primaryModal5" tabindex="-1" aria-labelledby="primaryModalLabel" aria-hidden="true">
+              <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+                data-bs-target="#primaryModal5">자세히 보기</button>
+              <div class="modal fade" id="primaryModal5" tabindex="-1" aria-labelledby="primaryModalLabel"
+                aria-hidden="true">
                 <div class="modal-dialog">
                   <div class="modal-content">
                     <div class="modal-header">
@@ -114,49 +128,29 @@
             </div>
           </div>
         </div>
+      </div>
     </div>
-    </div>
-</div>
+  </div>
 
-<div class="container row border-bottom p-2">
-  <div class="container col-12 col-lg-6">
+  <div class="container row border-bottom p-2">
+    <div class="container col-12 col-lg-6">
       <div class="row">
         <div class="card p-0" style="width: auto;">
           <img src="Images/06.avif" alt="6" class="img-fluid">
           <div class="card-body">
-            <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#primaryModal6">자세히 보기</button>
-            <div class="modal fade" id="primaryModal6" tabindex="-1" aria-labelledby="primaryModalLabel" aria-hidden="true">
+            <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+              data-bs-target="#primaryModal6">자세히 보기</button>
+            <div class="modal fade" id="primaryModal6" tabindex="-1" aria-labelledby="primaryModalLabel"
+              aria-hidden="true">
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <h1 class="modal-title fs-5"><img src="Images/06.avif" alt="6" class="img-fluid" style="height: 100%"></h1>
+                    <h1 class="modal-title fs-5"><img src="Images/06.avif" alt="6" class="img-fluid"
+                        style="height: 100%"></h1>
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
                   </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-  </div>
-
-  <div class="container col-12 col-lg-6">
-  <div class="row">
-    <div class="col-3 col-lg-6">
-      <div class="card p-0" style="width: auto;">
-        <img src="Images/07.avif" alt="7" class="img-fluid">
-        <div class="card-body">
-          <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#primaryModal7">자세히 보기</button>
-          <div class="modal fade" id="primaryModal7" tabindex="-1" aria-labelledby="primaryModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h1 class="modal-title fs-5"><img src="Images/07.avif" alt="7" class="img-fluid"></h1>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
                 </div>
               </div>
             </div>
@@ -164,70 +158,104 @@
         </div>
       </div>
     </div>
-    <div class="col-3 col-lg-6">
-      <div class="card p-0" style="width: auto;">
-        <img src="Images/08.avif" alt="8" class="img-fluid">
-        <div class="card-body">
-          <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#primaryModal8">자세히 보기</button>
-          <div class="modal fade" id="primaryModal8" tabindex="-1" aria-labelledby="primaryModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h1 class="modal-title fs-5"><img src="Images/08.avif" alt="8" class="img-fluid"></h1>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      </div> 
-      <div class="col-3 col-lg-6">
-        <div class="card p-0" style="width: auto;">
-          <img src="Images/09.avif" alt="9" class="img-fluid">
-          <div class="card-body">
-            <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#primaryModal9">자세히 보기</button>
-            <div class="modal fade" id="primaryModal9" tabindex="-1" aria-labelledby="primaryModalLabel" aria-hidden="true">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h1 class="modal-title fs-5"><img src="Images/09.avif" alt="9" class="img-fluid"></h1>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-3 col-lg-6">
-        <div class="card p-0" style="width: auto;">
-          <img src="Images/10.avif" alt="10" class="img-fluid">
-          <div class="card-body">
-            <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#primaryModal10">자세히 보기</button>
-            <div class="modal fade" id="primaryModal10" tabindex="-1" aria-labelledby="primaryModalLabel" aria-hidden="true">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h1 class="modal-title fs-5"><img src="Images/10.avif" alt="10" class="img-fluid"></h1>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-  </div>
-  </div>
-</div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <div class="container col-12 col-lg-6">
+      <div class="row">
+        <div class="col-3 col-lg-6">
+          <div class="card p-0" style="width: auto;">
+            <img src="Images/07.avif" alt="7" class="img-fluid">
+            <div class="card-body">
+              <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+                data-bs-target="#primaryModal7">자세히 보기</button>
+              <div class="modal fade" id="primaryModal7" tabindex="-1" aria-labelledby="primaryModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5"><img src="Images/07.avif" alt="7" class="img-fluid"></h1>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-3 col-lg-6">
+          <div class="card p-0" style="width: auto;">
+            <img src="Images/08.avif" alt="8" class="img-fluid">
+            <div class="card-body">
+              <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+                data-bs-target="#primaryModal8">자세히 보기</button>
+              <div class="modal fade" id="primaryModal8" tabindex="-1" aria-labelledby="primaryModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5"><img src="Images/08.avif" alt="8" class="img-fluid"></h1>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-3 col-lg-6">
+          <div class="card p-0" style="width: auto;">
+            <img src="Images/09.avif" alt="9" class="img-fluid">
+            <div class="card-body">
+              <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+                data-bs-target="#primaryModal9">자세히 보기</button>
+              <div class="modal fade" id="primaryModal9" tabindex="-1" aria-labelledby="primaryModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5"><img src="Images/09.avif" alt="9" class="img-fluid"></h1>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-3 col-lg-6">
+          <div class="card p-0" style="width: auto;">
+            <img src="Images/10.avif" alt="10" class="img-fluid">
+            <div class="card-body">
+              <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+                data-bs-target="#primaryModal10">자세히 보기</button>
+              <div class="modal fade" id="primaryModal10" tabindex="-1" aria-labelledby="primaryModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5"><img src="Images/10.avif" alt="10" class="img-fluid"></h1>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
 </body>
+
 </html>
