@@ -11,9 +11,9 @@ for i in range(10):
             ls.append(string[j])
         if string[j] in right:
             if right.index(string[j]) == left.index(ls[-1]):
-                ls.pop()   
+                ls.pop()
             else:
-                break     
+                break
     ans = 0
     if len(ls) == 0:
         ans = 1

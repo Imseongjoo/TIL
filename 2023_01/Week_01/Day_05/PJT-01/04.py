@@ -1,15 +1,15 @@
 f = open('data/fruits.txt', 'r', encoding='UTF8')
-text = f.read() 
+text = f.read()
 string = text.split('\n')
 dict_variable = {}
 for char in string:
-     if char in dict_variable.keys():
-         dict_variable[char] += 1
-     elif char not in dict_variable.keys():
-         dict_variable[char] = 1
+    if char in dict_variable.keys():
+        dict_variable[char] += 1
+    elif char not in dict_variable.keys():
+        dict_variable[char] = 1
 
 for key, value in dict_variable.items():
-     print(key, value)
+    print(key, value)
 
 #      fruit_dict = {}
 

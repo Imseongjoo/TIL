@@ -1,4 +1,4 @@
-# 1547 공	
+# 1547 공
 # 문제
 # 세준이는 컵 3개를 탁자 위에 일렬로 엎어놓았다. 컵의 번호는 맨 왼쪽 컵부터 순서대로 1번, 2번 3번이고, 세준이는 이 컵을 이용해서 게임을 하려고 한다.
 
@@ -15,10 +15,10 @@
 # 첫째 줄에 공이 들어있는 컵의 번호를 출력한다. 공이 사라져서 컵 밑에 없는 경우에는 -1을 출력한다.
 
 M = int(input())
-cup = [0,1,2,3]
-for i in range(1,M+1):
-    x,y = map(int, input().split())
-    cup[x],cup[y]=cup[y],cup[x]
+cup = [0, 1, 2, 3]
+for i in range(1, M+1):
+    x, y = map(int, input().split())
+    cup[x], cup[y] = cup[y], cup[x]
 print(cup.index(1))
 
 # 5576 콘테스트
@@ -33,7 +33,7 @@ print(cup.index(1))
 # 입력은 20 행으로 구성된다. 1 번째 줄부터 10 번째 줄에는 W 대학의 각 참가자의 점수를 나타내는 정수가 11 번째 줄부터 20 번째 줄에는 K 대학의 각 참가자의 점수를 나타내는 정수가 적혀있다. 이 정수는 모두 0 이상 100 이하이다.
 
 # 출력
-# W 대학 점수와 K 대학의 점수를 순서대로 공백으로 구분하여 출력하라.	
+# W 대학 점수와 K 대학의 점수를 순서대로 공백으로 구분하여 출력하라.
 
 w = [list(map(int, input().split())) for i in range(10)]
 k = [list(map(int, input().split())) for i in range(10)]
@@ -41,7 +41,7 @@ w.sort(key=lambda x: (x[0]))
 k.sort(key=lambda x: (x[0]))
 www = w[7][0]+w[8][0]+w[9][0]
 kkk = k[7][0]+k[8][0]+k[9][0]
-print(www,kkk)
+print(www, kkk)
 
 # 2846 오르막길
 # 문제
@@ -63,8 +63,8 @@ N = int(input())
 P = list(map(int, input().split()))
 S = []
 sum = 0
-for i in range(1,N):
-    if P[i-1]<P[i]:
+for i in range(1, N):
+    if P[i-1] < P[i]:
         sum += P[i]-P[i-1]
         if i == N-1:
             S.append(sum)
@@ -73,7 +73,7 @@ for i in range(1,N):
         sum = 0
 print(max(S))
 
-# 1251 단어 나누기	
+# 1251 단어 나누기
 # 문제
 # 알파벳 소문자로 이루어진 단어를 가지고 아래와 같은 과정을 해 보려고 한다.
 
@@ -96,8 +96,8 @@ print(max(S))
 string = list(input())
 cnt = []
 ans = []
-for i in range(1,len(string)-1):
-    for j in range(i+1,len(string)):
+for i in range(1, len(string)-1):
+    for j in range(i+1, len(string)):
         a = string[:i]
         b = string[i:j]
         c = string[j:]

@@ -1,4 +1,5 @@
 import heapq
+
 S = ['baekjoononlinejudge', 'startlink',
      'codeplus', 'sundaycoding', 'codingsh']
 

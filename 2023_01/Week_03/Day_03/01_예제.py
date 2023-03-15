@@ -1,4 +1,4 @@
-# 2789 유학 금지	
+# 2789 유학 금지
 # 문제
 # 아주 멀리 떨어져 있는 작은 나라가 있다. 이 나라에서 가장 공부를 잘하는 학생들은 모두 다른 나라로 유학을 간다. 정부는 최고의 학생들이 자꾸 유학을 가는 이유를 찾으려고 했다. 하지만, 학생들의 이유가 모두 달랐기 때문에 정확한 이유를 찾을 수 없었다. 정부의 고위직은 뛰어난 학생들이 자꾸 유학을 가는 현상을 매우 불쾌해 했다.
 
@@ -14,7 +14,7 @@
 
 T = input()
 for i in 'CAMBRIDGE':
-    T = T.replace(i,'')
+    T = T.replace(i, '')
 print(T)
 
 # string = "KARIJERA"
@@ -29,27 +29,27 @@ print(T)
 # for index in range(len(string)):
 #     # print(string[index])
 #     char = string[index]
-    
+
 #     # 포함되지 않은 문자 찾기
 #     # print(char, char not in compare_word)
 #     if char not in compare_word:
 #         # 포함되지 않은 문자라면
 #         # 방법 1. end 속성을 활용
 #         # print(char, end="")
-        
+
 #         # 방법 2. 새로운 문자열 만들기 (추천)
 #         result += char
 
 # print(result)
 
-# 2675 문자열 반복	
+# 2675 문자열 반복
 # 문제
 # 문자열 S를 입력받은 후에, 각 문자를 R번 반복해 새 문자열 P를 만든 후 출력하는 프로그램을 작성하시오. 즉, 첫 번째 문자를 R번 반복하고, 두 번째 문자를 R번 반복하는 식으로 P를 만들면 된다. S에는 QR Code "alphanumeric" 문자만 들어있다.
 
 # QR Code "alphanumeric" 문자는 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ\$%*+-./: 이다.
 
 # 입력
-# 첫째 줄에 테스트 케이스의 개수 T(1 ≤ T ≤ 1,000)가 주어진다. 각 테스트 케이스는 반복 횟수 R(1 ≤ R ≤ 8), 문자열 S가 공백으로 구분되어 주어진다. S의 길이는 적어도 1이며, 20글자를 넘지 않는다. 
+# 첫째 줄에 테스트 케이스의 개수 T(1 ≤ T ≤ 1,000)가 주어진다. 각 테스트 케이스는 반복 횟수 R(1 ≤ R ≤ 8), 문자열 S가 공백으로 구분되어 주어진다. S의 길이는 적어도 1이며, 20글자를 넘지 않는다.
 
 # 출력
 # 각 테스트 케이스에 대해 P를 출력한다.
@@ -60,14 +60,14 @@ for i in range(T):
     N = int(N)
     S = list(S)
     for j in range(len(S)):
-        print(S[j] * N, end = '')
+        print(S[j] * N, end='')
     print('')
 
-# 10988 팰린드롬인지 확인하기	
+# 10988 팰린드롬인지 확인하기
 # 문제
 # 알파벳 소문자로만 이루어진 단어가 주어진다. 이때, 이 단어가 팰린드롬인지 아닌지 확인하는 프로그램을 작성하시오.
 
-# 팰린드롬이란 앞으로 읽을 때와 거꾸로 읽을 때 똑같은 단어를 말한다. 
+# 팰린드롬이란 앞으로 읽을 때와 거꾸로 읽을 때 똑같은 단어를 말한다.
 
 # level, noon은 팰린드롬이고, baekjoon, online, judge는 팰린드롬이 아니다.
 
@@ -87,7 +87,7 @@ else:
 # print(int(word == word[::-1]))
 
 # https://www.acmicpc.net/problem/10988
-# 팰린드롬 
+# 팰린드롬
 
 # 1. Input
 # word = '토마무우마토'
@@ -96,14 +96,14 @@ word = input()
 # 2. 값 초기화(단어의 인덱스)
 # start(시작) : 0
 # end(끝) : len(word) - 1
-start = 0 
+start = 0
 end = len(word) - 1
 is_pal = True
 
 # 3. while
 # start 값이 end보다 작을 때....
 while start < end:
-    # word[start], word[end] 비교해서 
+    # word[start], word[end] 비교해서
     # 다르면, 팰린드롬이 아니다!
     if word[start] != word[end]:
         is_pal = False
@@ -114,11 +114,11 @@ while start < end:
     start += 1
     end -= 1
 
-# 4. 출력 
+# 4. 출력
 # 팰린드롬이면 1, 아니면 0을 출력한다.
 if is_pal:
     print(1)
-else: 
+else:
     print(0)
 
 # print(int(is_pal))
@@ -137,7 +137,7 @@ else:
 # 문자열의 길이는 1,000을 넘지 않는다.
 
 # 출력
-# 첫째 줄에 왼손의 잔상의 수와 오른손의 잔상의 수를 출력한다.	
+# 첫째 줄에 왼손의 잔상의 수와 오른손의 잔상의 수를 출력한다.
 
 i = 0
 r = [0, 0]
@@ -148,7 +148,7 @@ for c in input():
         i ^= 1
 print(*r)
 
-# 2941 크로아티아 알파벳	
+# 2941 크로아티아 알파벳
 # 문제
 # 예전에는 운영체제에서 크로아티아 알파벳을 입력할 수가 없었다. 따라서, 다음과 같이 크로아티아 알파벳을 변경해서 입력했다.
 
@@ -175,7 +175,7 @@ print(*r)
 
 C = ['c=', 'c-', 'dz=', 'd-', 'lj', 'nj', 's=', 'z=']
 T = input()
-for i in C :
+for i in C:
     T = T.replace(i, 'a')
 print(len(T))
 
@@ -192,9 +192,9 @@ print(len(T))
 # 만약, 어떤 알파벳이 단어에 포함되어 있지 않다면 -1을 출력한다. 단어의 첫 번째 글자는 0번째 위치이고, 두 번째 글자는 1번째 위치이다.
 
 S = input()
-A ='abcdefghijklmnopqrstuvwxyz'
+A = 'abcdefghijklmnopqrstuvwxyz'
 for i in A:
     if i in S:
-        print(S.index(i), end =' ')
+        print(S.index(i), end=' ')
     else:
-        print(-1, end =' ')
+        print(-1, end=' ')

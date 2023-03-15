@@ -9,6 +9,7 @@
 # Lotto 번호
 # 기능 :
 # 로또 구매 금액 계산
+
 import random
 
 

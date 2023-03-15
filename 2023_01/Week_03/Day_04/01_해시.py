@@ -1,5 +1,6 @@
-# 1. Input 대체
 from collections import Counter
+
+# 1. Input 대체
 members = [
     "Jay", "John", "John", "Jay", "Jack", "Jack", "John", "Jo", "Jo", "Jack"
 ]

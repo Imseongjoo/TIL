@@ -5,7 +5,7 @@ for test_case in range(1, T+1):
     N = int(input())
     ls = [0]*10
     i = 0
-    while(True):
+    while (True):
         if 0 not in ls:
             break
         else:

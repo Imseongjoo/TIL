@@ -2,10 +2,7 @@
   {
     "adult": false,
     "backdrop_path": "/tXHpvlr5F7gV5DwgS7M5HBrUi2C.jpg",
-    "genre_ids": [
-      18,
-      80
-    ],
+    "genre_ids": [18, 80],
     "id": 278,
     "original_language": "en",
     "original_title": "The Shawshank Redemption",
@@ -21,10 +18,7 @@
   {
     "adult": false,
     "backdrop_path": "/rSPw7tgCH9c6NqICZef4kZjFOQ5.jpg",
-    "genre_ids": [
-      18,
-      80
-    ],
+    "genre_ids": [18, 80],
     "id": 238,
     "original_language": "en",
     "original_title": "The Godfather",
@@ -40,11 +34,7 @@
   {
     "adult": false,
     "backdrop_path": "/loRmRzQXZeqG78TqZuyvSlEQfZb.jpg",
-    "genre_ids": [
-      18,
-      36,
-      10752
-    ],
+    "genre_ids": [18, 36, 10752],
     "id": 424,
     "original_language": "en",
     "original_title": "Schindler's List",
@@ -60,11 +50,7 @@
   {
     "adult": false,
     "backdrop_path": "/dIWwZW7dJJtqC6CgWzYkNVKIUm8.jpg",
-    "genre_ids": [
-      10749,
-      16,
-      18
-    ],
+    "genre_ids": [10749, 16, 18],
     "id": 372058,
     "original_language": "ja",
     "original_title": "君の名は。",
@@ -80,13 +66,7 @@
   {
     "adult": false,
     "backdrop_path": "/hQQTE285UQB1lLY1XiioQ77LYnC.jpg",
-    "genre_ids": [
-      16,
-      35,
-      10749,
-      18,
-      14
-    ],
+    "genre_ids": [16, 35, 10749, 18, 14],
     "id": 572154,
     "original_language": "ja",
     "original_title": "青春ブタ野郎はゆめみる少女の夢を見ない",
@@ -102,11 +82,7 @@
   {
     "adult": false,
     "backdrop_path": "/mSDsSDwaP3E7dEfUPWy4J0djt4O.jpg",
-    "genre_ids": [
-      16,
-      10751,
-      14
-    ],
+    "genre_ids": [16, 10751, 14],
     "id": 129,
     "original_language": "ja",
     "original_title": "千と千尋の神隠し",
@@ -122,11 +98,7 @@
   {
     "adult": false,
     "backdrop_path": "/ApiBzeaa95TNYliSbQ8pJv4Fje7.jpg",
-    "genre_ids": [
-      35,
-      53,
-      18
-    ],
+    "genre_ids": [35, 53, 18],
     "id": 496243,
     "original_language": "ko",
     "original_title": "기생충",
@@ -142,11 +114,7 @@
   {
     "adult": false,
     "backdrop_path": "/xMIyotorUv2Yz7zpQz2QYc8wkWB.jpg",
-    "genre_ids": [
-      14,
-      18,
-      80
-    ],
+    "genre_ids": [14, 18, 80],
     "id": 497,
     "original_language": "en",
     "original_title": "The Green Mile",
@@ -162,10 +130,7 @@
   {
     "adult": false,
     "backdrop_path": "/w7RDIgQM6bLT7JXtH4iUQd3Iwxm.jpg",
-    "genre_ids": [
-      53,
-      80
-    ],
+    "genre_ids": [53, 80],
     "id": 680,
     "original_language": "en",
     "original_title": "Pulp Fiction",
@@ -181,10 +146,7 @@
   {
     "adult": false,
     "backdrop_path": "/6aNKD81RHR1DqUUa8kOZ1TBY1Lp.jpg",
-    "genre_ids": [
-      35,
-      18
-    ],
+    "genre_ids": [35, 18],
     "id": 637,
     "original_language": "it",
     "original_title": "La vita è bella",
@@ -200,11 +162,7 @@
   {
     "adult": false,
     "backdrop_path": "/lXhgCODAbBXL5buk9yEmTpOoOgR.jpg",
-    "genre_ids": [
-      12,
-      14,
-      28
-    ],
+    "genre_ids": [12, 14, 28],
     "id": 122,
     "original_language": "en",
     "original_title": "The Lord of the Rings: The Return of the King",
@@ -220,11 +178,7 @@
   {
     "adult": false,
     "backdrop_path": "/tlEFuIlaxRPXIYVHXbOSAMCfWqk.jpg",
-    "genre_ids": [
-      35,
-      18,
-      10749
-    ],
+    "genre_ids": [35, 18, 10749],
     "id": 13,
     "original_language": "en",
     "original_title": "Forrest Gump",
@@ -240,12 +194,7 @@
   {
     "adult": false,
     "backdrop_path": "/hkBaDkMWbLaf8B1lsWsKX7Ew3Xq.jpg",
-    "genre_ids": [
-      18,
-      28,
-      80,
-      53
-    ],
+    "genre_ids": [18, 28, 80, 53],
     "id": 155,
     "original_language": "en",
     "original_title": "The Dark Knight",
@@ -261,10 +210,7 @@
   {
     "adult": false,
     "backdrop_path": "/rO4pfAIIrt3N905wTTe2HrH3uUv.jpg",
-    "genre_ids": [
-      18,
-      80
-    ],
+    "genre_ids": [18, 80],
     "id": 311,
     "original_language": "en",
     "original_title": "Once Upon a Time in America",
@@ -280,10 +226,7 @@
   {
     "adult": false,
     "backdrop_path": "/zoVeIgKzGJzpdG6Gwnr7iOYfIMU.jpg",
-    "genre_ids": [
-      18,
-      10749
-    ],
+    "genre_ids": [18, 10749],
     "id": 11216,
     "original_language": "it",
     "original_title": "Nuovo Cinema Paradiso",
@@ -299,9 +242,7 @@
   {
     "adult": false,
     "backdrop_path": "/52AfXWuXCHn3UjD17rBruA9f5qb.jpg",
-    "genre_ids": [
-      18
-    ],
+    "genre_ids": [18],
     "id": 550,
     "original_language": "en",
     "original_title": "Fight Club",
@@ -317,10 +258,7 @@
   {
     "adult": false,
     "backdrop_path": "/194dso1hBwQEgIU3fgS7mXHtFAj.jpg",
-    "genre_ids": [
-      18,
-      80
-    ],
+    "genre_ids": [18, 80],
     "id": 598,
     "original_language": "pt",
     "original_title": "Cidade de Deus",
@@ -336,13 +274,7 @@
   {
     "adult": false,
     "backdrop_path": "/aUVCJ0HkcJIBrTJYPnTXta8h9Co.jpg",
-    "genre_ids": [
-      28,
-      12,
-      16,
-      878,
-      35
-    ],
+    "genre_ids": [28, 12, 16, 878, 35],
     "id": 324857,
     "original_language": "en",
     "original_title": "Spider-Man: Into the Spider-Verse",
@@ -358,11 +290,7 @@
   {
     "adult": false,
     "backdrop_path": "/vwBa7djy1oxfxUjc7YtVgGNsjrT.jpg",
-    "genre_ids": [
-      14,
-      16,
-      12
-    ],
+    "genre_ids": [14, 16, 12],
     "id": 4935,
     "original_language": "ja",
     "original_title": "ハウルの動く城",
@@ -378,9 +306,7 @@
   {
     "adult": false,
     "backdrop_path": "/7jTgJ24UPkWeb5zzH7ihs554xVy.jpg",
-    "genre_ids": [
-      35
-    ],
+    "genre_ids": [35],
     "id": 914,
     "original_language": "en",
     "original_title": "The Great Dictator",

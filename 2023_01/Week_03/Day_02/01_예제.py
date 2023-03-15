@@ -9,8 +9,8 @@
 # 첫째 줄에 주어진 정수 N개의 최솟값과 최댓값을 공백으로 구분해 출력한다.
 
 T = int(input())
-numbers = list(map(int,input().split()))
-print(min(numbers),max(numbers))
+numbers = list(map(int, input().split()))
+print(min(numbers), max(numbers))
 
 # 11720 숫자의 합
 # 문제
@@ -20,7 +20,7 @@ print(min(numbers),max(numbers))
 # 첫째 줄에 숫자의 개수 N (1 ≤ N ≤ 100)이 주어진다. 둘째 줄에 숫자 N개가 공백없이 주어진다.
 
 # 출력
-# 입력으로 주어진 숫자 N개의 합을 출력한다.	
+# 입력으로 주어진 숫자 N개의 합을 출력한다.
 
 T = int(input())
 total = 0
@@ -29,7 +29,7 @@ for i in numbers:
     total += int(i)
 print(total)
 
-# 2750 수 정렬하기	
+# 2750 수 정렬하기
 # 문제
 # N개의 수가 주어졌을 때, 이를 오름차순으로 정렬하는 프로그램을 작성하시오.
 
@@ -47,7 +47,7 @@ num_list1 = sorted(num_list)
 for i in range(len(num_list)):
     print(num_list1[i])
 
-# 2562 최댓값	
+# 2562 최댓값
 # 문제
 # 9개의 서로 다른 자연수가 주어질 때, 이들 중 최댓값을 찾고 그 최댓값이 몇 번째 수인지를 구하는 프로그램을 작성하시오.
 

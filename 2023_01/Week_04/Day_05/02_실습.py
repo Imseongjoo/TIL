@@ -1,3 +1,6 @@
+import heapq
+import sys
+
 # 10817 세 수
 # 문제
 # 세 정수 A, B, C가 주어진다. 이때, 두 번째로 큰 정수를 출력하는 프로그램을 작성하시오.
@@ -8,8 +11,6 @@
 # 출력
 # 두 번째로 큰 정수를 출력한다.
 
-import heapq
-import sys
 ls = list(map(int, input().split()))
 print(sorted(ls)[1])
 
@@ -99,7 +100,6 @@ print(len(res))
 # 출력
 # 조건에 따라 정렬하여 단어들을 출력한다. 단, 같은 단어가 여러 번 입력된 경우에는 한 번씩만 출력한다.
 
-
 n = int(sys.stdin.readline())
 ls = []
 
@@ -126,7 +126,6 @@ for i in ls:
 
 # 출력
 # 입력에서 0이 주어진 회수만큼 답을 출력한다. 만약 배열이 비어 있는 경우인데 절댓값이 가장 작은 값을 출력하라고 한 경우에는 0을 출력하면 된다.
-
 
 n = int(input())
 q = []

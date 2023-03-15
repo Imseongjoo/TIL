@@ -7,7 +7,7 @@ movie = json.load(movie_json)
 genres_json = open("data/genres.json", encoding="UTF8")
 genres_list = json.load(genres_json)
 
-# 이하 문제 해결을 위한 코드 작성 
+# 이하 문제 해결을 위한 코드 작성
 
 # import json
 

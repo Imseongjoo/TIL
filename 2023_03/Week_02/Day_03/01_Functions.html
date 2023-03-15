@@ -30,7 +30,7 @@
       console.log(greeting())
 
       // 매개변수 개수와 인자 개수의 불일치 상황
-      // 매개변수 개수 < 인자
+      // 매개변수 개수 < 인자 개수
       const noArgs = function () {
         return 0
       }
@@ -43,13 +43,14 @@
 
       console.log(twoArgs(1, 2, 3))
 
-      // 매개변수 개수 > 인자개수
+      // 매개변수 개수 > 인자 개수
       const threeArgs = function (num1, num2, num3) {
         return [num1, num2, num3]
       }
 
       console.log(threeArgs(1))
 
+      // 나머지 매개변수 (가변 인자)
       const myFunc = function (num1, num2, ...restArgs) {
         return [num1, num2, restArgs]
       }

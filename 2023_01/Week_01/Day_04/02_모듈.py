@@ -1,11 +1,10 @@
 # 1. 모듈을 가져오는 것!
-import os
-import datetime
 import random
+import datetime
+import os
 
 menu = ['햄버거', '국밥', '초밥']
 print(random.choice(menu))
-
 # 로또 추첨 코드 작성
 # random.sample(population, k)
 # Return a k length list   6개 숫자

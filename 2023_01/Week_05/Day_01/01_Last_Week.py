@@ -1,7 +1,7 @@
 import sys
 
 # heapq 모듈 import
-from heapq import heapify,heappop,heappush
+from heapq import heapify, heappop, heappush
 
 sys.stdin = open("input.txt")
 
@@ -25,18 +25,17 @@ for _ in range(N):
         # heap이 비어있을때
         if len(number_list) == 0:
             pass
-            
+
         # heap이 비어있지 않을 때
         elif len(number_list) != 0:
             pass
-        
+
     # heappush
     elif number != 0:
         # (절대값, 원본값) push
         heappush(number_list, (abs(number), number))
         # print(number,number_list)
 
-import sys
 
 sys.stdin = open("input.txt")
 
@@ -52,7 +51,7 @@ word_len = dict()
 # 단어의 수만큼 반복문
 for _ in range(N):
     word = input()
-    
+
     # 입력받은 단어
     # print(word)
     word_len[word] = len(word)
@@ -67,7 +66,7 @@ for _ in range(N):
 # print(word_len.items())
 
 # sorted 정렬 기준이 2개 이상일 때 -> 튜플 형태
-sorted_word_len = sorted(word_len.items(), key = lambda x:(x[1],x[0]))
+sorted_word_len = sorted(word_len.items(), key=lambda x: (x[1], x[0]))
 # print(sorted_word_len)
 
 # 정렬한 값을 순회하며 출력

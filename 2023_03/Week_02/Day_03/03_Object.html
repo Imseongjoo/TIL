@@ -6,40 +6,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
+
   <body>
     <script>
       const user = {
-        name: "sophia",
+        name: "Sophia",
         age: 30,
         "key with space": true,
       }
 
-      // 조회 (점 표기법, 대괄호 표기법)
-      console.log(user.age)
-      console.log(user["age"])
-      console.log(user["key with space"])
+      // 조회
+      console.log(user.age) // 30
+      console.log(user["key with space"]) // true
 
       // 추가
       user.address = "korea"
-      console.log(user)
+      console.log(user) // {name: 'Sophia', age: 30, key with space: true, address: 'korea'}
 
       // 수정
-      user.age = 40
-      console.log(user)
+      user.age = 20
+      console.log(user.age) // 20
 
       // 삭제
       delete user.address
-      console.log(user)
+      console.log(user) // {name: 'Sophia', age: 20, key with space: true}
 
       // in 연산자
-      console.log("age" in user)
-      console.log("country" in user)
+      console.log("age" in user) // true
+      console.log("country" in user) // false
 
-      // 단축 속성
+      // 단축 프로퍼티
       const age = 30
       const address = "korea"
 
-      const olduser = {
+      const oldUser = {
         age: age,
         address: address,
       }
@@ -49,17 +49,37 @@
         address,
       }
 
-      // 계산된 속성
-      const product = prompt("물건 이름을 입력해주세요.")
-      const a = "my"
-      const b = "property"
+      // 계산된 프로퍼티
+      const product = prompt("물건 이름을 입력해주세요")
+      const prefix = "my"
+      const suffix = "property"
 
       const bag = {
         [product]: 5,
-        [a + b]: true,
+        [prefix + suffix]: "value",
       }
 
-      console.log(bag)
+      console.log(bag) // {연필: 5, myproperty: 'value'}
+
+      // 객체와 함수
+      const person = {
+        name: "Sophia",
+        greeting: function () {
+          return `Hello my name is ${this.name}`
+        },
+      }
+
+      // greeting 메서드 호출
+      console.log(person.greeting()) // Hello my name is Sophia
+
+      // 추가
+      const profile = {
+        name: "Sophia",
+        age: 30,
+      }
+
+      console.log(Object.keys(profile)) // ['name', 'age']
+      console.log(Object.values(profile)) // ['Sophia', 30]
     </script>
   </body>
 </html>

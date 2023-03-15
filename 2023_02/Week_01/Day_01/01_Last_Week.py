@@ -1,11 +1,15 @@
 import sys
+
 # from pprint import pprint
 sys.stdin = open("어디에 단어가 들어갈 수 있을까.txt")
 
 # 2차원 리스트에서 하나의 행을 구분해서 출력
+
+
 def pprint(arr):
     for row in arr:
         print(*row)
+
 
 # 테스트케이스 수
 T = int(input())
@@ -16,10 +20,10 @@ for t in range(1, T+1):
     # 띄어쓰기로 구분된 정수 2개를 입력
     N, K = list(map(int, input().split()))
     # print(N, K)
-    
+
     # 2차원 리스트 저장 변수
     grid = []
-    
+
     # N x N 입력
     # N번 만큼 입력
     for _ in range(N):
@@ -27,7 +31,7 @@ for t in range(1, T+1):
         temp_list = list(map(int, input().split()))
         # print(temp_list)
         grid.append(temp_list)
-    
+
     # pprint(grid)
 
     # 탐색을 시작하기전에 출력 값을 초기화
@@ -36,11 +40,11 @@ for t in range(1, T+1):
     # 가로 탐색
     # 열(x) -> 행(y)
     for y in range(N):
-        empty_count = 0 
+        empty_count = 0
         for x in range(N):
             # print(f"행:{y} / 열:{x}")
             # print(grid[y][x])
-            
+
             # K 만큼의 빈 공간이 있는지 확인
 
             # 흰공간(1)을 만났을 때
@@ -57,18 +61,18 @@ for t in range(1, T+1):
 
                 # 빈공간의 수를 0 초기화
                 empty_count = 0
-        
+
         if empty_count == K:
             answer += 1
 
     # 세로 탐색
-    # 행(y) -> 열(x) 
+    # 행(y) -> 열(x)
     for x in range(N):
-        empty_count = 0 
+        empty_count = 0
         for y in range(N):
             # print(f"행:{y} / 열:{x}")
             # print(grid[y][x])
-            
+
             # K 만큼의 빈 공간이 있는지 확인
 
             # 흰공간(1)을 만났을 때
@@ -85,7 +89,7 @@ for t in range(1, T+1):
 
                 # 빈공간의 수를 0 초기화
                 empty_count = 0
-        
+
         if empty_count == K:
             answer += 1
 
@@ -108,7 +112,7 @@ max_fly_sum = 0
 for y in range(0, N - M + 1):
     for x in range(0, N - M + 1):
         # print(y, x)
-        
+
         # 파리채 영역의 파리의 수
         fly_sum = 0
 
@@ -117,7 +121,7 @@ for y in range(0, N - M + 1):
             for xm in range(x, x + M):
                 # 죽인 파리의 수
                 fly_sum += list_[ym][xm]
-        
+
         # 가장 많이 죽인 파리의 수 갱신
         if max_fly_sum < fly_sum:
             max_fly_sum = fly_sum

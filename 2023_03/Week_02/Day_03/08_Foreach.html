@@ -6,21 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
+
   <body>
     <script>
-      const greeting = function (name) {
-        return `hello, ${name}`
-      }
+      const fruits = ["apple", "banana", "coconut"]
 
-      const arrow1 = (name) => {
-        return `hello, ${name}`
-      }
+      fruits.forEach(function (item, index, array) {
+        console.log(`${item} / ${index} / ${array}`)
+      })
 
-      console.log(arrow1("harry"))
-
-      const arrow2 = (name) => `hello, ${name}`
-
-      console.log(arrow2("harry"))
+      fruits.forEach((item, index, array) => {
+        console.log(`${item} / ${index} / ${array}`)
+      })
     </script>
   </body>
 </html>

@@ -15,6 +15,6 @@ class user:
         return 'hello'
 
     @classmethod
-    def class_mathod(cls):
+    def class_method(cls):
 
         return cls.a
