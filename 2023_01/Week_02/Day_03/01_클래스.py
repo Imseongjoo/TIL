@@ -1,7 +1,11 @@
+import sys
+
+
 class Person:
 
     def greeting(self):
         return 'hi....'
+
 
 iu = Person()
 jimin = Person()
@@ -15,16 +19,17 @@ print(type([]))
 # 메서드를 호출할 수 있음
 print(iu.greeting())
 
-# 속성을 부여할 수 있음 
+# 속성을 부여할 수 있음
 iu.name = '아이유'
 jimin.name = 'BTS 지민'
 print(iu.name)
 print(jimin.name)
 print(type(iu.name))
 
+
 class Person:
 
-    # 생성자 메서드 
+    # 생성자 메서드
     def __init__(self, name):
         self.name = name
 
@@ -35,16 +40,19 @@ class Person:
     def __del__(self):
         print('ㅠㅠ')
 
+
 # 인스턴스 생성
-p1 = Person('홍길동') # __init__메서드가 호출됨
-print(p1.greeting()) # 직접 greeting을 호출!
+p1 = Person('홍길동')  # __init__메서드가 호출됨
+print(p1.greeting())  # 직접 greeting을 호출!
 
 # p2 = Person('뉴진스')
 # print(p2.greeting())
 # # print(Person.greeting(p2))
 
+
 def foo(abc, d):
     return abc + d
+
 
 foo(1, 2)
 foo(100, 212312)
@@ -52,10 +60,11 @@ foo(100, 212312)
 # 소개팅
 # 사람 관련 정보 뭐가 있을까요?
 
+
 class Person:
 
     def __init__(self, name, age, mbti):
-        self.name = name 
+        self.name = name
         self.age = age
         self.mbti = mbti
 
@@ -65,15 +74,16 @@ class Person:
     # print(p1 > p2)
     def __gt__(self, other):
         if self.age > other.age:
-            return self 
+            return self
         else:
-            return other 
+            return other
 
     def __str__(self):
         return f'{self.name} ({self.age})'
 
     def __len__(self):
         return self.age
+
 
 p1 = Person('재용', 30, 'istp')
 p2 = Person('유영', 28, 'enfj')
@@ -88,14 +98,16 @@ print(map(int, ['1', '2', '3']))
 
 # 필수/선택
 
-# 기능 설계 관점에서 
+# 기능 설계 관점에서
+
+
 class MJ:
     pass
+
 
 mj = MJ()
 
 # 2068
-import sys
 sys.stdin = open("input.txt", "r")
 
 T = int(input())

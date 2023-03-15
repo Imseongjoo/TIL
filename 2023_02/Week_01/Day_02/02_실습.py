@@ -44,7 +44,7 @@ print(cnt)
 
 # 제한
 # 2 ≤ N ≤ 50
-# 10 ≤ x, y ≤ 200	
+# 10 ≤ x, y ≤ 200
 
 N = int(input())
 stu = []
@@ -55,8 +55,8 @@ for i in range(N):
 for cur in stu:
     rank = 1
     for next in stu:
-        if (cur[0]!=next[0]) and (cur[1]!=next[1]):  
-            if (cur[0]<next[0]) and (cur[1]<next[1]):
+        if (cur[0] != next[0]) and (cur[1] != next[1]):
+            if (cur[0] < next[0]) and (cur[1] < next[1]):
                 rank += 1
     print(rank)
 
@@ -90,7 +90,8 @@ for cur in stu:
 king, stone, N = input().split()
 k = list(map(int, [ord(king[0]) - 64, king[1]]))
 s = list(map(int, [ord(stone[0]) - 64, stone[1]]))
-move = {'R': [1, 0], 'L': [-1, 0], 'B': [0, -1], 'T': [0, 1], 'RT': [1, 1], 'LT': [-1, 1], 'RB': [1, -1], 'LB': [-1, -1]}
+move = {'R': [1, 0], 'L': [-1, 0], 'B': [0, -1], 'T': [0, 1],
+        'RT': [1, 1], 'LT': [-1, 1], 'RB': [1, -1], 'LB': [-1, -1]}
 
 for _ in range(int(N)):
     m = input()

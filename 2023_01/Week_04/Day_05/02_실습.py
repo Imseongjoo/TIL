@@ -1,6 +1,6 @@
 # 10817 세 수
 # 문제
-# 세 정수 A, B, C가 주어진다. 이때, 두 번째로 큰 정수를 출력하는 프로그램을 작성하시오. 
+# 세 정수 A, B, C가 주어진다. 이때, 두 번째로 큰 정수를 출력하는 프로그램을 작성하시오.
 
 # 입력
 # 첫째 줄에 세 정수 A, B, C가 공백으로 구분되어 주어진다. (1 ≤ A, B, C ≤ 100)
@@ -8,6 +8,8 @@
 # 출력
 # 두 번째로 큰 정수를 출력한다.
 
+import heapq
+import sys
 ls = list(map(int, input().split()))
 print(sorted(ls)[1])
 
@@ -48,7 +50,7 @@ if start == '고무오리 디버깅 시작':
     else:
         print('힝구')
 
-# 1269 대칭 차집합	
+# 1269 대칭 차집합
 # 문제
 # 자연수를 원소로 갖는 공집합이 아닌 두 집합 A와 B가 있다. 이때, 두 집합의 대칭 차집합의 원소의 개수를 출력하는 프로그램을 작성하시오. 두 집합 A와 B가 있을 때, (A-B)와 (B-A)의 합집합을 A와 B의 대칭 차집합이라고 한다.
 
@@ -61,15 +63,15 @@ if start == '고무오리 디버깅 시작':
 # 첫째 줄에 대칭 차집합의 원소의 개수를 출력한다.
 
 A, B = map(int, input().split())
- 
+
 A_set = set(map(int, input().split()))
 B_set = set(map(int, input().split()))
- 
+
 print(len(A_set-B_set)+len(B_set-A_set))
 
-# 3052 나머지	
+# 3052 나머지
 # 문제
-# 두 자연수 A와 B가 있을 때, A%B는 A를 B로 나눈 나머지 이다. 예를 들어, 7, 14, 27, 38을 3으로 나눈 나머지는 1, 2, 0, 2이다. 
+# 두 자연수 A와 B가 있을 때, A%B는 A를 B로 나눈 나머지 이다. 예를 들어, 7, 14, 27, 38을 3으로 나눈 나머지는 1, 2, 0, 2이다.
 
 # 수 10개를 입력받은 뒤, 이를 42로 나눈 나머지를 구한다. 그 다음 서로 다른 값이 몇 개 있는지 출력하는 프로그램을 작성하시오.
 
@@ -81,7 +83,7 @@ print(len(A_set-B_set)+len(B_set-A_set))
 
 ls = []
 for i in range(10):
-    ls.append(int(input())%42)
+    ls.append(int(input()) % 42)
 res = set(ls)
 print(len(res))
 
@@ -95,9 +97,8 @@ print(len(res))
 # 첫째 줄에 단어의 개수 N이 주어진다. (1 ≤ N ≤ 20,000) 둘째 줄부터 N개의 줄에 걸쳐 알파벳 소문자로 이루어진 단어가 한 줄에 하나씩 주어진다. 주어지는 문자열의 길이는 50을 넘지 않는다.
 
 # 출력
-# 조건에 따라 정렬하여 단어들을 출력한다. 단, 같은 단어가 여러 번 입력된 경우에는 한 번씩만 출력한다.	
+# 조건에 따라 정렬하여 단어들을 출력한다. 단, 같은 단어가 여러 번 입력된 경우에는 한 번씩만 출력한다.
 
-import sys
 
 n = int(sys.stdin.readline())
 ls = []
@@ -107,7 +108,7 @@ for i in range(n):
 set_ls = set(ls)
 ls = list(set_ls)
 ls.sort()
-ls.sort(key = len)
+ls.sort(key=len)
 
 for i in ls:
     print(i)
@@ -126,8 +127,6 @@ for i in ls:
 # 출력
 # 입력에서 0이 주어진 회수만큼 답을 출력한다. 만약 배열이 비어 있는 경우인데 절댓값이 가장 작은 값을 출력하라고 한 경우에는 0을 출력하면 된다.
 
-import sys
-import heapq
 
 n = int(input())
 q = []

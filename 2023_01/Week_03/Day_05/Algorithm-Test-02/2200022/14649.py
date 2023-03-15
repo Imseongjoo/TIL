@@ -9,6 +9,6 @@ for i in range(T):
     N = 0
     if A + B + N % 10 == 0:
         print(f"#{i+1} {N%10}")
-    elif A + B + N % 10 > 0: 
+    elif A + B + N % 10 > 0:
         N = 10 - ((A + B) % 10)
         print(f"#{i+1} {N%10}")

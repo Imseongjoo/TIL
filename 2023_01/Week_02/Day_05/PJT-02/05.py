@@ -3,39 +3,41 @@ from pprint import pprint
 
 API_KEY = '7ab85c2ccd889c17aa8c871d33b927e5'
 
+
 def recommendation(title):
     pass
     # 여기에 코드를 작성합니다.
 
-    #영화 id 찾기
+    # 영화 id 찾기
     BASE_URL = 'https://api.themoviedb.org/3'
-    path = '/search/movie' 
-    params = { # 
-    'api_key' : API_KEY,
-    'language': 'ko-KR',
-    'region'  : 'KR',
-    'query'   : title
+    path = '/search/movie'
+    params = {
+        'api_key': API_KEY,
+        'language': 'ko-KR',
+        'region': 'KR',
+        'query': title
     }
-    movie_id = 0 # 영화 id
-    
+    movie_id = 0  # 영화 id
+
     res = requests.get(BASE_URL+path, params=params).json()
     res = res['results']
-    
+
     if res == []:
         return None
     else:
         movie_id = res[0]['id']
 
     # 추천영화 찾기!
-    path = f'/movie/{movie_id}/recommendations' 
-    params = { # 
-    'api_key' : API_KEY,
-    'language': 'ko-KR',
+    path = f'/movie/{movie_id}/recommendations'
+    params = {
+        'api_key': API_KEY,
+        'language': 'ko-KR',
     }
     res = requests.get(BASE_URL+path, params=params).json()
     res = res['results']
-    
+
     return [i['title'] for i in res]
+
 
 # 아래의 코드는 수정하지 않습니다.
 if __name__ == '__main__':

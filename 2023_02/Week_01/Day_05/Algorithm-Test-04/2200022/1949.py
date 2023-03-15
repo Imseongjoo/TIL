@@ -3,6 +3,7 @@
 dr = (-1, 1, 0, 0)
 dc = (0, 0, -1, 1)
 
+
 def dfs(r, c, chance):
     global MAX, visited
     MAX = max(MAX, visited[r][c])
@@ -22,6 +23,7 @@ def dfs(r, c, chance):
             dfs(nr, nc, chance-1)
             visited[nr][nc] = 0
             A[nr][nc] = temp
+
 
 T = int(input())
 for tc in range(T):

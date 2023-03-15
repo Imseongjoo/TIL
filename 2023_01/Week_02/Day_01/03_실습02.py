@@ -12,12 +12,12 @@ i = ''
 cnt = 0
 for i in str:
     if 'e' not in str:
-            print(int(-1))
-            break
+        print(int(-1))
+        break
     elif 'e' not in i:
-            cnt += 1     
+        cnt += 1
     elif 'e' in i:
-            print(int(cnt))
+        print(int(cnt))
 
 # string = input("문자열을 입력하세요 > ")
 # for index in range(len(string)):
@@ -33,7 +33,7 @@ for i in str:
 #     if string[index] == 'e':
 #         result = index
 # print(result)
- 
+
 # 문제 2
 # 문자열을 입력받고, 각 단어의 등장 횟수를 출력하세요.
 # 단, count() 메서드는 사용하지마세요.
@@ -79,7 +79,7 @@ print(strx)
 # print(new_string)
 
 # 문제 4
-# 문자열과 알파벳을 공백으로 구분해서 입력받고, 
+# 문자열과 알파벳을 공백으로 구분해서 입력받고,
 # 문자열에서 입력한 알파벳의 개수를 출력하세요.
 # 단, count() 메서드는 사용하지마세요.
 
@@ -92,9 +92,9 @@ i = ''
 cnt = 0
 for i in a:
     if b in i:
-            cnt += 1     
+        cnt += 1
     elif b in i:
-            cnt = 0
+        cnt = 0
 print(int(cnt))
 
 # string, alpha = input("문자열을 입력하세요 > ").split()
@@ -136,25 +136,25 @@ print(k)
 # 문자열을 입력하세요 > 244 # 사용자 입력
 # 10
 
-n =  int(input())
+n = int(input())
 
 if n < 0:
     print(-1)
 else:
-    result =0
+    result = 0
     while n > 0:
-        result += n%10
+        result += n % 10
         n //= 10
     print(result)
 
-# # while 사용 
-# # 반복적으로 n을 10으로 나눈 몫, 
+# # while 사용
+# # 반복적으로 n을 10으로 나눈 몫,
 # # n이 0보다 클 때 계속 반복!
 # # 결과값은 n을 10으로 나눈 나머지를 더해나갈 것이다!
 
 # n = int(input())
 
-# if n < 0: 
+# if n < 0:
 #     print(-1)
 # else:
 #     result = 0

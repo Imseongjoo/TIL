@@ -11,7 +11,7 @@ for i in range(T):
         elif j == 'd':
             P += 'b'
         elif j == 'p':
-            P +='q'
+            P += 'q'
         else:
             P += 'p'
     print(f"#{i+1} {P}")

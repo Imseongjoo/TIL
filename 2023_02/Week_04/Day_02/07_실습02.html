@@ -1,95 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>가로 Content 레이아웃</title>
+    <style>
+      .container1 {
+        height: 100%;
+        background-color: rgb(206, 212, 218);
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+      }
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>가로 Content 레이아웃</title>
-  <style>
-    .container1 {
-      height: 100%;
-      background-color: rgb(206, 212, 218);
-      display: flex;
-      flex-direction: column;
-      flex-wrap: nowrap;
-    }
+      .container2 {
+        height: 100%;
+        background-color: rgb(207, 244, 252);
+        margin: 1.5rem;
+        margin-bottom: 0rem;
+        padding-left: 3rem;
+        padding-right: 3rem;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: center;
+      }
 
-    .container2 {
-      height: 100%;
-      background-color: rgb(207, 244, 252);
-      margin: 1.5rem;
-      margin-bottom: 0rem;
-      padding-left: 3rem;
-      padding-right: 3rem;
-      display: flex;
-      flex-wrap: nowrap;
-      justify-content: space-between;
-      align-items: center;
-    }
+      .container3 {
+        height: 100%;
+        background-color: rgb(207, 244, 252);
+        margin: 1.5rem;
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        justify-content: space-evenly;
+      }
 
-    .container3 {
-      height: 100%;
-      background-color: rgb(207, 244, 252);
-      margin: 1.5rem;
-      display: flex;
-      flex-wrap: nowrap;
-      flex-direction: row;
-      justify-content: space-evenly
-    }
+      .post1 {
+        margin: 1rem;
+      }
 
-    .post1 {
-      margin: 1rem;
-    }
+      .post2 {
+        margin: 1.5rem;
+      }
 
-    .post2 {
-      margin: 1.5rem;
-    }
+      .item {
+        font-weight: bold;
+        font-size: 150%;
+      }
+    </style>
+  </head>
 
-    .item {
-      font-weight: bold;
-      font-size: 150%;
-    }
-  </style>
-</head>
-
-<body>
-  <div class="container1">
-
-    <div class="container2">
-      <div class="post1 item">
-        <p>로고</p>
+  <body>
+    <div class="container1">
+      <div class="container2">
+        <div class="post1 item">
+          <p>로고</p>
+        </div>
+        <div class="post1 item">
+          <p>로그인</p>
+        </div>
       </div>
-      <div class="post1 item">
-        <p>로그인</p>
+
+      <div class="container3">
+        <div class="post2">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
+          viverra sapien et facilisis vulputate. Phasellus placerat varius
+          risus, nec finibus mauris fermentum eu. In id turpis in orci posuere
+          posuere. Morbi sagittis enim vitae leo congue placerat. Maecenas nec
+          ex non dolor tempus finibus. Aliquam elementum blandit commodo.
+          Vivamus aliquet sodales dolor pharetra dictum. Donec ut nunc vel velit
+          volutpat commodo. Pellentesque habitant morbi tristique senectus et
+          netus et malesuada fames ac turpis egestas.
+        </div>
+        <div class="post2" style="margin-left: 0rem; margin-right: 0rem">
+          Aenean non orci nibh. In hac habitasse platea dictumst. Nunc sed
+          gravida magna. Cras euismod sit amet libero vitae fringilla. Curabitur
+          volutpat tincidunt tincidunt. Donec condimentum ex at nulla ultricies
+          sollicitudin. Cras pulvinar tristique turpis et varius. Etiam at urna
+          et nisi feugiat mollis eu ut dui. In laoreet vehicula lacus ac
+          consectetur. Etiam aliquet dictum rutrum. In condimentum lorem neque,
+          et tempus purus vehicula eu. Pellentesque vitae viverra nisi. Sed
+          facilisis eu magna non efficitur.
+        </div>
+        <div class="post2">
+          Cras commodo nunc sit amet lectus placerat posuere. Phasellus cursus
+          lacus in eros commodo, nec sollicitudin tellus ullamcorper. Aliquam
+          dictum efficitur nisl, a varius felis maximus et. Cras commodo elit et
+          diam suscipit, nec dignissim nisl tristique. Aenean tincidunt, tortor
+          ac congue blandit, quam nisi lobortis dolor, quis consectetur leo diam
+          id sapien. Etiam commodo at lectus sed interdum. Donec cursus metus
+          vitae nisi tempus, eu imperdiet nibh facilisis. Aenean ut lobortis
+          justo.
+        </div>
       </div>
     </div>
-
-    <div class="container3">
-      <div class="post2">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque viverra sapien et facilisis vulputate.
-        Phasellus placerat varius risus, nec finibus mauris fermentum eu. In id turpis in orci posuere posuere. Morbi
-        sagittis enim vitae leo congue placerat. Maecenas nec ex non dolor tempus finibus. Aliquam elementum blandit
-        commodo. Vivamus aliquet sodales dolor pharetra dictum. Donec ut nunc vel velit volutpat commodo. Pellentesque
-        habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
-      </div>
-      <div class="post2" style="margin-left: 0rem; margin-right: 0rem;">
-        Aenean non orci nibh. In hac habitasse platea dictumst. Nunc sed gravida magna. Cras euismod sit amet libero
-        vitae fringilla. Curabitur volutpat tincidunt tincidunt. Donec condimentum ex at nulla ultricies sollicitudin.
-        Cras pulvinar tristique turpis et varius. Etiam at urna et nisi feugiat mollis eu ut dui. In laoreet vehicula
-        lacus ac consectetur. Etiam aliquet dictum rutrum. In condimentum lorem neque, et tempus purus vehicula eu.
-        Pellentesque vitae viverra nisi. Sed facilisis eu magna non efficitur.
-      </div>
-      <div class="post2">
-        Cras commodo nunc sit amet lectus placerat posuere. Phasellus cursus lacus in eros commodo, nec sollicitudin
-        tellus ullamcorper. Aliquam dictum efficitur nisl, a varius felis maximus et. Cras commodo elit et diam
-        suscipit, nec dignissim nisl tristique. Aenean tincidunt, tortor ac congue blandit, quam nisi lobortis dolor,
-        quis consectetur leo diam id sapien. Etiam commodo at lectus sed interdum. Donec cursus metus vitae nisi tempus,
-        eu imperdiet nibh facilisis. Aenean ut lobortis justo.
-      </div>
-    </div>
-
-  </div>
-</body>
-
+  </body>
 </html>

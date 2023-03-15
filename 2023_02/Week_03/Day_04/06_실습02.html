@@ -1,53 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>카드 디자인</title>
+    <style>
+      .box {
+        display: inline-block;
+        box-sizing: content-box;
+        border: 2px solid black;
+        padding: 20px;
+        text-align: left;
+      }
 
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>카드 디자인</title>
-	<style>
-		.box {
-			display: inline-block;
-			box-sizing: content-box;
-			border: 2px solid black;
-			padding: 20px;
-			text-align: left;
-		}
+      .inner-box {
+        padding: 20px;
+      }
 
-		.inner-box {
-			padding: 20px;
-		}
+      .red {
+        color: red;
+      }
 
-		.red {
-			color: red;
-		}
+      em {
+        color: gray;
+      }
 
-		em {
-			color: gray;
-		}
+      .underline {
+        border-bottom: 1px dotted black;
+      }
 
-		.underline {
-			border-bottom: 1px dotted black;
-		}
-
-		.underline-solid {
-			border-bottom: 1px solid black;
-		}
-	</style>
-</head>
-<div class="box">
-	<img src="Tim.jpg" alt="팀 버너스리">
-	<h1>팀 버너스리</h1>
-	<h3 class="underline"><em><strong>프로그래머</strong></em></h3>
-	<div class="inner-box">
-		<p class="underline-solid">1989년 월드 와이드 웹의 하이퍼텍스트 시스템을 고안하여 개발. <span class="red">웹의 아버지</span></p>
-		<p class="underline-solid">국적: 영국</p>
-		<p class="underline-solid">생년월일: 1955년 6월 8일</p>
-		<p class="underline-solid">추가정보: <a
-				href="https://ko.wikipedia.org/wiki/팀_버너스리">https://ko.wikipedia.org/wiki/팀_버너스리</a></p>
-	</div>
-</div>
-</body>
-
+      .underline-solid {
+        border-bottom: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <img src="Tim.jpg" alt="팀 버너스리" />
+      <h1>팀 버너스리</h1>
+      <h3 class="underline">
+        <em><strong>프로그래머</strong></em>
+      </h3>
+      <div class="inner-box">
+        <p class="underline-solid">
+          1989년 월드 와이드 웹의 하이퍼텍스트 시스템을 고안하여 개발.
+          <span class="red">웹의 아버지</span>
+        </p>
+        <p class="underline-solid">국적: 영국</p>
+        <p class="underline-solid">생년월일: 1955년 6월 8일</p>
+        <p class="underline-solid">
+          추가정보:
+          <a href="https://ko.wikipedia.org/wiki/팀_버너스리"
+            >https://ko.wikipedia.org/wiki/팀_버너스리</a
+          >
+        </p>
+      </div>
+    </div>
+  </body>
 </html>

@@ -1,4 +1,6 @@
 # 1. 모듈을 가져오는 것!
+import os
+import datetime
 import random
 
 menu = ['햄버거', '국밥', '초밥']
@@ -19,8 +21,6 @@ print(students)
 random.shuffle(students)
 print(students)
 
-import datetime
-
 # print(datetime.datetime.now())
 # print(datetime.date(2023, 1, 5))
 
@@ -38,7 +38,7 @@ print(f'우리가 개발자가 되는 시간... {end - today}')
 # 해당 리스트 자체를 정렬!
 numbers = [10, 2, 5]
 result = numbers.sort()
-print(result) # None
+print(result)  # None
 print(numbers)
 
 numbers = [10, 2, 5]
@@ -49,8 +49,6 @@ print(numbers)
 # return : 정렬된 리스트
 numbers = [10, 2, 5]
 result = sorted(numbers)
-print(result) # [2, 5, 10]
-
-import os 
+print(result)  # [2, 5, 10]
 
 print(os.listdir())

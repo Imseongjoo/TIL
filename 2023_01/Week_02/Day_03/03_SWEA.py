@@ -38,29 +38,29 @@ print('++#++')
 print('+++#+')
 print('++++#')
 
-for i in range(5) :
-    for j in range(5) :
-        if i == j :
+for i in range(5):
+    for j in range(5):
+        if i == j:
             print('#', end='')
-        else :
+        else:
             print('+', end='')
     print()
 
 # 2058 자릿수 더하기
 
-n =  int(input())
+n = int(input())
 if n < 0:
     print(-1)
 else:
-    result =0
+    result = 0
     while n > 0:
-        result += n%10
+        result += n % 10
         n //= 10
     print(result)
 
-number=list(input())
-number=list(map(int,number))
-sum_number=sum(number)
+number = list(input())
+number = list(map(int, number))
+sum_number = sum(number)
 print(sum_number)
 
 # 2019 더블더블

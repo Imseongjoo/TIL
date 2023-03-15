@@ -1,4 +1,4 @@
-# 9498 시험 성적	
+# 9498 시험 성적
 # 문제
 # 시험 점수를 입력받아 90 ~ 100점은 A, 80 ~ 89점은 B, 70 ~ 79점은 C, 60 ~ 69점은 D, 나머지 점수는 F를 출력하는 프로그램을 작성하시오.
 
@@ -9,18 +9,18 @@
 # 시험 성적을 출력한다.
 
 S = int(input())
-if 90<=S:
+if 90 <= S:
     print("A")
-elif 80<=S<=89:
+elif 80 <= S <= 89:
     print("B")
-elif 70<=S<=79:
+elif 70 <= S <= 79:
     print("C")
-elif 60<=S<=69:
+elif 60 <= S <= 69:
     print("D")
 else:
     print("F")
 
-# 9093 단어 뒤집기	
+# 9093 단어 뒤집기
 # 문제
 # 문장이 주어졌을 때, 단어를 모두 뒤집어서 출력하는 프로그램을 작성하시오. 단, 단어의 순서는 바꿀 수 없다. 단어는 영어 알파벳으로만 이루어져 있다.
 
@@ -30,13 +30,13 @@ else:
 # 출력
 # 각 테스트 케이스에 대해서, 입력으로 주어진 문장의 단어를 모두 뒤집어 출력한다.
 
-N=int(input())
+N = int(input())
 for i in range(N):
-    string=list(input().split())
+    string = list(input().split())
     for j in string:
         print(j[::-1], end=' ')
 
-# 11721 열 개씩 끊어 출력하기	
+# 11721 열 개씩 끊어 출력하기
 # 문제
 # 알파벳 소문자와 대문자로만 이루어진 길이가 N인 단어가 주어진다.
 
@@ -52,7 +52,7 @@ N = input()
 for i in range(0, len(N), 10):
     print(N[i:i+10])
 
-# 2947 나무 조각	
+# 2947 나무 조각
 # 문제
 # 동혁이는 나무 조각을 5개 가지고 있다. 나무 조각에는 1부터 5까지 숫자 중 하나가 쓰여져 있다. 또, 모든 숫자는 다섯 조각 중 하나에만 쓰여 있다.
 
@@ -103,9 +103,9 @@ while True:
 #             result = ""
 #             for number in numbers:
 #                 result += str(number) + " "
-            
+
 #             print(result)
-    
+
 #     if numbers == [1,2,3,4,5]:
 #         break
 
@@ -113,7 +113,7 @@ while True:
 #     # if numbers[0] > numbers[1]:
 #     #     # 조건식이 성립하면 값을 교환
 #     #     numbers[0], numbers[1] = numbers[1], numbers[0]
-        
+
 #     #     result = ""
 #     #     for number in numbers:
 #     #         result += str(number) + " "
@@ -131,7 +131,7 @@ while True:
 
 #     # if numbers[2] > numbers[3]:
 #     #     numbers[2], numbers[3] = numbers[3], numbers[2]
-        
+
 #     #     result = ""
 #     #     for number in numbers:
 #     #         result += str(number) + " "

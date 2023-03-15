@@ -1,329 +1,335 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>위키백과 클론 코딩</title>
+    <style>
+      .nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>위키백과 클론 코딩</title>
-  <style>
-    .nav {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-    }
+      .nav__img--position {
+        margin-left: 3rem;
+      }
 
-    .nav__img--position {
-      margin-left: 3rem;
-    }
+      .nav__account {
+        width: 250px;
+        height: 30px;
+      }
 
-    .nav__account {
-      width: 250px;
-      height: 30px;
-    }
+      .nav__account--position {
+        font-size: 1.5rem;
+        margin-right: 2rem;
+        margin-top: 2rem;
+      }
 
-    .nav__account--position {
-      font-size: 1.5rem;
-      margin-right: 2rem;
-      margin-top: 2rem;
-    }
+      .main {
+        display: flex;
+        flex-direction: row;
+      }
 
-    .main {
-      display: flex;
-      flex-direction: row;
-    }
+      .sidebar {
+        display: flex;
+        flex-direction: column;
+        margin-right: 10rem;
+        padding: 2rem;
+        text-align: left;
+      }
 
-    .sidebar {
-      display: flex;
-      flex-direction: column;
-      margin-right: 10rem;
-      padding: 2rem;
-      text-align: left;
-    }
+      .content_area {
+        display: flex;
+        flex-direction: column;
+        width: 70%;
+        flex-grow: 1;
+      }
 
-    .content_area {
-      display: flex;
-      flex-direction: column;
-      width: 70%;
-      flex-grow: 1;
-    }
+      .content_area__main {
+        display: flex;
+        flex-direction: row;
+      }
 
-    .content_area__main {
-      display: flex;
-      flex-direction: row;
-    }
+      .content_area__title {
+      }
 
-    .content_area__title {}
+      .content_area__title--font {
+        font-size: 2.5rem;
+        margin-bottom: 0;
+      }
 
-    .content_area__title--font {
-      font-size: 2.5rem;
-      margin-bottom: 0;
-    }
+      .content_area__information {
+        display: flex;
+        flex-direction: column;
+        width: 1000px;
+        height: 1300px;
+        margin-right: 2rem;
+      }
 
-    .content_area__information {
-      display: flex;
-      flex-direction: column;
-      width: 1000px;
-      height: 1300px;
-      margin-right: 2rem;
-    }
+      .content_area__information--position {
+        line-height: 2rem;
+      }
 
-    .content_area__information--position {
-      line-height: 2rem;
-    }
+      /* 프로필 */
+      .content_area__profile {
+        display: flex;
+        flex-direction: column;
+        width: 600px;
+        height: 1300px;
+        border: 2px solid black;
+      }
 
-    /* 프로필 */
-    .content_area__profile {
-      display: flex;
-      flex-direction: column;
-      width: 600px;
-      height: 1300px;
-      border: 2px solid black;
-    }
+      .content_area__profile--title {
+        font-size: 2rem;
+      }
 
-    .content_area__profile--title {
-      font-size: 2rem;
-    }
+      .profile-box {
+        background-color: gainsboro;
+        padding: 1rem;
+      }
 
-    .profile-box {
-      background-color: gainsboro;
-      padding: 1rem;
-    }
+      .content_area__profile--center {
+        text-align: center;
+      }
 
-    .content_area__profile--center {
-      text-align: center;
-    }
+      .profile-info {
+        display: flex;
+        flex-direction: row;
+        text-align: left;
+        font-size: 1.2rem;
+      }
 
-    .profile-info {
-      display: flex;
-      flex-direction: row;
-      text-align: left;
-      font-size: 1.2rem;
-    }
+      .profile-info--position {
+        margin-right: 1rem;
+      }
 
-    .profile-info--position {
-      margin-right: 1rem;
-    }
+      /* footer */
+      .footer {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        border-top: 1px solid black;
+      }
 
-    /* footer */
-    .footer {
-      display: flex;
-      justify-content: space-between;
-      flex-direction: column;
-      border-top: 1px solid black;
-    }
+      .ul1 {
+        list-style: none;
+      }
 
-    .ul1 {
-      list-style: none;
-    }
+      .list {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        list-style: none;
+      }
 
-    .list {
-      display: flex;
-      justify-content: space-between;
-      flex-direction: row;
-      list-style: none;
-    }
+      li {
+        float: left;
+        margin-right: 0.5rem;
+      }
 
-    li {
-      float: left;
-      margin-right: 0.5rem;
-    }
+      .list_icon {
+        display: flex;
+        flex-direction: row;
+        justify-content: right;
+      }
 
-    .list_icon {
-      display: flex;
-      flex-direction: row;
-      justify-content: right;
-    }
+      .icon {
+        display: block;
+        float: right;
+        width: 100px;
+        height: 40px;
+      }
+    </style>
+  </head>
 
-    .icon {
-      display: block;
-      float: right;
-      width: 100px;
-      height: 40px;
-    }
-  </style>
-</head>
-
-<body>
-
-  <!-- nav 부분 -->
-  <div class="nav">
-    <a class="nav__img--position"
-      href="https://ko.wikipedia.org/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EB%8C%80%EB%AC%B8"><img
-        src="01/Logo.png" alt="logo"></a>
-    <div class="nav__account nav__account--position">
+  <body>
+    <!-- nav 부분 -->
+    <div class="nav">
       <a
-        href="https://ko.wikipedia.org/w/index.php?title=%ED%8A%B9%EC%88%98:%EA%B3%84%EC%A0%95%EB%A7%8C%EB%93%A4%EA%B8%B0&returnto=%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC%3A%EB%8C%80%EB%AC%B8&returntoquery=action%3Dedit">계정
-        만들기</a>&nbsp;&nbsp;
-      <a
-        href="https://ko.wikipedia.org/w/index.php?title=%ED%8A%B9%EC%88%98:%EB%A1%9C%EA%B7%B8%EC%9D%B8&returnto=%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC%3A%EB%8C%80%EB%AC%B8&returntoquery=action%3Dedit">로그인</a>
-    </div>
-  </div>
-
-  <!-- main 부분 -->
-  <div class="main">
-    <!-- side 부분 -->
-    <div class="sidebar">
-      <ul>
-        <h2>목차&nbsp;&nbsp;<button>숨기기</button></h2>
-        <p>처음 위치</p>
-        <p>생애 <a href="#"></a></p>
-        <p>약력 <a href="#"></a></p>
-        <p>저서 <a href="#"></a></p>
-        <p>각주 <a href="#"></a></p>
-        <p>외부링크 <a href="#"></p></a></p>
-      </ul>
+        class="nav__img--position"
+        href="https://ko.wikipedia.org/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EB%8C%80%EB%AC%B8"
+        ><img src="01/Logo.png" alt="logo"
+      /></a>
+      <div class="nav__account nav__account--position">
+        <a
+          href="https://ko.wikipedia.org/w/index.php?title=%ED%8A%B9%EC%88%98:%EA%B3%84%EC%A0%95%EB%A7%8C%EB%93%A4%EA%B8%B0&returnto=%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC%3A%EB%8C%80%EB%AC%B8&returntoquery=action%3Dedit"
+          >계정 만들기</a
+        >&nbsp;&nbsp;
+        <a
+          href="https://ko.wikipedia.org/w/index.php?title=%ED%8A%B9%EC%88%98:%EB%A1%9C%EA%B7%B8%EC%9D%B8&returnto=%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC%3A%EB%8C%80%EB%AC%B8&returntoquery=action%3Dedit"
+          >로그인</a
+        >
+      </div>
     </div>
 
-    <!-- content area 부분 -->
-    <div class="content_area">
-      <div class="content_area__title">
-        <p class="content_area__title--font"><b>팀 버너스리</b></p>
-        <hr size="2" color="gray" noshade>
-        <p>위키백과, 모두의 백과사전</p>
+    <!-- main 부분 -->
+    <div class="main">
+      <!-- side 부분 -->
+      <div class="sidebar">
+        <ul>
+          <h2>목차&nbsp;&nbsp;<button>숨기기</button></h2>
+          <p>처음 위치</p>
+          <p>생애 <a href="#"></a></p>
+          <p>약력 <a href="#"></a></p>
+          <p>저서 <a href="#"></a></p>
+          <p>각주 <a href="#"></a></p>
+          <p>외부링크 <a href="#"></a></p>
+        </ul>
       </div>
 
-      <div class="content_area__main">
-        <div class="content_area__information">
-          <p>팀 버너스리 경(영어: Sir Tim Berners-Lee, OM, KBE, FRS, 1955년 6월 8일 ~ )은 영국의 컴퓨터 과학자이다. <br><br>
-            1989년 월드 와이드 웹의 하이퍼텍스트 시스템을 고안하여 개발했다. 인터넷의 기반을 닦은 여러 공로로 웹의 아버지라고 불리는 인물 중 하나이다. <br><br>
-            URL, HTTP, HTML 최초 설계와 구현도 CERN 시절에 동료였던 로베르 카이오(Robert Cailliau) 등과 함께 그가 주도한 것이다. <br><br>
-            차세대 웹 기술인 시맨틱 웹 기술의 표준화에 힘쏟고 있다.</p>
-
-          <h2>생애
-            <hr size="2" color="gray" noshade>
-          </h2>
-          <p>버너스리는 잉글랜드 런던에서 태어났으며, 부모는 메리 리 우즈(Mary Lee Woods)와 콘웨이 버너스리(Conway Berners-Lee)이다. <br><br>
-            1990년에 낸시 칼슨(Nancy Carlson)과 결혼하였으나 2011년 이혼하였다. <br><br>
-            2014년, 버너스리와 로즈메리 리스(Rosemary Leith)가 런던 세인트 제임스 궁전에서 결혼하였다.</p>
-
-          <h2>약력
-            <hr size="2" color="gray" noshade>
-          </h2>
-          <ul class="content_area__information--position">
-            <li>CERN에서 WWW 개념의 기초가 된 인콰이어(Enquire)를 개발.</li><br>
-            <li>1989년 글로벌 하이퍼텍스트 프로젝트를 제안.</li><br>
-            <li>1990년 최초의 하이퍼텍스트 브라우저와 편집기를 개발.</li><br>
-            <li>1991년 8월 6일 최초의 웹사이트가 만들어짐.</li><br>
-            <li>1994년 W3C(World Wide Web Consortium)를 창립.</li><br>
-            <li>1997년 4등급 대영 제국 훈장(OBE)을 받음.</li><br>
-            <li>2002년 BBC '위대한 영국인 100(100 Greatest Britons)'에 선정됨.</li><br>
-            <li>2004년 6월 15일 밀레니엄 테크놀로지 상(Millennium Technology Prize)의 첫 수상자가 됨.</li><br>
-            <li>2004년 2등급 대영 제국 훈장(KBE, 작위급 훈장)을 받음.</li><br>
-            <li>2007년 메리트 훈장(OM)을 받음.</li><br>
-            <!-- <li>2016년 튜링상을 받음.</li><br> -->
-          </ul>
-
-          <h2>저서
-            <hr size="2" color="gray" noshade>
-          </h2>
-          <ul class="content_area__information--position">
-            <li>당신이 꿈꾸는 인터넷 세상 월드와이드웹(Weaving the web), ISBN 89-475-2329-1</li> <br>
-            <li>정보 관리: 한가지 제안(Tim Berners-Lee, CERN)</li>
-          </ul>
+      <!-- content area 부분 -->
+      <div class="content_area">
+        <div class="content_area__title">
+          <p class="content_area__title--font"><b>팀 버너스리</b></p>
+          <hr size="2" color="gray" noshade />
+          <p>위키백과, 모두의 백과사전</p>
         </div>
 
-        <!-- 프로필 -->
-        <div class="content_area__profile content_area__profile--center">
-          <!-- 사진 이름 -->
-          <div class="profile-box content_area__profile--title">
-            <p><b>팀 버너스리</b><br>Timothy John "Tim" Berners-Lee</p>
-          </div>
-          <div><img src="01/Tim.jpg" alt=""></div>
-          <h3 class="center">팀 버너스리 (2014년)</h3>
-
-          <!-- 아저씨 소개 -->
-          <div class="profile-info">
-            <p class="profile-info--position">출생<br><br><br>분야<br><br>소속<br><br><br><br><br>
-              출신대학<br><br>수상<br><br><br><br><br><br><br><br>배우자<br><br><br>자녀</p>
-            <p>1955년 6월 8일(67세)<br>잉글랜드 런던<br><br>컴퓨터 과학<br><br>
-              W3C<br>사우샘프턴 대학교<br>플레시<br>매사추세츠 공과대학교<br><br>
-              옥스퍼드 대학교 물리학 학사<br><br>튜링상(2016)<br>메리트 훈장(2007)<br>
-              대영 제국 훈장 2등급(2004)<br>왕립학회 회원(2001)<br>왕립공학학회 회원(2001)<br>
-              왕립예술학회 회원 (2001)<br>영국 컴퓨터학회 최고회원(1995)<br><br>
-              낸시 칼슨(1990 ~ 2011)<br>로즈메리 리스(2014 ~ )<br><br>1남 1녀
+        <div class="content_area__main">
+          <div class="content_area__information">
+            <p>
+              팀 버너스리 경(영어: Sir Tim Berners-Lee, OM, KBE, FRS, 1955년 6월
+              8일 ~ )은 영국의 컴퓨터 과학자이다. <br /><br />
+              1989년 월드 와이드 웹의 하이퍼텍스트 시스템을 고안하여 개발했다.
+              인터넷의 기반을 닦은 여러 공로로 웹의 아버지라고 불리는 인물 중
+              하나이다. <br /><br />
+              URL, HTTP, HTML 최초 설계와 구현도 CERN 시절에 동료였던 로베르
+              카이오(Robert Cailliau) 등과 함께 그가 주도한 것이다. <br /><br />
+              차세대 웹 기술인 시맨틱 웹 기술의 표준화에 힘쏟고 있다.
             </p>
+
+            <h2>
+              생애
+              <hr size="2" color="gray" noshade />
+            </h2>
+            <p>
+              버너스리는 잉글랜드 런던에서 태어났으며, 부모는 메리 리 우즈(Mary
+              Lee Woods)와 콘웨이 버너스리(Conway Berners-Lee)이다. <br /><br />
+              1990년에 낸시 칼슨(Nancy Carlson)과 결혼하였으나 2011년
+              이혼하였다. <br /><br />
+              2014년, 버너스리와 로즈메리 리스(Rosemary Leith)가 런던 세인트
+              제임스 궁전에서 결혼하였다.
+            </p>
+
+            <h2>
+              약력
+              <hr size="2" color="gray" noshade />
+            </h2>
+            <ul class="content_area__information--position">
+              <li>CERN에서 WWW 개념의 기초가 된 인콰이어(Enquire)를 개발.</li>
+              <br />
+              <li>1989년 글로벌 하이퍼텍스트 프로젝트를 제안.</li>
+              <br />
+              <li>1990년 최초의 하이퍼텍스트 브라우저와 편집기를 개발.</li>
+              <br />
+              <li>1991년 8월 6일 최초의 웹사이트가 만들어짐.</li>
+              <br />
+              <li>1994년 W3C(World Wide Web Consortium)를 창립.</li>
+              <br />
+              <li>1997년 4등급 대영 제국 훈장(OBE)을 받음.</li>
+              <br />
+              <li>
+                2002년 BBC '위대한 영국인 100(100 Greatest Britons)'에 선정됨.
+              </li>
+              <br />
+              <li>
+                2004년 6월 15일 밀레니엄 테크놀로지 상(Millennium Technology
+                Prize)의 첫 수상자가 됨.
+              </li>
+              <br />
+              <li>2004년 2등급 대영 제국 훈장(KBE, 작위급 훈장)을 받음.</li>
+              <br />
+              <li>2007년 메리트 훈장(OM)을 받음.</li>
+              <br />
+              <!-- <li>2016년 튜링상을 받음.</li><br> -->
+            </ul>
+
+            <h2>
+              저서
+              <hr size="2" color="gray" noshade />
+            </h2>
+            <ul class="content_area__information--position">
+              <li>
+                당신이 꿈꾸는 인터넷 세상 월드와이드웹(Weaving the web), ISBN
+                89-475-2329-1
+              </li>
+              <br />
+              <li>정보 관리: 한가지 제안(Tim Berners-Lee, CERN)</li>
+            </ul>
           </div>
 
-          <!-- <div class="profile between">
-          <div class="profile between">
-              <div>출생</div>
-              <div>1955년 6월 8일(67세)</div>
-              <div>잉글랜드 런던</div>
-          </div>
-        
-          <div class="profile between">
-              <div>분야</div>
-              <div>컴퓨터 과학</div>
-          </div>
-          
-          <div class="profile between">
-              <div>소속</div>
-              <div>W3C</div>
-              <div>사우스샘프턴 대학교</div>
-              <div>플레시</div>
-              <div>메사추세츠 공과대학교</div>
-          </div>
-        
-          <div class="profile between">
-              <div>출신 대학</div>
-              <div>옥스퍼드 대학교 물리학 학사</div>
-          </div>
-        
-          <div class="profile between"> 
-              <div>수상</div>
-              <div>튜링상(2016)</div>
-              <div>메리트 훈장(2007)</div>
-              <div>대영 제국 훈장 2등급(2004)</div>
-              <div>왕립학회 회원(2001)</div>
-              <div>왕립공학학회 회원(2001)</div>
-              <div>왕리예술학회 회원(2001)</div>
-              <div>영국 컴퓨터학회 최고회원(1995)</div>
-          </div>
-        
-          <div class="profile between">
-              <div>배우자</div>
-              <div>낸시 칼슨(1990 ~ 2011)</div>
-              <div>로즈메리 리스(2014 ~)</div>
-          </div>
-        
-          <div class="profile between">
-              <div>자녀</div>
-              <div>1남 1녀</div>
-          </div>  
-        </div> -->
+          <!-- 프로필 -->
+          <div class="content_area__profile content_area__profile--center">
+            <!-- 사진 이름 -->
+            <div class="profile-box content_area__profile--title">
+              <p><b>팀 버너스리</b><br />Timothy John "Tim" Berners-Lee</p>
+            </div>
+            <div><img src="01/Tim.jpg" alt="" /></div>
+            <h3 class="center">팀 버너스리 (2014년)</h3>
 
+            <!-- 아저씨 소개 -->
+            <div class="profile-info">
+              <p class="profile-info--position">
+                출생<br /><br /><br />분야<br /><br />소속<br /><br /><br /><br /><br />
+                출신대학<br /><br />수상<br /><br /><br /><br /><br /><br /><br /><br />배우자<br /><br /><br />자녀
+              </p>
+              <p>
+                1955년 6월 8일(67세)<br />잉글랜드 런던<br /><br />컴퓨터
+                과학<br /><br />
+                W3C<br />사우샘프턴 대학교<br />플레시<br />매사추세츠
+                공과대학교<br /><br />
+                옥스퍼드 대학교 물리학 학사<br /><br />튜링상(2016)<br />메리트
+                훈장(2007)<br />
+                대영 제국 훈장 2등급(2004)<br />왕립학회 회원(2001)<br />왕립공학학회
+                회원(2001)<br />
+                왕립예술학회 회원 (2001)<br />영국 컴퓨터학회 최고회원(1995)<br /><br />
+                낸시 칼슨(1990 ~ 2011)<br />로즈메리 리스(2014 ~ )<br /><br />1남
+                1녀
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- footer 부분 -->
-  <div class="footer">
-    <p style="margin-bottom: 0rem;">이 문서는 박지환, 방한영, 임성주가 2023년 3월 3일 (금) 17:24에 마지막으로 편집하였습니다.</p>
-    <p style="margin-bottom: 0rem;">모든 문서는 크리에이티브 커먼즈 저작자표시-동일조건변경허락 3.0에 따라 사용할 수 있으며, 추가적인 조건이 적용될 수 있습니다. 자세한 내용은 이용
-      약관을 참고하십시오.
-      Wikipedia®는 미국 및 다른 국가에 등록되어 있는 Wikimedia Foundation, Inc. 소유의 등록 상표입니다.</p>
+    <!-- footer 부분 -->
+    <div class="footer">
+      <p style="margin-bottom: 0rem">
+        이 문서는 박지환, 방한영, 임성주가 2023년 3월 3일 (금) 17:24에
+        마지막으로 편집하였습니다.
+      </p>
+      <p style="margin-bottom: 0rem">
+        모든 문서는 크리에이티브 커먼즈 저작자표시-동일조건변경허락 3.0에 따라
+        사용할 수 있으며, 추가적인 조건이 적용될 수 있습니다. 자세한 내용은 이용
+        약관을 참고하십시오. Wikipedia®는 미국 및 다른 국가에 등록되어 있는
+        Wikimedia Foundation, Inc. 소유의 등록 상표입니다.
+      </p>
 
-    <div class="list">
-      <ul class="ul1" style="-webkit-padding-start:0px;">
-        <li><a>개인정보처리방침</li>
-        <li>위키백과 소개 </li>
-        <li>면책 조항 </li>
-        <li>모바일 보기 </li>
-        <li>개발자 </li>
-        <li>통계 </li>
-        <li>쿠키 정책 </li>
-      </ul>
+      <div class="list">
+        <ul class="ul1" style="-webkit-padding-start: 0px">
+          <li>개인정보처리방침</li>
+          <li>위키백과 소개</li>
+          <li>면책 조항</li>
+          <li>모바일 보기</li>
+          <li>개발자</li>
+          <li>통계</li>
+          <li>쿠키 정책</li>
+        </ul>
 
-      <div class="list_icon">
-        <a href="https://wikimediafoundation.org/"><img src="01/Wikimedia.png" alt="Wiki media" class="icon"></a>
-        <a href="https://www.mediawiki.org/"><img src="01/Poweredbymedia.png" alt="Powered by MediaWiki"
-            class="icon"></a>
+        <div class="list_icon">
+          <a href="https://wikimediafoundation.org/"
+            ><img src="01/Wikimedia.png" alt="Wiki media" class="icon"
+          /></a>
+          <a href="https://www.mediawiki.org/"
+            ><img
+              src="01/Poweredbymedia.png"
+              alt="Powered by MediaWiki"
+              class="icon"
+          /></a>
+        </div>
       </div>
     </div>
-  </div>
-
-</body>
-
+  </body>
 </html>

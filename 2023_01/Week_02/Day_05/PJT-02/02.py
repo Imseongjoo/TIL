@@ -1,26 +1,28 @@
 import requests
 from pprint import pprint
 
+
 def vote_average_movies():
-    pass 
-    # 여기에 코드를 작성합니다. 
+    pass
+    # 여기에 코드를 작성합니다.
     vote_average_movies_over_8 = []
     BASE_URL = 'https://api.themoviedb.org/3'
     path = '/movie/popular'
     params = {
-        'api_key': '7ab85c2ccd889c17aa8c871d33b927e5', # 키값 입력
+        'api_key': '7ab85c2ccd889c17aa8c871d33b927e5',  # 키값 입력
         'language': 'ko-KR',
         'region': 'KR'
     }
     response = requests.get(BASE_URL+path, params=params)
     data = response.json()
     movies = data.get('results', None)
-    
+
     for i in movies:
         vote_average = i.get('vote_average', None)
         if vote_average >= 8:
-          vote_average_movies_over_8.append(i)
+            vote_average_movies_over_8.append(i)
     return vote_average_movies_over_8
+
 
 # 아래의 코드는 수정하지 않습니다.
 if __name__ == '__main__':

@@ -12,12 +12,12 @@ print(result)
 # 딕셔너리 활용
 
 dict_ = {
-    'A' : 3,
-    'B' : 3,
-    'C' : 3,
-    'D' : 4,
-    'E' : 4,
-    'F' : 4,
+    'A': 3,
+    'B': 3,
+    'C': 3,
+    'D': 4,
+    'E': 4,
+    'F': 4,
 }
 
 input_string = 'WA'
@@ -54,7 +54,7 @@ Artem enter
 #     # 사람의 상태(출입) 기록
 #     # key(사람) - value(출입 상태)
 #     log_dict[name] = log
-    
+
 # # print(log_dict)
 
 # # 현재 사람의 상태가 enter만 남긴다.
@@ -77,21 +77,21 @@ Artem enter
 #     print(name)
 
 dict_ = {
-    3: ['x','cc'],
-    1: ['x','aa'],
-    2: ['x','bb'],
+    3: ['x', 'cc'],
+    1: ['x', 'aa'],
+    2: ['x', 'bb'],
 }
 
 # print(dict_)
 print(dict_.items())
 
-A_sorted = sorted(dict_.items(), key = lambda x: -x[0])
+A_sorted = sorted(dict_.items(), key=lambda x: -x[0])
 print(A_sorted)
 
-B_sorted = sorted(dict_.items(), key = lambda x: x[1],reverse=True)
+B_sorted = sorted(dict_.items(), key=lambda x: x[1], reverse=True)
 print(B_sorted)
 
-C_sorted = sorted(dict_.items(), key = lambda x: x[1][1])
+C_sorted = sorted(dict_.items(), key=lambda x: x[1][1])
 print(C_sorted)
 
 # 예시
@@ -185,7 +185,7 @@ for score, count in number_dict.items():
 print(result_score)
 
 # 이 문제에서 우리가 배워야할 점? 얻어야할 점? 얻어야할 스킬?
-# 반복문 내부에서 값을 변화 
+# 반복문 내부에서 값을 변화
 # 하나의 값이 아니라 두 개 이상의 값을 변화(갱신)
 
 # 숫자 리스트가 있을 때 가장 큰 숫자와 그 숫자의 위치(index)는?

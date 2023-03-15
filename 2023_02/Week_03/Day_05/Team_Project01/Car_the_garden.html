@@ -1,101 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>카더가든</title>
+    <script
+      src="https://kit.fontawesome.com/439f978588.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      * {
+        box-sizing: content-box;
+      }
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>카더가든</title>
-  <script src="https://kit.fontawesome.com/439f978588.js" crossorigin="anonymous"></script>
-  <style>
-    * {
-      box-sizing: content-box;
-    }
+      .box1 {
+        border: solid 10px rgb(78, 76, 76);
+        width: 350px;
+        height: 600px;
+        padding: 10px;
+        padding-top: 15px;
+      }
 
-    .box1 {
-      border: solid 10px rgb(78, 76, 76);
-      width: 350px;
-      height: 600px;
-      padding: 10px;
-      padding-top: 15px;
-    }
+      .box2 {
+        width: 100%;
+        text-align: center;
+      }
 
-    .box2 {
-      width: 100%;
-      text-align: center;
-    }
+      .box3 {
+        width: 100%;
+        text-align: center;
+      }
 
-    .box3 {
-      width: 100%;
-      text-align: center;
-    }
+      .box4 {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 10px;
+      }
 
-    .box4 {
-      width: 100%;
-      text-align: center;
-      margin-bottom: 10px;
-    }
+      span {
+        margin: 10px;
+        font-family: "NanumBarunGothic";
+        font-weight: bold;
+        font-size: 120%;
+        margin-bottom: 30px;
+      }
 
-    span {
-      margin: 10px;
-      font-family: 'NanumBarunGothic';
-      font-weight: bold;
-      font-size: 120%;
-      margin-bottom: 30px;
-    }
+      .icon {
+        margin-top: 10px;
+        margin-right: 30px;
+        font-size: 30px;
+      }
 
-    .icon {
-      margin-top: 10px;
-      margin-right: 30px;
-      font-size: 30px;
-    }
+      @font-face {
+        font-family: "Chosunilbo_myungjo";
+        src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Chosunilbo_myungjo.woff")
+          format("woff");
+        font-weight: normal;
+        font-style: normal;
+      }
 
-    @font-face {
-      font-family: 'Chosunilbo_myungjo';
-      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Chosunilbo_myungjo.woff') format('woff');
-      font-weight: normal;
-      font-style: normal;
-    }
+      @font-face {
+        font-family: "NanumBarunGothic";
+        font-style: normal;
+        font-weight: 400;
+        src: url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot");
+        src: url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot?#iefix")
+            format("embedded-opentype"),
+          url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.woff")
+            format("woff"),
+          url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.ttf")
+            format("truetype");
+      }
 
-    @font-face {
-      font-family: 'NanumBarunGothic';
-      font-style: normal;
-      font-weight: 400;
-      src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot');
-      src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.ttf') format('truetype');
-    }
+      p {
+        font-family: "Chosunilbo_myungjo";
+        font-size: 120%;
+      }
+    </style>
+  </head>
 
-    p {
-      font-family: 'Chosunilbo_myungjo';
-      font-size: 120%;
-    }
-  </style>
-</head>
-
-<body>
-  <div class="box1">
-    <div class="box2">
-      <img src="https://cdn.discordapp.com/attachments/1052099940475748403/1078556735385636904/Profile.png" alt="프로필"
-        style="border: solid 5px rgb(78, 76, 76); padding: 5px; width: 300px; height: auto; margin-bottom: 20px;">
+  <body>
+    <div class="box1">
+      <div class="box2">
+        <img
+          src="https://cdn.discordapp.com/attachments/1052099940475748403/1078556735385636904/Profile.png"
+          alt="프로필"
+          style="
+            border: solid 5px rgb(78, 76, 76);
+            padding: 5px;
+            width: 300px;
+            height: auto;
+            margin-bottom: 20px;
+          "
+        />
+      </div>
+      <div class="box3">
+        <img
+          src="https://cdn.discordapp.com/attachments/1052099940475748403/1078566745050189884/Text.png"
+          alt="이름"
+          style="width: 250px; height: auto"
+        />
+      </div>
+      <div class="box4">
+        <p>가수</p>
+        <p>두루두루 아티스트 컴퍼니</p>
+        <p>대한민국 인천광역시</p>
+        <p>부개고등학교(문과)</p>
+      </div>
+      <div class="box4">
+        <span>#차정원</span><span>#잘생김</span><span>#섹시함</span>
+      </div>
+      <div class="box4 icon">
+        <a href="https://twitter.com/MaysonTheSoul"
+          ><i class="fa-brands fa-twitter"></i
+        ></a>
+        <a href="https://www.facebook.com/Carthegarden"
+          ><i class="fa-brands fa-facebook"></i
+        ></a>
+        <a href="https://www.instagram.com/carthegarden/"
+          ><i class="fa-brands fa-instagram"></i
+        ></a>
+        <a href="https://www.youtube.com/channel/UC1KHPyA5XiRMxiXcV9kruNA"
+          ><i class="fa-brands fa-youtube"></i
+        ></a>
+      </div>
     </div>
-    <div class="box3">
-      <img src="https://cdn.discordapp.com/attachments/1052099940475748403/1078566745050189884/Text.png" alt="이름"
-        style="width: 250px; height: auto;">
-    </div>
-    <div class="box4">
-      <p>가수</p>
-      <p>두루두루 아티스트 컴퍼니</p>
-      <p>대한민국 인천광역시</p>
-      <p>부개고등학교(문과)</p>
-    </div>
-    <div class="box4"><span>#차정원</span><span>#잘생김</span><span>#섹시함</span></div>
-    <div class="box4 icon">
-      <a href="https://twitter.com/MaysonTheSoul"><i class="fa-brands fa-twitter"></i></a>
-      <a href="https://www.facebook.com/Carthegarden"><i class="fa-brands fa-facebook"></i></a>
-      <a href="https://www.instagram.com/carthegarden/"><i class="fa-brands fa-instagram"></i></a>
-      <a href="https://www.youtube.com/channel/UC1KHPyA5XiRMxiXcV9kruNA"><i class="fa-brands fa-youtube"></i></a>
-    </div>
-  </div>
-</body>
-
+  </body>
 </html>

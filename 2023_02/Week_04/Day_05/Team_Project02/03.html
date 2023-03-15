@@ -1,173 +1,173 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>Spotify 클론 코딩</title>
+    <style>
+      * {
+        box-sizing: content-box;
+      }
 
-<head>
-	<title>Spotify 클론 코딩</title>
-	<style>
-		* {
-			box-sizing: content-box;
+      .sidebar {
+        width: 130px;
+        height: 100%;
+        font-weight: bold;
+        padding: 20px;
+      }
 
-		}
+      .upside {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        border: 1px solid black;
+        border-bottom: 0px;
+        border-top: 0px;
+        padding: 20px;
+      }
 
-		.sidebar {
-			width: 130px;
-			height: 100%;
-			font-weight: bold;
-			padding: 20px;
-		}
+      button {
+        width: 130px;
+        height: 35px;
+        background-color: white;
+        border-radius: 20px;
+        border: 1px solid black;
+        font-size: 0.7rem;
+        margin: 2px;
+      }
 
-		.upside {
-			display: flex;
-			flex-direction: row;
-			align-items: center;
-			justify-content: space-between;
-			border: 1px solid black;
-			border-bottom: 0px;
-			border-top: 0px;
-			padding: 20px;
-		}
+      .left-side {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+      }
 
-		button {
-			width: 130px;
-			height: 35px;
-			background-color: white;
-			border-radius: 20px;
-			border: 1px solid black;
-			font-size: 0.7rem;
-			margin: 2px;
-		}
+      .right-side {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+      }
 
-		.left-side {
-			display: flex;
-			flex-direction: row;
-			align-items: center;
-		}
+      .downside {
+        flex-grow: 0;
+        border: 1px solid black;
+        border-bottom: 0px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 1rem;
+      }
 
-		.right-side {
-			display: flex;
-			flex-direction: row;
-			align-items: center;
-		}
+      .box {
+        width: 150px;
+        height: 190px;
+        margin: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border: 1px solid black;
+        background-color: black;
+        color: white;
+        text-align: left;
+        padding: 10px;
+      }
 
-		.downside {
-			flex-grow: 0;
-			border: 1px solid black;
-			border-bottom: 0px;
-			display: flex;
-			flex-wrap: wrap;
-			align-items: flex-start;
-			justify-content: flex-start;
-			padding: 1rem;
-		}
+      .box img {
+        width: 150px;
+        height: 150px;
+      }
 
-		.box {
-			width: 150px;
-			height: 190px;
-			margin: 1rem;
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			border: 1px solid black;
-			background-color: black;
-			color: white;
-			text-align: left;
-			padding: 10px;
-		}
+      .box p {
+        margin: 0px;
+      }
 
-		.box img {
-			width: 150px;
-			height: 150px;
-		}
+      .box p:first-child {
+        font-weight: bold;
+      }
 
-		.box p {
-			margin: 0px;
-		}
+      .box p:last-child {
+        color: gray;
+        font-size: 0.8rem;
+      }
 
-		.box p:first-child {
-			font-weight: bold;
-		}
+      .footer {
+        height: 3rem;
+        border: 1px solid black;
+        border-bottom: 0px;
+        border-left: 0px;
+        text-align: center;
+      }
+    </style>
+  </head>
 
-		.box p:last-child {
-			color: gray;
-			font-size: 0.8rem;
-		}
+  <body>
+    <div style="display: flex; height: 100%">
+      <div class="sidebar">
+        <!-- 왼쪽 사이드바 -->
+        <a href="https://www.spotify.com/kr-ko/"
+          ><img src="03/Spotify.png" alt="스포티파이" style="width: 100%"
+        /></a>
+        <p>홈</p>
+        <p>검색하기</p>
+        <p>내 라이브러리</p>
+      </div>
 
-		.footer {
-			height: 3rem;
-			border: 1px solid black;
-			border-bottom: 0px;
-			border-left: 0px;
-			text-align: center;
-		}
-	</style>
-</head>
+      <div style="width: 100%; display: flex; flex-direction: column">
+        <div class="upside">
+          <!-- 위쪽 박스 -->
+          <div class="left-side">
+            <button>&lt;</button>
+            <button>&gt;</button>
+          </div>
+          <div class="right-side">
+            <a href="https://www.spotify.com/kr-ko/signup"
+              ><button>가입하기</button></a
+            >
+            <a href="https://accounts.spotify.com/ko/login"
+              ><button>로그인하기</button></a
+            >
+          </div>
+        </div>
 
-<body>
-	<div style="display:flex; height: 100%;">
+        <div class="downside">
+          <!-- 아래쪽 박스 -->
+          <div class="box">
+            <img src="03/1나무.jpg" />
+            <p>카더가든</p>
+            <p>나무</p>
+          </div>
+          <div class="box">
+            <img src="03/2꿈을꿨어요.jpg" />
+            <p>카더가든</p>
+            <p>꿈을 꿨어요</p>
+          </div>
+          <div class="box">
+            <img src="03/3HomeSweetHome.jpg" />
+            <p>카더가든</p>
+            <p>Home Sweet Home</p>
+          </div>
+          <div class="box">
+            <img src="03/4가까운듯먼그대여.jpg" />
+            <p>카더가든</p>
+            <p>가까운 듯 먼 그대여</p>
+          </div>
+          <div class="box">
+            <img src="03/5Stay.jpg" />
+            <p>카더가든</p>
+            <p>Stay</p>
+          </div>
+          <div class="box">
+            <img src="03/6우리의밤을외워요.jpg" />
+            <p>카더가든</p>
+            <p>우리의 밤을 외워요</p>
+          </div>
+        </div>
+      </div>
+    </div>
 
-		<div class="sidebar">
-			<!-- 왼쪽 사이드바 -->
-			<a href="https://www.spotify.com/kr-ko/"><img src="03/Spotify.png" alt="스포티파이" style="width: 100%;"></a>
-			<p>홈</p>
-			<p>검색하기</p>
-			<p>내 라이브러리</p>
-		</div>
-
-		<div style="width: 100%; display: flex; flex-direction: column;">
-
-			<div class="upside">
-				<!-- 위쪽 박스 -->
-				<div class="left-side">
-					<button>&lt;</button>
-					<button>&gt;</button>
-				</div>
-				<div class="right-side">
-					<a href="https://www.spotify.com/kr-ko/signup"><button>가입하기</button></a>
-					<a href="https://accounts.spotify.com/ko/login"><button>로그인하기</button></a>
-				</div>
-			</div>
-
-			<div class="downside">
-				<!-- 아래쪽 박스 -->
-				<div class="box">
-					<img src="03/1나무.jpg">
-					<p>카더가든</p>
-					<p>나무</p>
-				</div>
-				<div class="box">
-					<img src="03/2꿈을꿨어요.jpg">
-					<p>카더가든</p>
-					<p>꿈을 꿨어요</p>
-				</div>
-				<div class="box">
-					<img src="03/3HomeSweetHome.jpg">
-					<p>카더가든</p>
-					<p>Home Sweet Home</p>
-				</div>
-				<div class="box">
-					<img src="03/4가까운듯먼그대여.jpg">
-					<p>카더가든</p>
-					<p>가까운 듯 먼 그대여</p>
-				</div>
-				<div class="box">
-					<img src="03/5Stay.jpg">
-					<p>카더가든</p>
-					<p>Stay</p>
-				</div>
-				<div class="box">
-					<img src="03/6우리의밤을외워요.jpg">
-					<p>카더가든</p>
-					<p>우리의 밤을 외워요</p>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<footer class="footer">
-		<!-- 푸터 내용 -->
-		박지환, 방한영, 임성주
-	</footer>
-
-</body>
-
+    <footer class="footer">
+      <!-- 푸터 내용 -->
+      박지환, 방한영, 임성주
+    </footer>
+  </body>
 </html>

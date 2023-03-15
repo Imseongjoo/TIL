@@ -5,7 +5,7 @@ for i in range(T):
     N = int(input())
     numbers = list(map(int, input().split()))
     A = (sum(numbers)/len(numbers))
-    count =0
+    count = 0
     for j in numbers:
         if j <= A:
             count += 1

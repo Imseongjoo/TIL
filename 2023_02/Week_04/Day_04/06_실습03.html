@@ -1,132 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>갤럭시 비교 페이지 클론 코딩</title>
+    <style>
+      .container1 {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+      }
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>갤럭시 비교 페이지 클론 코딩</title>
-  <style>
-    .container1 {
-      display: flex;
-      flex-wrap: wrap;
-      flex-direction: column;
-    }
+      .container2 {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin: 1.5rem;
+        border-bottom: 2px solid black;
+      }
 
-    .container2 {
-      display: flex;
-      flex-wrap: wrap;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-      margin: 1.5rem;
-      border-bottom: 2px solid black;
-    }
+      .container3 {
+        height: 100%;
+        margin: 1.5rem;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-evenly;
+      }
 
-    .container3 {
-      height: 100%;
-      margin: 1.5rem;
-      display: flex;
-      flex-wrap: wrap;
-      flex-direction: row;
-      justify-content: space-evenly
-    }
+      .container4 {
+        height: 100%;
+        margin: 1.5rem;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
 
-    .container4 {
-      height: 100%;
-      margin: 1.5rem;
-      display: flex;
-      flex-wrap: wrap;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
+      .upside {
+        margin: 1.5rem;
+      }
 
-    .upside {
-      margin: 1.5rem;
-    }
+      .downside {
+        margin: 1.5rem;
+        font-weight: bold;
+      }
 
-    .downside {
-      margin: 1.5rem;
-      font-weight: bold;
-    }
+      .item {
+        font-weight: bold;
+        font-size: 1.5rem;
+      }
 
-    .item {
-      font-weight: bold;
-      font-size: 1.5rem;
-    }
+      .logo {
+        width: 10rem;
+        height: auto;
+        padding-bottom: 1.5rem;
+      }
 
-    .logo {
-      width: 10rem;
-      height: auto;
-      padding-bottom: 1.5rem
-    }
+      .pad {
+        padding-bottom: 2rem;
+      }
 
-    .pad {
-      padding-bottom: 2rem;
-    }
+      .phone {
+        width: 5rem;
+        height: auto;
+      }
 
-    .phone {
-      width: 5rem;
-      height: auto;
-    }
+      .narrow {
+        margin-bottom: 0rem;
+      }
+    </style>
+  </head>
 
-    .narrow {
-      margin-bottom: 0rem;
-    }
-  </style>
-</head>
+  <body>
+    <div class="container1">
+      <div class="container2">
+        <div><img class="logo" src="Images/04.png" alt="하이퍼그로스" /></div>
+        <div class="item pad">Hyper S23</div>
+      </div>
 
-<body>
-  <div class="container1">
+      <div class="container3 downside">
+        <div class="container4">
+          <h2>하이퍼 S23 Super</h2>
+          <img class="phone" src="Images/03.png" alt="폰" />
+          <p>몰입형 게임 최적화</p>
+          <p class="narrow">화면 크기</p>
+          <p>173.1 mm</p>
+          <p class="narrow">3,088 x 1,440</p>
+          <p>(Quad HD 엣지 디스플레이)</p>
+          <p class="narrow">최대 밝기</p>
+          <p>1,750 니트</p>
+          <p class="narrow">가변주사율</p>
+          <p>1~120Hz</p>
+        </div>
 
-    <div class="container2">
-      <div><img class="logo" src="Images/04.png" alt="하이퍼그로스"></div>
-      <div class="item pad">Hyper S23</div>
+        <div class="container4" style="margin-left: 0rem; margin-right: 0rem">
+          <h2>하이퍼 S23+</h2>
+          <img class="phone" src="Images/03.png" alt="폰" />
+          <p>야외에서도 뛰어난 선명도</p>
+          <p class="narrow">화면 크기</p>
+          <p>166.5 mm</p>
+          <p class="narrow">2,340 x 1,080</p>
+          <p>(FHD+ 플랫 디스플레이)</p>
+          <p class="narrow">최대 밝기</p>
+          <p>1,750 니트</p>
+          <p class="narrow">가변주사율</p>
+          <p>48~120Hz</p>
+        </div>
+
+        <div class="container4">
+          <h2>하이퍼 S23</h2>
+          <img class="phone" src="Images/03.png" alt="폰" />
+          <p>야외에서도 뛰어난 선명도</p>
+          <p class="narrow">화면 크기</p>
+          <p>153.9 mm</p>
+          <p class="narrow">2,340 x 1,080</p>
+          <p>(FHD+ 플랫 디스플레이)</p>
+          <p class="narrow">최대 밝기</p>
+          <p>1,750 니트</p>
+          <p class="narrow">가변주사율</p>
+          <p>48~120Hz</p>
+        </div>
+      </div>
     </div>
-
-    <div class="container3 downside">
-      <div class="container4">
-        <h2>하이퍼 S23 Super</h2><img class="phone" src="Images/03.png" alt="폰">
-        <p>몰입형 게임 최적화</p>
-        <p class="narrow">화면 크기</p>
-        <p>173.1 mm</p>
-        <p class="narrow">3,088 x 1,440</p>
-        <p>(Quad HD 엣지 디스플레이)</p>
-        <p class="narrow">최대 밝기</p>
-        <p>1,750 니트</p>
-        <p class="narrow">가변주사율</p>
-        <p>1~120Hz</p>
-      </div>
-
-      <div class="container4" style="margin-left: 0rem; margin-right: 0rem;">
-        <h2>하이퍼 S23+</h2><img class="phone" src="Images/03.png" alt="폰">
-        <p>야외에서도 뛰어난 선명도</p>
-        <p class="narrow">화면 크기</p>
-        <p>166.5 mm</p>
-        <p class="narrow">2,340 x 1,080</p>
-        <p>(FHD+ 플랫 디스플레이)</p>
-        <p class="narrow">최대 밝기</p>
-        <p>1,750 니트</p>
-        <p class="narrow">가변주사율</p>
-        <p>48~120Hz</p>
-      </div>
-
-      <div class="container4">
-        <h2>하이퍼 S23</h2><img class="phone" src="Images/03.png" alt="폰">
-        <p>야외에서도 뛰어난 선명도</p>
-        <p class="narrow">화면 크기</p>
-        <p>153.9 mm</p>
-        <p class="narrow">2,340 x 1,080</p>
-        <p>(FHD+ 플랫 디스플레이)</p>
-        <p class="narrow">최대 밝기</p>
-        <p>1,750 니트</p>
-        <p class="narrow">가변주사율</p>
-        <p>48~120Hz</p>
-      </div>
-    </div>
-
-  </div>
-</body>
-
+  </body>
 </html>

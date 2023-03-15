@@ -1,7 +1,7 @@
 # 11856 반반
 
 TC = int(input())
-for _ in range(1,TC+1):
+for _ in range(1, TC+1):
     string = list(map(str, input()))
     result = 0
     for i in range(4):

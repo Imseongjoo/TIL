@@ -1,20 +1,21 @@
-# Input : 
-    # n 로또 번호 세트 수
+# Input :
+# n 로또 번호 세트 수
 # Output :
-    # 오늘 지른 로또 금액
-    # 번호 
+# 오늘 지른 로또 금액
+# 번호
 # ===========================
 # Data :
-    # N 세트 수 
-    # Lotto 번호 
-# 기능 : 
-    # 로또 구매 금액 계산
+# N 세트 수
+# Lotto 번호
+# 기능 :
+# 로또 구매 금액 계산
 import random
+
 
 class Lotto:
 
     def __init__(self, n):
-        self.n = n 
+        self.n = n
         self.lotto_numbers = []
         for i in range(n):
             self.lotto_numbers.append(sorted(random.sample(range(1, 46), 6)))

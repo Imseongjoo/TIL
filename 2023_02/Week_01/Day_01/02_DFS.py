@@ -10,20 +10,20 @@ graph = [
 
 visited = [False] * 7  # 방문 처리 리스트 만들기
 
-start = 0 # 시작 노드
+start = 0  # 시작 노드
 stack = [start]
-visited[start] = True  
+visited[start] = True
 
 # 방문 시작..
-while stack: # 스택이 빌 때까지
-    cur = stack.pop()  
-    
-    for adj in graph[cur]: 
-        if not visited[adj]: 
-            visited[adj] = True  
+while stack:  # 스택이 빌 때까지
+    cur = stack.pop()
+
+    for adj in graph[cur]:
+        if not visited[adj]:
+            visited[adj] = True
             stack.append(adj)
 
-# 1. 0 
+# 1. 0
 # stack : [0]
 # visited : [True, False, False, False, False, False, False]
 '''

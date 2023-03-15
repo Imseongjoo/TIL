@@ -47,7 +47,7 @@ $ git init
    (master) $ git merge {브랜치명}
    ```
 
-   * master 브랜치에서 {브랜치명}을 병합
+   - master 브랜치에서 {브랜치명}을 병합
 
 ## 2. branch 병합 시나리오
 
@@ -77,30 +77,23 @@ $ git init
    e89616a (master) Init
    ```
 
-
 3. master 이동
 
    ```bash
    (feature/home) $ git checkout master
    (master) $ git log --oneline
    ```
-   
-   
-
 
 4. master에 병합
 
    ```bash
-   (master) $ git merge feature/home 
+   (master) $ git merge feature/home
    Updating e89616a..b534a34
    Fast-forward
     home.txt | 0
     1 file changed, 0 insertions(+), 0 deletions(-)
     create mode 100644 home.txt
    ```
-   
-   
-
 
 5. 결과 : fast-foward
 
@@ -110,16 +103,12 @@ $ git init
    e89616a Init
    ```
 
-   
-
 6. branch 삭제
 
    ```bash
-   (master) $ git branch -d feature/home 
+   (master) $ git branch -d feature/home
    Deleted branch feature/home (was b534a34).
    ```
-   
-   
 
 ---
 
@@ -136,8 +125,6 @@ $ git init
    (feature/about) $
    ```
 
-   
-
 2. 작업 완료 후 commit
 
    ```bash
@@ -150,8 +137,6 @@ $ git init
    e89616a Init
    ```
 
-   
-
 3. master 이동
 
    ```bash
@@ -159,9 +144,9 @@ $ git init
    (master) $
    ```
 
-4. *master에 추가 commit 이 발생시키기!!*
+4. _master에 추가 commit 이 발생시키기!!_
 
-   * **다른 파일을 수정 혹은 생성하세요!**
+   - **다른 파일을 수정 혹은 생성하세요!**
 
    ```bash
    (master) $ touch master.txt
@@ -173,17 +158,13 @@ $ git init
    e89616a Init
    ```
 
-   
-
 5. master에 병합
 
    ```bash
    (master) $ git merge feature/about
    ```
 
-   
-
-6. 결과 -> 자동으로 *merge commit 발생*
+6. 결과 -> 자동으로 _merge commit 발생_
 
 7. 커밋 및 그래프 확인하기
 
@@ -201,11 +182,9 @@ $ git init
 8. branch 삭제
 
    ```bash
-   $ git branch -d feature/about 
+   $ git branch -d feature/about
    Deleted branch feature/about (was 5e1f6de).
    ```
-   
-   
 
 ---
 
@@ -225,8 +204,6 @@ $ git init
    (master) $ git checkout -b feature/test
    ```
 
-   
-
 2. 작업 완료 후 commit
 
    ```bash
@@ -243,19 +220,15 @@ $ git init
    e89616a Init
    ```
 
-
 3. master 이동
 
    ```bash
    $ git checkout master
    ```
-   
-   
 
+4. _master에 추가 commit 이 발생시키기!!_
 
-4. *master에 추가 commit 이 발생시키기!!*
-
-   * **동일 파일을 수정 혹은 생성하세요!**
+   - **동일 파일을 수정 혹은 생성하세요!**
 
    ```bash
    # README.md 파일 열어서 수정
@@ -263,21 +236,16 @@ $ git init
    (master) $ git commit -m 'Update README.md'
    ```
 
-   
-
 5. master에 병합
 
    ```bash
-   (master) $ git merge feature/test 
+   (master) $ git merge feature/test
    Auto-merging README.md
    CONFLICT (content): Merge conflict in README.md
    Automatic merge failed; fix conflicts and then commit the result.
    ```
-   
-   
 
-
-6. 결과 -> *merge conflict발생*
+6. 결과 -> _merge conflict발생_
 
    > git status 명령어로 충돌 파일을 확인할 수 있음.
 
@@ -285,21 +253,18 @@ $ git init
    (master|MERGING) $ git status
    On branch master
    You have unmerged paths.
-     (fix conflicts and run "git commit")        
+     (fix conflicts and run "git commit")
      (use "git merge --abort" to abort the merge)
-   
+
    Changes to be committed:
            new file:   test-1.txt
            new file:   test-2.txt
            new file:   test.txt
-   
+
    Unmerged paths:
      (use "git add <file>..." to mark resolution)
            both modified:   README.md
    ```
-   
-   
-
 
 7. 충돌 확인 및 해결
 
@@ -313,7 +278,6 @@ $ git init
 
    => 나보고 고치라는 것인가 학생^^?
 
-
 8. merge commit 진행
 
    ```bash
@@ -321,34 +285,31 @@ $ git init
    (master|MERGING) $ git commit
    ```
 
-   * vim 편집기 화면이 나타납니다.
+   - vim 편집기 화면이 나타납니다.
 
-     * 자동으로 작성된 커밋 메시지를 확인하고, `esc`를 누른 후 `:wq`를 입력하여 저장 및 종료를 합니다.
-     * `w` : write
-     * `q` : quit
+     - 자동으로 작성된 커밋 메시지를 확인하고, `esc`를 누른 후 `:wq`를 입력하여 저장 및 종료를 합니다.
+     - `w` : write
+     - `q` : quit
 
-   * vs code 편집기에서 메시지보고 닫아주세요~!
-
-     
+   - vs code 편집기에서 메시지보고 닫아주세요~!
 
 9. 커밋 및 확인하기
 
    ```bash
    (master) $ git log --oneline --graph
    *   bc1c0cd (HEAD -> master) Merge branch 'feature/test'
-   |\  
+   |\
    | * 95fad1c (feature/test) README 수정하고 test 작성하고
    * | 2ecad28 리드미 수정
-   |/  
+   |/
    *   582902d Merge branch 'feature/about'
-   |\  
+   |\
    | * 5e1f6de 자기소개 페이지 완료!
    * | 98c5528 마스터 작업....
-   |/  
+   |/
    * b534a34 Complete Home!!!!
    * e89616a Init
    ```
-
 
 10. branch 삭제
 

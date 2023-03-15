@@ -29,7 +29,7 @@
 # 출력 예시
 
 # plus
-### 실행 코드
+# 실행 코드
 # calculator = Calculator(10, 5)
 # print(calculator.plus())
 
@@ -37,12 +37,12 @@
 # calculator.number2 = 2
 # print(calculator.plus())
 
-### 출력
+# 출력
 # 15
 # 0
 
 # minus
-### 실행 코드
+# 실행 코드
 # calculator = Calculator(10, 5)
 # print(calculator.minus())
 
@@ -50,12 +50,12 @@
 # calculator.number2 = 2
 # print(calculator.minus())
 
-### 출력
+# 출력
 # 5
 # -4
 
 # multiply
-### 실행 코드
+# 실행 코드
 # calculator = Calculator(10, 5)
 # print(calculator.multiply())
 
@@ -63,12 +63,12 @@
 # calculator.number2 = 2
 # print(calculator.multiply())
 
-### 출력
+# 출력
 # 50
 # -4
 
 # division
-### 실행 코드
+# 실행 코드
 # calculator = Calculator(10, 5)
 # print(calculator.division())
 
@@ -76,7 +76,7 @@
 # calculator.number2 = 2
 # print(calculator.division())
 
-### 출력
+# 출력
 # number1 = 10, number2 = 5
 # 합 : 15
 # 빼기 : 5

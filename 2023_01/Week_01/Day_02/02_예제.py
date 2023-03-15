@@ -1,10 +1,10 @@
 a = 1
 b = 1
-print(a < b) # False
+print(a < b)  # False
 
 a = bool("")
 b = False
-print(a == b) # True
+print(a == b)  # True
 
 a = 1
 result = ""
@@ -14,9 +14,9 @@ if a == 1:
 else:
     result = False
 
-print(result) # True
+print(result)  # True
 
-a = 90 
+a = 90
 
 if a == 90:
     a = a + 10
@@ -32,13 +32,13 @@ else:
 
 a = a + 10
 
-print(a) # 110
+print(a)  # 110
 
 string = "hello world!"
 
 for element in string:
     print(element)
-    
+
 """
 예측을 작성하세요.
 ?
@@ -60,7 +60,7 @@ list_variable = [0, 1, 2, 3, 4, 5, 6]
 
 for element in list_variable:
     print(element, end=" ")
-    
+
 """
 예측을 작성하세요.
 ?
@@ -71,30 +71,30 @@ n = 10
 
 for element in range(-n, n):
     print(element, end=" ")
-    
+
 """
 예측을 작성하세요.
 ?
 """
-# -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 
+# -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9
 
 n = 10
 
 for element in range(1, n + 1, 3):
     print(element, end=" ")
-    
+
 """
 예측을 작성하세요.
 ?
 """
 # 1 4 7 10
 
-list_variable = [6, 5, 4, 3, 2, 1, 0] 
+list_variable = [6, 5, 4, 3, 2, 1, 0]
 
 # enumerate가 무엇인지 검색해보세요!
 for index, element in enumerate(list_variable):
     print(index, element)
-    
+
 """
 예측을 작성하세요.
 ?
@@ -117,21 +117,21 @@ for element in range(n, -n, -1):
 예측을 작성하세요.
 ?
 """
-# 10 9 8 7 6 5 4 3 2 1 0 -1 -2 -3 -4 -5 -6 -7 -8 -9 
+# 10 9 8 7 6 5 4 3 2 1 0 -1 -2 -3 -4 -5 -6 -7 -8 -9
 
 list_variable = [-1, 3, 5, -2, 1, 9, 21, -3, -5]
 
 for element in list_variable:
     if element < 0:
         continue
-    
+
     print(element, end=" ")
-    
+
 """
 예측을 작성하세요.
 ?
 """
-# 3 5 1 9 21 
+# 3 5 1 9 21
 
 N = 3
 M = 4

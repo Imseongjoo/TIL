@@ -1,12 +1,12 @@
 if 5 < 3:
     print('크다!')
     print('!!!!!')
-else: 
+else:
     print('작다!')
 
-# 홀수/짝수 
+# 홀수/짝수
 n = int(input())
-if n%2 == 1:
+if n % 2 == 1:
     print('홀수')
 else:
     print('짝수')
@@ -17,12 +17,12 @@ else:
 #     print('짝수')
 
 a = range(4)
-print(a) # range(0, 4)
-print(list(a)) # [0, 1, 2, 3]
+print(a)  # range(0, 4)
+print(list(a))  # [0, 1, 2, 3]
 
 b = range(0, -6, -1)
-print(b) # range(0, -6, -1)
-print(list(b)) # [0, -1, -2, -3, -4, -5]
+print(b)  # range(0, -6, -1)
+print(list(b))  # [0, -1, -2, -3, -4, -5]
 
 a = 'apple'
 
@@ -50,13 +50,13 @@ print(a[2])
 print(a[3])
 print(a[4])
 print('=================')
-# 1. 
+# 1.
 # 반복 가능한 객체 : 각 요소가 필요할 때
 for char in a:
     print(char)
 print('=================')
-# 2. 
-# 반복 가능한 객체 : 인덱스가 필요할 때 
+# 2.
+# 반복 가능한 객체 : 인덱스가 필요할 때
 for i in range(len(a)):
     print(i, a[i])
 
@@ -98,7 +98,7 @@ word = 'emango'
 
 # 'e' 있으면 1을 출력
 # 'e' 없으면 0을 출력
-is_end = False # T/F 
+is_end = False  # T/F
 for char in word:
     if char == 'e':
         is_end = True

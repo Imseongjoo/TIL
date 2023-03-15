@@ -15,14 +15,15 @@
 # 행복한 이모티콘이 슬픈 이모티콘보다 많이 포함되어 있으면, happy 를 출력한다.
 # 슬픈 이모티콘이 행복한 이모티콘보다 많이 포함되어 있으면, sad 를 출력한다.
 
-s= input()
-a=s.count(":-)")
-b=s.count(":-(")
+import sys
+s = input()
+a = s.count(":-)")
+b = s.count(":-(")
 if a == 0 and b == 0:
     print("none")
-elif a>b:
+elif a > b:
     print("happy")
-elif a<b:
+elif a < b:
     print("sad")
 else:
     print("unsure")
@@ -47,19 +48,19 @@ else:
 # 4개의 역에 대해 기차에서 내린 사람 수와 탄 사람 수가 주어졌을 때, 기차에 사람이 가장 많을 때의 사람 수를 계산하는 프로그램을 작성하시오.
 
 # 입력
-# 각 역에서 내린 사람 수와 탄 사람 수가 빈칸을 사이에 두고 첫째 줄부터 넷째 줄까지 역 순서대로 한 줄에 하나씩 주어진다. 
+# 각 역에서 내린 사람 수와 탄 사람 수가 빈칸을 사이에 두고 첫째 줄부터 넷째 줄까지 역 순서대로 한 줄에 하나씩 주어진다.
 
 # 출력
-# 첫째 줄에 최대 사람 수를 출력한다.  
+# 첫째 줄에 최대 사람 수를 출력한다.
 
-a=[list(input().split()) for _ in range(4)]
+a = [list(input().split()) for _ in range(4)]
 b = []
 cnt = 0
 for i in range(4):
-        cnt -= (int(a[i][0]))
-        b.append(cnt)  
-        cnt += (int(a[i][1]))
-        b.append(cnt)         
+    cnt -= (int(a[i][0]))
+    b.append(cnt)
+    cnt += (int(a[i][1]))
+    b.append(cnt)
 print(max(b))
 
 # 2606 바이러스
@@ -80,26 +81,30 @@ n = int(input())
 m = int(input())
 graph = [[]*n for i in range(n+1)]
 for i in range(m):
-    a,b = map(int,input().split())
+    a, b = map(int, input().split())
     graph[a].append(b)
     graph[b].append(a)
 cnt = 0
 visited = [0]*(n+1)
+
+
 def dfs(start):
     global cnt
     visited[start] = 1
-    for i in graph[start]: 
-        if visited[i] == 0: 
+    for i in graph[start]:
+        if visited[i] == 0:
             dfs(i)
-            cnt+=1
-dfs(1)   
+            cnt += 1
+
+
+dfs(1)
 print(cnt)
 
-# 4963 섬의 개수	
+# 4963 섬의 개수
 # 문제
 # 정사각형으로 이루어져 있는 섬과 바다 지도가 주어진다. 섬의 개수를 세는 프로그램을 작성하시오.
 
-# 한 정사각형과 가로, 세로 또는 대각선으로 연결되어 있는 사각형은 걸어갈 수 있는 사각형이다. 
+# 한 정사각형과 가로, 세로 또는 대각선으로 연결되어 있는 사각형은 걸어갈 수 있는 사각형이다.
 
 # 두 정사각형이 같은 섬에 있으려면, 한 정사각형에서 다른 정사각형으로 걸어서 갈 수 있는 경로가 있어야 한다. 지도는 바다로 둘러싸여 있으며, 지도 밖으로 나갈 수 없다.
 
@@ -113,33 +118,34 @@ print(cnt)
 # 출력
 # 각 테스트 케이스에 대해서, 섬의 개수를 출력한다.
 
-import sys
 read = sys.stdin.readline
 sys.setrecursionlimit(10000)
 
-def dfs(x, y):
-  dx = [1, 1, -1, -1, 1, -1, 0, 0]
-  dy = [0, 1, 0, 1, -1, -1, 1, -1]
 
-  matrix[x][y] = 0
-  for i in range(8):
-    nx = x + dx[i]
-    ny = y + dy[i]
-    if 0 <= nx < col and 0 <= ny < row and matrix[nx][ny] == 1:
-      dfs(nx, ny)
+def dfs(x, y):
+    dx = [1, 1, -1, -1, 1, -1, 0, 0]
+    dy = [0, 1, 0, 1, -1, -1, 1, -1]
+
+    matrix[x][y] = 0
+    for i in range(8):
+        nx = x + dx[i]
+        ny = y + dy[i]
+        if 0 <= nx < col and 0 <= ny < row and matrix[nx][ny] == 1:
+            dfs(nx, ny)
+
 
 while True:
-  row, col = map(int, read().split())
-  if row == 0 and col == 0:
-    break
-  matrix = []
-  cnt = 0
-  for _ in range(col):
-    matrix.append(list(map(int, read().split())))
-  for i in range(col):
-    for j in range(row):
-      if matrix[i][j] == 1:
-        dfs(i, j)
-        cnt += 1
-  
-  print(cnt)
+    row, col = map(int, read().split())
+    if row == 0 and col == 0:
+        break
+    matrix = []
+    cnt = 0
+    for _ in range(col):
+        matrix.append(list(map(int, read().split())))
+    for i in range(col):
+        for j in range(row):
+            if matrix[i][j] == 1:
+                dfs(i, j)
+                cnt += 1
+
+    print(cnt)

@@ -1,6 +1,6 @@
 a = 'apple'
-print(a) # 'apple'
-print(a[0]) # 'a'
+print(a)  # 'apple'
+print(a[0])  # 'a'
 a[1]
 
 # 필수 단축키
@@ -13,8 +13,8 @@ print(name)
 
 print(123)
 a = '123'
-print(a) # '123'
-print(a*3) # '123123123'
+print(a)  # '123'
+print(a*3)  # '123123123'
 print(type(a))
 
 a = ['소담', '정은']

@@ -1,26 +1,27 @@
 SELECT
-	lastName 
-FROM 
-	employees;
-    
-SELECT 
-	lastName, firstName
+	lastName
 FROM
 	employees;
-    
+
+SELECT
+	lastName,
+	firstName
+FROM
+	employees;
+
 SELECT
 	*
 FROM
 	employees;
-    
+
 SELECT
 	firstName AS '이름'
-FROM 
+FROM
 	employees;
-    
-SELECT 
-	productCode, 
-    quantityOrdered * priceEach AS '주문 총액'
+
+SELECT
+	productCode,
+	quantityOrdered * priceEach AS '주문 총액'
 FROM
 	orderdetails;
 
@@ -29,7 +30,6 @@ FROM
 -- *
 -- FROM
 -- 	orderdetails;
-    
 SELECT
 	firstName
 FROM
@@ -43,17 +43,19 @@ FROM
 	employees
 ORDER BY
 	firstName DESC;
-    
+
 SELECT
-	lastName, firstName
+	lastName,
+	firstName
 FROM
 	employees
 ORDER BY
-	lastName DESC, firstName ASC;
+	lastName DESC,
+	firstName ASC;
 
-SELECT 
-	productCode, 
-    quantityOrdered * priceEach AS totalsales
+SELECT
+	productCode,
+	quantityOrdered * priceEach AS totalsales
 FROM
 	orderdetails
 ORDER BY

@@ -29,7 +29,7 @@ print(len(set(locations)))
 
 locations = ['서울', '서울', '대전', '부산', '대전']
 
-# 지역별 갯수를 구하세요. 
+# 지역별 갯수를 구하세요.
 # {'서울': 2, '대전': 2, '부산': 1}
 result = {}
 for location in locations:
@@ -65,12 +65,12 @@ result = ['1', '5', '3', '4']
 
 # 1534을 출력해야한다...?
 
-# (1) print의 키워드(end)를 써서 출력한다. 
-# (2-1) 반복하면서 문자열을 만든다. 
+# (1) print의 키워드(end)를 써서 출력한다.
+# (2-1) 반복하면서 문자열을 만든다.
 
 text = ''
 for elem in result:
-    text = text + elem 
+    text = text + elem
 print(text)
 
 # (2-2) join 메서드
@@ -87,7 +87,7 @@ print(numbers[::-1])
 drama = {'name': '더 글로리', 'writer': '김은숙'}
 print(drama['name'])
 # print(drama['director']) # KeyError
-print(drama.get('director')) # None
+print(drama.get('director'))  # None
 
 students = {'홍엽': 89, '민지': 20, '소담': 47}
 print(students['홍엽'])

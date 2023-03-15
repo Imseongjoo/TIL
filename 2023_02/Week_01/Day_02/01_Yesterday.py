@@ -1,9 +1,12 @@
 import sys
 sys.stdin = open("input.txt")
 
+
 def pprint(arr):
     for row in arr:
         print(row)
+
+
 # 인접 행렬 풀이
 # 정점의 수
 N = int(input())
@@ -20,8 +23,8 @@ for _ in range(N+1):
 # pprint(graph)
 # 정점의 쌍 입력(간선만큼)
 for _ in range(M):
-    node1, node2 = list(map(int,input().split()))
-    
+    node1, node2 = list(map(int, input().split()))
+
     # (node1, node2) -> 간선 표현
     graph[node1][node2] = 1
 
@@ -32,7 +35,7 @@ for _ in range(M):
 start = 1
 
 # 스택, 방문 확인 변수
-stack = [] 
+stack = []
 visit = set()
 
 # 시작점을 스택에 넣고, 방문 표시
@@ -48,7 +51,7 @@ while len(stack) != 0:
     for index_node in range(N+1):
         # print(f"확인 정점 : {index_node}")
         # print(f"간선 여부 : {graph[current_node][index_node]}")
-        
+
         # 인접한 정점 -> 간선 여부가 1인
         # 인접 정점 확인
         if graph[current_node][index_node] == 1:
