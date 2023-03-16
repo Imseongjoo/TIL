@@ -14,7 +14,7 @@ Git/Github 기초, 심화
 
 ### [3월](https://github.com/Imseongjoo/TIL/tree/master/2023_03)
 
-HTML/CSS 심화/활용, 프론트엔드 총합, JS 기초 활용, Django 기초/CRUD
+HTML/CSS 심화/활용, 프론트엔드 종합, JS 기초 활용, Django 기초/CRUD
 
 ### [4월](https://github.com/Imseongjoo/TIL/tree/master/2023_04)
 
