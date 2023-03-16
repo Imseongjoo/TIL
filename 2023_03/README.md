@@ -2,11 +2,11 @@
 
 ### [1주차](https://github.com/Imseongjoo/TIL/tree/master/2023_03/Week_01)
 
-HTML/CSS 활용, 프론트엔드 총합
+HTML/CSS 활용, 프론트엔드 종합
 
 ### [2주차](https://github.com/Imseongjoo/TIL/tree/master/2023_03/Week_02)
 
-JS 기초 활용, 프론트엔드 총합
+JS 기초 활용, 프론트엔드 종합
 
 ### [3주차](https://github.com/Imseongjoo/TIL/tree/master/2023_03/Week_03)
 
