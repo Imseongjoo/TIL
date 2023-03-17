@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container text-center mt-3">
+      <div class="row">
+        <div class="col">
+          <button type="button" class="btn btn-primary" id="btn">생성</button>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <div id="result"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+    <script>
+      // 로또 번호 등수 확인
+      // 범위 정의, 당첨번호, 보너스번호
+      const numbers = _.range(1, 46)
+      const winningNumbers = [11, 23, 25, 30, 32, 40]
+      
+      const winningBonus = 42
+
+      // 당첨번호, 보너스 번호 출력
+      const btn = document.querySelector('#btn')
+      btn.addEventListener('click', event => {
+        // 1부터 45 랜덤 숫자 생성변수만들기
+        const numbers = _.range(1, 46)
+        const sixNumbers = _.sampleSize(numbers, 6) // 2 3 25 18 11 26
+        const bonusNumber = _.sampleSize(numbers, 1)
+        console.log(sixNumbers)
+        
+        // 일치하는 갯수 구하기
+        let cnt = 0
+        let bonus = false
+        for (let i = 0; i < 6; i++) {
+          if (sixNumbers[i] in winningNumbers) {
+            cnt += 1
+          }
+          if (winningBonus == bonusNumber) {
+            bonus = true
+          }
+        }
+        //console.log(cnt)
+        //console.log(bonus)
+        let result = ''
+        if (cnt == 6) {
+          //1등
+          //console.log("1등")
+          result = '1등'
+        } else if (cnt == 5) {
+          if (bonus == true) {
+            //2등
+            //console.log("2등")
+            result = '2등'
+          } else {
+            //3등
+            //console.log("3등")
+            result = '3등'
+          }
+        } else if (cnt == 4) {
+          //4등
+          //console.log("4등")
+          result = '4등'
+        } else if (cnt == 3) {
+          //5등
+          //console.log("5등")
+          result = '5등'
+        } else {
+          //꽝
+          //console.log("꽝")
+          result = '꽝'
+        }
+        console.log(
+          `당첨번호 : ${winningNumbers} 보너스 번호 : ${winningBonus} 랜덤 번호 : ${sixNumbers} 등수 : ${result}`
+        )
+      })
+
+      console.log(`반갑습니다. ${name}님`)
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

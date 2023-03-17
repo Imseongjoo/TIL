@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <style>
+      .lotto {
+        box-sizing: border-box;
+        width: 50px;
+        height: 50px;
+        margin: 5px auto;
+        display: inline-flex;
+        justify-content: center;
+        text-align: center;
+        border-radius: 50%;
+        border: 2px solid lightgray;
+        margin: 5px 10px;
+        line-height:47px;
+      }
+      
+      .text{
+        color:white;
+      }
+
+      .yellow {
+        background-color: rgb(255, 231, 76);  
+      }
+
+      .blue {
+        background-color: rgb(61, 122, 198);
+      }
+
+      .red {
+        background-color: rgb(230, 57, 70);
+      }
+
+      .gray {
+        background-color: rgb(153, 153, 153);
+      }
+
+      .green {
+        background-color: rgb(75, 183, 90);
+      }
+
+      .navy {
+        background-color: rgb(27, 9, 103);
+      }
+      
+    </style>
+  </head>
+  <body>
+    <div class="container text-center mt-3">
+      <div class="row">
+        <div class="col">
+          <button type="button" class="btn btn-primary" id="btn">생성</button>
+        </div>
+        <div id="result">
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+    <script>
+      // 로또 번호 input 받기
+      // 범위 정의, 당첨번호, 보너스번호
+      const numbers = _.range(1, 46)
+
+      //const winningNumbers = [11, 23, 25, 30, 32, 40]
+      const input = prompt("당첨번호를 띄어쓰기로 구분해 입력해주세요.(6자리)") // 입력을 받습니다.
+      const winningNumbers = input.split(" ").map(Number) // 쉼표를 기준으로 분리하고 숫자 배열로 변환합니다.
+
+      console.log(winningNumbers)
+      const inputBonus = Number(prompt("보너스번호를 입력해주세요."))
+      const winningBonus = inputBonus
+
+      // 당첨번호, 보너스 번호 출력
+      function countResult(sixNumbers, bonusNumber) {
+        let cnt = 0
+        let bonus = false
+        for (let i = 0; i < 6; i++) {
+          if (sixNumbers[i] in winningNumbers) {
+            cnt += 1
+          }
+          if (winningBonus == bonusNumber) {
+            bonus = true
+          }
+        }
+        let result = ''
+        if (cnt == 6) {
+          //1등
+          result = '1등'
+        } else if (cnt == 5) {
+          if (bonus == true) {
+            //2등
+            result = '2등'
+          } else {
+            //3등
+            result = '3등'
+          }
+        } else if (cnt == 4) {
+          //4등
+          result = '4등'
+        } else if (cnt == 3) {
+          //5등
+          result = '5등'
+        } else {
+          result = '꽝'
+        }
+        console.log(
+          `당첨번호 : ${winningNumbers} 보너스 번호 : ${winningBonus} 랜덤 번호 : ${sixNumbers} 등수 : ${result}`
+        )
+        return result
+      }
+
+      // 1부터 45 랜덤 숫자 생성변수만들기
+      const btn = document.querySelector('#btn')
+      btn.addEventListener('click', event => {
+
+        const numbers = _.range(1, 46)
+        const sixNumbers = _.sampleSize(numbers, 6)
+        const bonusNumber = _.sampleSize(numbers, 1)
+        console.log(sixNumbers)
+        const resultTag = document.querySelector('#result')
+
+        // 일치하는 갯수 구하기
+        const result = countResult(sixNumbers, bonusNumber)
+        console.log(result)
+        // span 만들고 그 안에 리스트 요소 하나씩 넣기
+        sixNumbers.forEach((num, index) => {
+          const resultSpan = document.createElement('span')
+          resultSpan.textContent = num
+          resultSpan.classList.add('lotto')
+          
+          // 1~10번까지는 노란색, 11~20번은 파란색, 21~30번은 빨간색, 31~40번은 회색, 41~45번은 녹색
+          if (num <= 10) {
+            resultSpan.classList.add("yellow")
+          }else if (num <= 20) {
+            resultSpan.classList.add("blue", "text")
+          }else if (num <= 30) {
+            resultSpan.classList.add("red","text")
+          }else if (num <= 40) {
+            resultSpan.classList.add("gray" ,"text")
+          }else if (num <= 45) {
+            resultSpan.classList.add("green","text") 
+          }else {
+            resultSpan.classList.add("blue", "text")
+          }
+          resultTag.appendChild(resultSpan)
+
+          if ((index + 1) % 6 == 0) {
+            const circle = document.createElement('span')
+            circle.textContent = result
+            circle.classList.add('lotto', 'navy',"text")
+            resultTag.appendChild(circle)
+            resultTag.appendChild(document.createElement('br'))
+          }
+        })
+      })
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
