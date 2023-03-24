@@ -1,0 +1,20 @@
+{% extends 'articles/base.html' %} {% block content %}
+<div class="container mt-3">
+  <div class="row justify-content-center">
+    <div class="col-sm-6">
+      <form action="/catch/" method="GET">
+        <div class="input-group mb-3">
+          <input
+            type="text"
+            name="message"
+            class="form-control form-control-lg rounded-2 mr-3"
+          />
+          <button type="submit" class="btn btn-primary btn-lg rounded-2">
+            throw
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock content %}

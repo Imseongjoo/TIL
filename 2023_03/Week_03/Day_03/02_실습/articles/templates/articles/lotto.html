@@ -1,0 +1,12 @@
+{% extends 'articles/base.html' %} {% block content %}
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      {% for lotto_number in lotto_numbers %}
+      <div>{{ lotto_number }}</div>
+      {% endfor %}
+      <a href="http://127.0.0.1:8000/lotto-create/">뒤로 가기</a>
+    </div>
+  </div>
+</div>
+{% endblock content %}

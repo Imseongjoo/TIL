@@ -1,0 +1,21 @@
+{% extends 'articles/base.html' %} {% block content %}
+<div class="container mt-3">
+  <div class="row justify-content-center">
+    <div class="col-sm-6">
+      <form action="/lotto/" method="GET">
+        <div class="input-group mb-3">
+          <input
+            type="number"
+            class="form-control form-control-lg rounded-2 mr-3"
+            placeholder="로또 생성 수"
+            name="count"
+          />
+          <button type="submit" class="btn btn-primary btn-lg rounded-2">
+            생성
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock content %}
