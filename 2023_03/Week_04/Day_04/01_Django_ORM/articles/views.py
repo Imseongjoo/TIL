@@ -12,7 +12,7 @@ def index(request):
     }
 
     # context - 템플릿에 데이터와 함께 렌더링
-    return render(request, 'articles:index', context)
+    return render(request, 'articles/index.html', context)
 
 
 def detail(request, pk):
@@ -33,7 +33,7 @@ def create(request):
     # print(request.GET)
     title = request.POST.get('title')
     content = request.POST.get('content')
-
+    
     # 받은 데이터를 DB에 저장
     # 1
     # article = Article()
@@ -53,18 +53,18 @@ def create(request):
     # return render(request, 'articles/create.html')
 
     # 결과 페이지(전체 조회 템플릿) 반환
-
+    
     # articles = Article.objects.all()
     # context = {
     #     'articles': articles,
     # }
-    # return render(request, 'articles:index', context)
+    # return render(request, 'articles/index.html', context)
 
-    # 이동 주소(URL)를 사용자에게 응답
-    # return redirect('articles:index')
+    # 이동할 주소(URL)를 사용자에게 응답
+    # return reirect('articles:index')
 
     # 생성한 글의 단일 조회(DETAIL) 주소(URL)로 이동 응답
-    return redirect("articles:detail", article.pk)
+    return redirect('articles:detail', article.pk)
 
 
 def delete(request, article_pk):
@@ -75,18 +75,18 @@ def delete(request, article_pk):
     article.delete()
 
     # 전체 조회 페이지 이동
-    return redirect('article:index')
+    return redirect('articles:index')
 
 
-def delete(request, article_pk):
-    # 수정할 데이터 조회
+def edit(request, article_pk):
+    # 수정 페이지(Edit) 입력 요소에 미리 값을 채우기 위한 데이터 조회
     article = Article.objects.get(pk=article_pk)
 
     context = {
-        'article': article,
+        'article': article
     }
 
-    return redirect(request, 'article/edit.html', context)
+    return render(request, 'articles/edit.html', context)
 
 
 def update(request, article_pk):
@@ -95,7 +95,7 @@ def update(request, article_pk):
     article = Article.objects.get(pk=article_pk)
 
     # 2. 데이터 수정
-    # 2-1. 사용자가 입력한 form 데이터 저장 -> create
+    # 2-1. 사용자가 입력한 form 데이터 할당 -> create
     title = request.POST.get('title')
     content = request.POST.get('content')
 
@@ -107,3 +107,4 @@ def update(request, article_pk):
     article.save()
 
     return redirect('articles:detail', article.pk)
+
