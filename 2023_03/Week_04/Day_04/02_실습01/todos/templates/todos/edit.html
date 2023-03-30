@@ -11,7 +11,7 @@
       crossorigin="anonymous"
     />
   </head>
-  <body class="m-3 fw-bold">
+  <body class="m-4 fw-bold">
     <form action="{% url 'todos:update' todo.pk %}" method="POST">
       {% csrf_token %}
 
@@ -57,7 +57,7 @@
           class="form-control"
           name="deadline"
           style="width: 10rem"
-          value="{{ todo.deadline }}"
+          value="{{ todo.deadline|date:'Y-m-d' }}"
         />
       </div>
 
