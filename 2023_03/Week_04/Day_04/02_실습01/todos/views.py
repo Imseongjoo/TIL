@@ -77,3 +77,6 @@ def toggle(request, pk):
     todo.completed = not todo.completed
     todo.save()
     return redirect('todos:index')
+
+
+

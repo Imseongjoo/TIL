@@ -1,0 +1,94 @@
+{% extends 'accountbooks/base.html' %} {% block content %}
+
+<h1>Detail</h1>
+
+<form action="{% url 'accountbooks:update' accountbook.pk %}" method="POST">
+  {% if accountbook.category == "식비" %}
+  <div
+    class="card mt-2"
+    style="background-color: rgba(214, 170, 190, 0.6); width: 20rem"
+  >
+    <div class="card-body p-3">
+      <div class="mb-1">내용 - {{ accountbook.note }}</div>
+      <div class="mb-1">메모 - {{ accountbook.description }}</div>
+      <div class="mb-1">분류 - {{ accountbook.category }}</div>
+      <div class="mb-1">사용금액 - {{ accountbook.amount }}</div>
+      <div class="mb-1">사용날짜 - {{ accountbook.date }}</div>
+      <div class="mb-1">생성날짜 - {{ accountbook.created_at }}</div>
+      <div class="mb-1">수정날짜 - {{ accountbook.updated_at }}</div>
+    </div>
+  </div>
+  {% elif accountbook.category == '통신비' %}
+  <div
+    class="card mt-2"
+    style="background-color: rgba(236, 217, 173, 0.6); width: 20rem"
+  >
+    <div class="card-body p-3">
+      <div class="mb-1">내용 - {{ accountbook.note }}</div>
+      <div class="mb-1">메모 - {{ accountbook.description }}</div>
+      <div class="mb-1">분류 - {{ accountbook.category }}</div>
+      <div class="mb-1">사용금액 - {{ accountbook.amount }}</div>
+      <div class="mb-1">사용날짜 - {{ accountbook.date }}</div>
+      <div class="mb-1">생성날짜 - {{ accountbook.created_at }}</div>
+      <div class="mb-1">수정날짜 - {{ accountbook.updated_at }}</div>
+    </div>
+  </div>
+
+  {% elif accountbook.category == '기타' %}
+  <div
+    class="card mt-2"
+    style="background-color: rgba(118, 169, 162, 0.6); width: 20rem"
+  >
+    <div class="card-body p-3">
+      <div class="mb-1">내용 - {{ accountbook.note }}</div>
+      <div class="mb-1">메모 - {{ accountbook.description }}</div>
+      <div class="mb-1">분류 - {{ accountbook.category }}</div>
+      <div class="mb-1">사용금액 - {{ accountbook.amount }}</div>
+      <div class="mb-1">사용날짜 - {{ accountbook.date }}</div>
+      <div class="mb-1">생성날짜 - {{ accountbook.created_at }}</div>
+      <div class="mb-1">수정날짜 - {{ accountbook.updated_at }}</div>
+    </div>
+  </div>
+
+  {% else %}
+  <div
+    class="card mt-2"
+    style="background-color: rgba(182, 159, 127, 0.6); width: 20rem"
+  >
+    <div class="card-body p-3">
+      <div class="mb-1">내용 - {{ accountbook.note }}</div>
+      <div class="mb-1">메모 - {{ accountbook.description }}</div>
+      <div class="mb-1">분류 - {{ accountbook.category }}</div>
+      <div class="mb-1">사용금액 - {{ accountbook.amount }}</div>
+      <div class="mb-1">사용날짜 - {{ accountbook.date }}</div>
+      <div class="mb-1">생성날짜 - {{ accountbook.created_at }}</div>
+      <div class="mb-1">수정날짜 - {{ accountbook.updated_at }}</div>
+    </div>
+  </div>
+  {% endif %}
+</form>
+<div class="button-group mt-2">
+  <a href="{% url 'accountbooks:edit' accountbook.pk %}">
+    <button type="button" class="btn btn-outline-success m-1">수정</button>
+  </a>
+
+  <form action="{% url 'accountbooks:delete' accountbook.pk %}" method="POST">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-outline-secondary m-1" value="DELETE">
+      삭제
+    </button>
+  </form>
+
+  <form action="{% url 'accountbooks:copy' accountbook.pk %}" method="POST">
+    {% csrf_token %}
+    <button class="btn btn-outline-info m-1" value="COPY">복사</button>
+  </form>
+</div>
+
+<a href="{% url 'accountbooks:index' %}">
+  <button type="button" class="btn btn-outline-primary mx-1 m-1">
+    뒤로 가기
+  </button>
+</a>
+
+{% endblock content %}
