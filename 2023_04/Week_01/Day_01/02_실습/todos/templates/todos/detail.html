@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Detail</h1>
+    <div>제목 - {{ todo.title }}</div>
+    <div>내용 - {{ todo.content }}</div>
+    <div>우선순위 - {{ todo.priority }}</div>
+    <div>마감기한 - {{ todo.deadline }}</div>
+    <div>완료여부 - {{ todo.completed }}</div>
+    <form action="{% url 'todos:delete' todo.pk  %}" method="POST">
+      {% csrf_token %}
+      <input type="submit" value="삭제" />
+    </form>
+    <a href="{% url 'todos:update' todo.pk %}">[UPDATE]</a>
+    <a href="{% url 'todos:index' %}">[back]</a>
+  </body>
+</html>
