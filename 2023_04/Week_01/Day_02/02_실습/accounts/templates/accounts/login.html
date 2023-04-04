@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.1/css/bootstrap.min.css"
+      integrity="sha512-1fIVtwH7p0zcimxuWz/a8iYbL1tKhUSmQTLu4i4m+hQJ4X9d56ITUTRyWkG8YvBZ3qN3I03wZGj6zheC6o3q3A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body class="m-10">
+    <h1>로그인</h1>
+    <form action="{% url 'accounts:login' %}" method="POST">
+      {% csrf_token %} {{ form.as_p }}
+      <input type="submit" value="로그인" />
+    </form>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.1/js/bootstrap.min.js"
+      integrity="sha512-hM+WKJ9ZzgBt77AonvzI1tIJh0GwN69y2O/2d8YMIoOZQfTnnJmT1d88ZZWmSSjyOwch1a4G4D3qP3bZgU6xpw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </body>
+</html>
