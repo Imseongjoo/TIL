@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div form {
+        display: inline-block;
+        vertical-align: top;
+      }
+
+      body {
+        margin: 3rem;
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="//maxcdn.bootstrapcdn.com/bootstrap/5.3.3/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="//maxcdn.bootstrapcdn.com/bootstrap/5.3.3/css/bootstrap-theme.min.css"
+    />
+  </head>
+  <body>
+    <h2>사용자 정보<br />{{ user }}</h2>
+    {% if request.user.is_authenticated %}
+
+    <div>
+      <form action="{% url 'accounts:update' %}" method="GET">
+        {% csrf_token %}
+        <input type="submit" value="회원정보수정" />
+      </form>
+
+      <form action="{% url 'accounts:logout' %}" method="POST">
+        {% csrf_token %}
+        <input type="submit" value="로그아웃" />
+      </form>
+
+      <form action="{% url 'accounts:delete' %}" method="POST" id="delete">
+        {% csrf_token %}
+        <input type="submit" value="회원탈퇴" onclick="confirmDelete(event)" />
+      </form>
+    </div>
+
+    {% else %}
+    <div>
+      <form action="{% url 'accounts:login' %}" method="POST">
+        {% csrf_token %}
+        <input type="submit" value="로그인" />
+      </form>
+
+      <form action="{% url 'accounts:signup' %}" method="POST">
+        {% csrf_token %}
+        <input type="submit" value="회원가입" />
+      </form>
+    </div>
+    {% endif %}
+
+    <script>
+      function confirmDelete(event) {
+        event.preventDefault()
+
+        if (confirm("정말로 탈퇴하시겠습니까?")) {
+          document.querySelector("#delete").submit()
+        }
+      }
+    </script>
+  </body>
+</html>
