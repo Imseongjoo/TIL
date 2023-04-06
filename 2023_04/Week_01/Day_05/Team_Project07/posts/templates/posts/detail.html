@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block style %}
+{% endblock style %}
+
+{% block content %}
+<div>
+  <h3>제목: {{ post.title }}</h3>
+</div>
+<div class="h5">
+  <p>분류: {{ post.category }}</p>
+  <hr />
+  <p>내용: {{ post.content }}</p>
+  <hr />
+  <p>작성: {{ post.created_at }}</p>
+</div>
+<button onclick="history.back()" class="btn btn-outline-primary mb-3">
+  뒤로
+</button>
+<a
+  href="{% url 'posts:update' post.pk %}"
+  class="btn btn-outline-success mb-3"
+  role="button"
+  >수정</a
+>
+<a
+  href="{% url 'posts:delete' post.pk %}"
+  class="btn btn-outline-secondary mb-3"
+  role="button"
+  >삭제</a
+>
+{% endblock content %}

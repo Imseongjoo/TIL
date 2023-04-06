@@ -1,0 +1,11 @@
+{% extends 'base.html' %} 
+
+{% block style %} 
+{% endblock style %} 
+
+{% block content %}
+<form class="mx-3" action="{% url 'posts:create' %}" , method="POST">
+  {% csrf_token %} {{ form.as_p }}
+  <button type="submit" class="btn btn-outline-success">게시글 작성</button>
+</form>
+{% endblock content %}
