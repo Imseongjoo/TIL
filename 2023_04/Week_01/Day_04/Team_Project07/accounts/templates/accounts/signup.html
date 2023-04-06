@@ -7,6 +7,6 @@
 <h1>회원가입</h1>
 <form method="post">
   {% csrf_token %} {{ form.as_p }}
-  <input type="submit" class="btn btn-secondary" value="가입" />
+  <input type="submit" class="btn btn-outline-success" value="가입" />
 </form>
 {% endblock content %}

@@ -1,11 +1,21 @@
 {% extends 'base.html' %}
 
 {% block style %}
+button {
+display: inline-block;
+}
 {% endblock style %}
 
 {% block content %}
+
 <form action="{% url 'posts:update' post.pk %}" method="POST">
   {% csrf_token %} {{ form.as_p }}
-  <button type="submit" class="btn btn-outline-success">게시글 수정</button>
+  <div>
+    <button type="submit" class="btn btn-outline-success">수정</button>
+    <form action="{% url 'posts:delete' post.pk %}" method="POST">
+      {% csrf_token %}
+      <button type="submit" class="btn btn-outline-secondary">삭제</button>
+    </form>
+  </div>
 </form>
 {% endblock content %}
