@@ -44,16 +44,16 @@
             <div class="justify-content-end d-flex align-items-center pe-4">
               {% if request.user.is_authenticated %}
               <div class="d-flex align-items-center">
-                <span class="m-2 fw-bold h5">{{ user }}</span>
+                <span class="m-2 h5">{{ user }}</span>
                 <a
-                  class="btn btn-outline-success m-2"
+                  class="btn btn-outline-success m-1"
                   href="{% url 'accounts:update' %}"
                   >정보수정</a
                 >
                 <form action="{% url 'accounts:logout' %}" method="POST">
                   {% csrf_token %}
                   <input
-                    class="btn btn-outline-primary m-2"
+                    class="btn btn-outline-primary m-1"
                     type="submit"
                     value="로그아웃"
                   />
@@ -62,7 +62,7 @@
               {% else %}
               <div>
                 <a
-                  class="btn btn-outline-success m-2"
+                  class="btn btn-outline-success m-1"
                   href="{% url 'accounts:login' %}"
                   >로그인</a
                 >
@@ -90,9 +90,9 @@
             <hr />
             <a href="{% url 'posts:create' %}">📝 글작성</a><br />
             <a href="{% url 'posts:index' %}">📚 모든 글</a><br />
-            <a href="?sort=dev">👩‍💻 개발</a><br />
-            <a href="?sort=cs">🔬 CS</a><br />
-            <a href="?sort=newtech">🤖 신기술</a>
+            <a href="{% url 'posts:dev' %}">👨‍💻 개발</a><br />
+            <a href="{% url 'posts:cs' %}">🔬 CS</a><br />
+            <a href="{% url 'posts:newtech' %}">🤖 신기술</a>
           </div>
         </div>
         <div class="content p-5">

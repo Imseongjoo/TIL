@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block style %}
+{% endblock style %}
+
+{% block content %}
+{% for post in posts %}
+<div class="h5">
+  <a href="{% url 'posts:detail' post.pk %}">
+    <span>제목 : {{post.title}} / 분류 : {{ post.category }}</span>
+    <hr style="width: 20rem" />
+  </a>
+</div>
+{% endfor %}
+{% endblock content %}

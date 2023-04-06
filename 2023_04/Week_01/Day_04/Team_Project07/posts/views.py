@@ -66,3 +66,21 @@ def delete(request, pk):
     post = Post.objects.get(pk=pk)
     post.delete()
     return redirect('posts:index')
+
+
+def dev(request):
+    posts = Post.objects.filter(category='개발')
+    context = {'posts': posts}
+    return render(request, 'posts/dev.html', context)
+
+
+def cs(request):
+    posts = Post.objects.filter(category='CS')
+    context = {'posts': posts}
+    return render(request, 'posts/cs.html', context)
+
+
+def newtech(request):
+    posts = Post.objects.filter(category='신기술')
+    context = {'posts': posts}
+    return render(request, 'posts/newtech.html', context)

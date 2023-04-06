@@ -8,7 +8,10 @@
 <br />
 <form action="{% url 'accounts:update' %}" method="POST" class="mb-2">
   {% csrf_token %} {{ form.as_p }}
-  <div class="mt-3">
+  <a href="{% url 'accounts:change_password' %}" class="btn btn-outline-primary">비밀번호 변경</a>
+
+  <div class="mt-2">
+    
     <input type="submit" class="btn btn-outline-success me-2" value="수정" />
     <button class="btn btn-outline-danger" onclick="confirmDelete(event)">
       회원탈퇴
