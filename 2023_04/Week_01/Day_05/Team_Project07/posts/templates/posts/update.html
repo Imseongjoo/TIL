@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block style %}
+button {
+display: inline-block;
+}
+{% endblock style %}
+
+{% block content %}
+<form action="{% url 'posts:update' post.pk %}" method="POST" id="update-form">
+  {% csrf_token %} {{ form.as_p }}
+  <div>
+    <button type="submit" class="btn btn-outline-success">수정</button>
+    <button type="button" class="btn btn-outline-secondary" id="delete">삭제</button>
+  </div>
+</form>
+
+<script>
+  const deleteBtn = document.getElementById('delete');
+  deleteBtn.addEventListener('click', () => {
+    if (confirm('정말로 삭제하시겠습니까?')) {
+      const form = document.getElementById('update-form');
+      form.action = "{% url 'posts:delete' post.pk %}";
+      form.submit();
+    }
+  });
+</script>
+{% endblock content %}
