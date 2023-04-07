@@ -42,7 +42,7 @@ class CustomUserChangeForm(UserChangeForm):
         attrs={'class': 'form-control', 'style': 'width: 150px;'}))
     birthday = forms.DateField(label='생년월일', label_suffix='', widget=forms.DateInput(
         attrs={'class': 'form-control', 'type': 'date',  'style': 'width: 150px;'}))
-
+    password = None
 
 class LoginForm(AuthenticationForm):
     username = forms.CharField(
