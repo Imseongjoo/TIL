@@ -24,20 +24,20 @@
       html, body {
         height: 100%;
       }
-      
+
       body {
         display: flex;
         flex-direction: column;
       }
-      
+
       main {
         flex-grow: 1;
       }
 
       footer {
         position: fixed;
-        bottom: 0; 
-      } 
+        bottom: 0;
+      }
 
       @media (max-width: 992px) {
         .navbar-nav {
@@ -94,7 +94,6 @@
       </nav>
     </div>
 
-
     <article>
       <div class="d-flex px-4">
         <div class="sidebar m-2 position-fixed" style="min-width: 150px">
@@ -104,15 +103,15 @@
           >
             <span>IT 정보공유</span>
             <hr />
-            <a href="{% url 'posts:create' %}">📝 글작성</a><br>
-            <a href="{% url 'posts:index' %}">📚 모든 글</a><br>
-            {% comment %} <a href="{% url 'posts:dev' %}">👨‍💻 개발</a><br /> {% endcomment %}
-            <a href="/posts/?sort=dev">👨‍💻 개발</a><br>
+            <a href="{% url 'posts:create' %}">📝 글작성</a><br />
+            <a href="{% url 'posts:index' %}">📚 모든 글</a><br />
+            {% comment %} <a href="{% url 'posts:dev' %}">👨‍💻 개발</a><br />
+            {% endcomment %} <a href="/posts/?sort=dev">👨‍💻 개발</a><br />
             <a href="{% url 'posts:cs' %}">🔬 CS</a><br />
             <a href="{% url 'posts:newtech' %}">🤖 신기술</a>
           </div>
         </div>
-        <div class="content ms-3 p-4" style="left: 200px; position: relative;">
+        <div class="content ms-3 p-4" style="left: 200px; position: relative">
           {% block content %} {% endblock content %}
         </div>
       </div>
