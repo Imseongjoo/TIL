@@ -1,0 +1,116 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/css/bootstrap.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="{% static 'albums/style.css' %}" />
+  </head>
+  <style>
+    img {
+      width: 150px;
+      height: auto;
+    }
+  </style>
+  <body>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/albums/">
+          <img src="{% static 'logo.svg' %}" alt="Navbar" />
+        </a>
+
+        <button
+          type="button"
+          class="btn btn-danger"
+          data-bs-toggle="modal"
+          data-bs-target="#createModal"
+        >
+          이미지 공유
+        </button>
+        <div
+          class="modal fade"
+          id="createModal"
+          tabindex="-1"
+          aria-labelledby="createModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="createModalLabel">
+                  이미지 공유하기
+                </h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <form
+                method="post"
+                enctype="multipart/form-data"
+                action="{% url 'albums:create' %}"
+              >
+                {% csrf_token %}
+                <div class="modal-body">
+                  <div class="mb-1">
+                    <label for="contentInput" class="form-label">Content</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="contentInput"
+                      name="content"
+                    />
+                  </div>
+                  <div class="mb-2">
+                    <label for="imageInput" class="form-label">Image</label>
+                    <input
+                      type="file"
+                      class="form-control"
+                      id="imageInput"
+                      name="image"
+                    />
+                  </div>
+                </div>
+                <div class="modal-footer justify-content-end">
+                  <button type="submit" class="btn btn-primary">
+                    공유하기
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="row p-5 pt-1">
+      {% for album in albums %}
+      <div class="col-md-3 col-sm-6 mb-1 p-0">
+        <div class="card m-2">
+          <img
+            src="{{ album.image.url }}"
+            class="card-img-top"
+            alt="{{ album.content }}"
+          />
+          <div class="card-body p-2">
+            <p class="card-text">{{ album.content }}</p>
+          </div>
+        </div>
+      </div>
+      {% empty %}
+      <p>No images found.</p>
+      {% endfor %}
+    </div>
+  </body>
+</html>
