@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+  </head>
+  <style>
+    li {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .comment-content {
+      flex: 1;
+    }
+
+    .comment-delete {
+      margin-left: 10px;
+    }
+  </style>
+  <body class="m-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1>📝 리뷰</h1>
+          <br />
+          <h3>제목: {{ review.title }}</h3>
+          <br />
+          <p>내용: {{ review.content }}</p>
+
+          {% if review.image_thumbnail %}
+          <img
+            src="{{ review.image_thumbnail.url }}"
+            alt="{{ review.title }}"
+            class="mb-2"
+          />
+          {% endif %}
+
+          <div>작성일: {{ review.created_at }}</div>
+          <div>수정일: {{ review.updated_at }}</div>
+          <div class="d-flex mt-2">
+            <a
+              href="{% url 'reviews:update' review.pk %}"
+              class="btn btn-outline-success m-1"
+              >수정</a
+            >
+            <form action="{% url 'reviews:delete' review.pk %}" method="POST">
+              {% csrf_token %}
+              <input
+                type="submit"
+                value="삭제"
+                class="btn btn-outline-danger m-1"
+              />
+            </form>
+            <a
+              href="{% url 'reviews:index' %}"
+              class="btn btn-outline-primary m-1"
+              >뒤로 가기</a
+            >
+          </div>
+
+          <hr />
+          <h5>댓글 목록</h5>
+          <p>댓글 개수: {{ review.comment_set.count }}</p>
+          <ul>
+            {% for comment in comments %}
+            <li class="comment-item mb-1">
+              <div class="comment-content">{{ comment.content }}</div>
+              <form
+                action="{% url 'reviews:comment_delete' review.pk comment.pk %}"
+                method="POST"
+              >
+                {% csrf_token %}
+                <input
+                  type="submit"
+                  value="삭제"
+                  class="comment-delete btn btn-outline-danger btn-sm"
+                />
+              </form>
+            </li>
+            {% endfor %}
+          </ul>
+          <hr />
+          <form
+            action="{% url 'reviews:comment_create' review.pk %}"
+            method="POST"
+          >
+            {% csrf_token %}
+            <div class="form-group mb-2">
+              <label for="{{ comment_form.content.id_for_label }}">댓글</label>
+              {{ comment_form.content }}
+            </div>
+            <button type="submit" class="btn btn-outline-primary">
+              댓글 작성
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
