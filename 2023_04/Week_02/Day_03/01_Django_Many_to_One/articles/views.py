@@ -98,7 +98,7 @@ def comment_delete(request, article_pk, comment_pk):
     # 삭제할 댓글을 조회
     comment = Comment.objects.get(pk=comment_pk)
     # article_pk = comment.article.pk
-    
+
     # 댓글 삭제를 요청하는 자 vs 댓글 작성자
     if request.user == comment.user:
         # 댓글 삭제
