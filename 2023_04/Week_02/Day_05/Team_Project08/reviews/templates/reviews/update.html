@@ -1,0 +1,17 @@
+{% extends 'base.html' %} 
+{% block title %}리뷰 수정{% endblock title %} 
+{% block style %}{% endblock style %} 
+{% block body %}
+<form
+action="{% url 'reviews:update' review.pk %}"
+method="POST"
+enctype="multipart/form-data"
+>
+{% csrf_token %} {% include 'error.html' %} {{ form.as_p }}
+<input type="submit" value="수정" />
+<a href="{% url 'reviews:index' %}">뒤로 가기</a>
+</form>
+{% endblock body %} 
+{% block script %}
+{% endblock script %}
+  

@@ -1,0 +1,139 @@
+{% extends 'base.html' %}
+{% block title %}회원정보{% endblock title %}
+{% block style %}
+
+.heading {
+  padding: 10px 15px 10px 25px;
+  float: initial;
+  border-radius: 0;
+  clear: left;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  line-height: 21px;
+}
+
+.heading::before {
+  background-color: #FA320A;
+  content: ' ';
+  min-width: 20px;
+  height: 20px;
+  position: absolute;
+  left: 0;
+}
+
+.heading-after::after {
+  position: absolute;
+  margin-left: 11px;
+  width: 100%;
+  background-color: #FA320A;
+  min-width: 20px;
+  height: 20px;
+  content: ' ';
+  box-sizing: border-box;
+}
+
+nav {
+  width: 50%;
+}
+{% endblock style %}
+{% block body %}
+<div class="container d-flex mt-3">
+  <div class="d-flex flex-column">
+    <section class="d-flex flex-column">
+      <p
+        onclick="location.href='{% url 'accounts:profile' user.pk %}'"
+        style="cursor: pointer"
+        class="m-0"
+      >
+        {{ user.last_name }} {{ user.first_name }}
+      </p>
+      {% if request.user == user %}
+      <p
+        onclick="location.href='{% url 'accounts:update' %}'"
+        style="cursor: pointer"
+        class="m-0"
+      >
+        회원정보 수정
+      </p>
+      {% endif %}
+      <p
+        onclick="location.href='{% url 'accounts:profile' user.pk %}'"
+        style="cursor: pointer"
+        class="m-0"
+      >
+        회원정보
+      </p>
+    </section>
+    <hr />
+    <section>
+      <h3 class="heading align-middle">ABOUT</h3>
+      <table class="table">
+        <tbody>
+          <tr>
+            <th scope="row">아이디</th>
+            <td>{{ user.username }}</td>
+          </tr>
+          <tr>
+            <th scope="row">이메일</th>
+            <td>{{ user.email }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </div>
+  <div class="flex-grow-1 m-2">
+    <nav class="nav nav-pills flex-column flex-sm-row">
+      <a
+        class="flex-sm-fill text-sm-center nav-link active"
+        aria-current="page"
+        href="#"
+        >Summary</a
+      >
+      <a class="flex-sm-fill text-sm-center nav-link" href="#"
+        >Movie Rating</a
+      >
+      <a class="flex-sm-fill text-sm-center nav-link" href="#"
+        >TV Ratings</a
+      >
+      <a
+        class="flex-sm-fill text-sm-center nav-link"
+        href="{% url 'reviews:create' %}"
+        >글작성</a
+      >
+    </nav>
+    <div>
+      <div class="mt-2" style="width: 100%">
+        <h3 class="heading heading-after align-middle">REVIEW HISTORY</h3>
+        {% for review in reviews %}
+        <div class="d-flex align-items-center mt-3">
+          <a href="{% url 'reviews:detail' review.pk %}">
+            <div style="width: 120px; height: 180px">
+              <img
+                src="{{ review.image.url }}"
+                alt="{{ review.title }}"
+                style="width: 100%; height: 100%; object-fit: cover"
+              />
+            </div>
+          </a>
+          <div
+            class="d-flex flex-column ms-3"
+            style="width: 240px; height: 180px"
+          >
+            <h4 class="mb-1">{{ review.movie }}</h4>
+          </div>
+          <div
+            class="d-flex flex-column ms-3"
+            style="width: 500px; height: 180px"
+          >
+            <p class="mb-0">{{ review.title }}</p>
+          </div>
+        </div>
+        <hr />
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock body %}
+{% block script %}{% endblock script %}

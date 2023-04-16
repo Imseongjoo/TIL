@@ -1,0 +1,110 @@
+{% extends 'base.html' %} 
+{% block title %}영화 리뷰{% endblock title %} 
+{% block style %}
+.carousel-control-prev,
+.carousel-control-next {
+  width: 50px;
+  height: 100%;
+  opacity: 1; 
+}
+
+.carousel-control-prev {
+  padding-left: 10px;
+}
+
+.carousel-control-next {
+  padding-right: 10px;
+}
+{% endblock style %} 
+{% block body %}
+<div class="container">
+  <div class="row p-2 pt-1 text-center m-3 justify-content-between">
+    <div
+      id="carouselControls"
+      class="carousel slide"
+      data-bs-ride="carousel"
+    >
+      <div class="carousel-inner">
+        {% for review in reviews %} {% if forloop.counter0|divisibleby:6 %}
+        <div class="carousel-item {% if forloop.first %}active{% endif %}">
+          <div class="row">
+            {% endif %}
+            <div class="col-2 p-0">
+              <div class="card m-1 border-0">
+                <a href="{% url 'reviews:detail' review.pk %}">
+                  <img
+                    src="{{ review.image.url }}"
+                    alt="{{ review.title }}"
+                    style="border-radius: 5px"
+                  />
+                </a>
+                <div class="card-body p-0">
+                  <a
+                    href="{% url 'reviews:detail' review.pk %}"
+                    class="text-dark"
+                    >{{ review.movie }}</a
+                  >
+                </div>
+              </div>
+            </div>
+            {% if forloop.counter0|add:1|divisibleby:6 or forloop.last %}
+          </div>
+        </div>
+        {% endif %} {% endfor %}
+      </div>
+
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselControls"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselControls"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<table class="table table-hover w-75 m-auto">
+  <thead>
+    <tr>
+      <th scope="col" class="text-center" style="width: 5%">#</th>
+      <th scope="col" class="text-center" style="width: 25%">영화</th>
+      <th scope="col" class="text-center">제목</th>
+      <th scope="col" class="text-center" style="width: 20%">작성자</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for review in reviews|slice:":5" %}
+    <tr>
+      <th scope="row" class="text-center">{{ review.pk }}</th>
+      <td class="text-center">{{ review.movie }}</td>
+      <td
+        onclick="location.href='{% url 'reviews:detail' review.pk %}'"
+        style="cursor: pointer"
+      >
+        {{ review.title }}
+      </td>
+      <td class="text-center">{{ review.user }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<button slot="scroll-right" control-id="ControlID-27">
+  <rt-icon slot="icon-arrow-right" image="" icon="right-chevron"></rt-icon>
+</button>
+{% endblock body %} 
+{% block script %}
+{% endblock script %}
+

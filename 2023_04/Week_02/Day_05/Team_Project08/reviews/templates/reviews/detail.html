@@ -1,0 +1,197 @@
+{% extends 'base.html' %} 
+{% block title %}리뷰{% endblock title %} 
+{% block style %}
+.movie-info #back{
+  border: 1px lightgray solid;
+  border-radius:5px;
+  padding-right:15px;
+  padding-left:10px;
+}
+#back:hover{
+  border:1px black solid;
+}
+#back a{
+  color:black;
+}
+.review-button{
+  display:flex;
+}
+.delete-button{
+  background:transparent;
+  border:none;
+  color: var(--bs-link-color);
+  padding:0;
+  
+}
+.movie-img{
+  max-width:100%;
+}
+.h2:before, h2:before{
+  position:absolute;
+  content:"";
+  height:1.1em;
+  border-left: 3px solid #fa320a;
+  margin: 2px 0 0 -9px;  
+}
+.review-row{
+  background-color:#f3f3f3;
+  height:auto;
+  padding-top:8px;
+  width:100%;
+}
+#rotton-icon{
+  width:20px;
+}
+p#comment-date{
+  color:#757a84;
+  font-size:14px;
+  font-weight:45;
+  line-height: 14px;
+  {% comment %} padding-top: 20px; {% endcomment %}
+}
+.review-comment p{
+  word-wrap:break-word;
+}
+.checked {
+  color: orange;
+}
+.star-btn{
+  background-color:inherit !important;
+  border: 0 !important;
+  padding:2px;
+}
+{% endblock style %} 
+{% block body %}
+<div class="container movie-info">
+  <div class="row">
+    <div class="col-3 mt-3">
+      <button id="back">
+        <a href="{% url 'reviews:index' %}"
+          ><i class="ri-arrow-left-line"></i>BACK</a
+        >
+      </button>
+      <div class="movie-info mt-3">
+        {% if review.image %}
+        <img src="{{ review.image.url }}" alt="IMAGE" class="movie-img" />
+        {% else %}{% load static %}
+        <img
+          src="{% static 'reviews/no-image.png' %}"
+          alt="no-img"
+          class="movie-img"
+        />
+        {% endif %}
+        <h3 class="text-center mt-1">
+          <b>{{ review.title }}</b>
+        </h3>
+        <div class="d-flex justify-content-between mb-3">
+          <a
+            href="{% url 'accounts:profile' review.user.pk %}"
+            style="color: #000000"
+            ><b>{{ review.user }}</b></a
+          >
+          <span>{{ review.created_at | date:'Y-m-d H:i:s' }}</span>
+        </div>
+        <div class="mb-3">
+          {{ review.content | linebreaks }}
+        </div>
+      </div>
+      {% if request.user == review.user %}
+      <div class="review-button justify-content-end">
+        <a href="{% url 'reviews:update' review.pk %}">수정</a>&ensp;|&ensp;
+        <form action="{% url 'reviews:delete' review.pk %}" method="POST">
+          {% csrf_token %}
+          <input type="submit" value="삭제" class="delete-button" />
+        </form>
+      </div>
+      {% endif %}
+    </div>
+    <div class="col-1"></div>
+    <div class="col-8 mt-4">
+      <h2>{{ review.movie }} REVIEWS</h2>
+      <form
+        action="{% url 'reviews:comment_create' review.pk %}"
+        method="POST"
+        style="float: right; margin-right: 10px; padding-bottom: 5px"
+      >
+        {% csrf_token %}
+        <div class="d-flex">
+          {{ comment_form.content }}
+          <input type="submit" value="등록" class="btn btn-danger ms-1" />
+        </div>
+      </form>
+      {% for comment in comments %}
+      <div class="row review-row">
+        <div class="reviewer col-2">
+          <b>{{ comment.user }}</b>
+        </div>
+        <div class="col-2">
+          <img
+            rel="review-icon"
+            id="rotton-icon"
+            src="https://upload.wikimedia.org/wikipedia/commons/5/5b/Rotten_Tomatoes.svg"
+          />
+        </div>
+        <div class="col-7 review-comment">
+          <!--comment-->
+          <p>{{ comment.content }}</p>
+          <br />
+          <!--ranking-->
+          <form
+            class="rate-form"
+            action="#"
+            method="POST"
+            id="{{ review.id }}"
+          >
+            {% csrf_token %}
+            <button
+              type="submit"
+              class="fa fa-star star-btn"
+              id="first"
+            ></button>
+            <button
+              type="submit"
+              class="fa fa-star star-btn"
+              id="second"
+            ></button>
+            <button
+              type="submit"
+              class="fa fa-star star-btn"
+              id="third"
+            ></button>
+            <button
+              type="submit"
+              class="fa fa-star star-btn"
+              id="fourth"
+            ></button>
+            <button
+              type="submit"
+              class="fa fa-star star-btn"
+              id="fifth"
+            ></button>
+            <p id="comment-date">{{ comment.created_at }}</p>
+          </form>
+          <div id="confirm-box"></div>
+        </div>
+        <div class="col-1 mr-3">
+          {% if request.user == comment.user %}
+          <form
+            action="{% url 'reviews:comment_delete' review.pk comment.pk %}"
+            method="POST"
+          >
+            {% csrf_token %}
+            <input type="submit" value="delete" class="delete-button" />
+          </form>
+        </div>
+      </div>
+      {% endif %} {% endfor %}
+    </div>
+  </div>
+</div>
+<hr />
+{% endblock body %} 
+{% block script %}
+const content = document.getElementById('id_content')
+content.classList.add('form-control')
+content.placeholder = '댓글 작성하기'
+{% endblock script %}
+  

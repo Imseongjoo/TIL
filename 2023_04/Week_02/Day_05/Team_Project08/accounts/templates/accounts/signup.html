@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% block title %}회원가입{% endblock title %}
+{% block style %}{% endblock style %}
+{% block body %}
+<div class="container m-auto mt-3 col-lg-4 col-sm-6 col-12">
+  <div class="card">
+    <div class="card-body">
+      <h2 class="card-title text-center mt-2">회원가입</h2>
+      <form
+        action="{% url 'accounts:signup' %}"
+        method="POST"
+        class="needs-validation mt-3"
+        novalidate
+      >
+        {% csrf_token %} {% include 'error.html' %}
+        <div class="mb-3">
+          {{ form.username }}
+          <div class="invalid-feedback">
+            150자 이하의 문자, 숫자 그리고 @.+-_만 가능합니다.
+          </div>
+        </div>
+        <div class="mb-3">
+          {{ form.email }}
+          <div class="invalid-feedback">이메일을 입력하세요</div>
+        </div>
+        <div class="d-flex">
+          <div class="mb-3">
+            {{ form.last_name }}
+            <div class="invalid-feedback">성을 입력하세요</div>
+          </div>
+          <div class="mb-3">
+            {{ form.first_name }}
+            <div class="invalid-feedback">이름을 입력하세요</div>
+          </div>
+        </div>
+        <div class="mb-3">
+          {{ form.password1 }}
+          <div class="invalid-feedback">비밀번호를 입력하세요</div>
+        </div>
+        <div class="mb-3">
+          {{ form.password2 }}
+          <div class="invalid-feedback">비밀번호를 다시 입력하세요</div>
+        </div>
+        <p class="text-secondary">
+          다른 개인 정보와 유사한 비밀번호는 사용할 수 없습니다.<br />
+          비밀번호는 최소 8자 이상이어야 합니다.<br />
+          통상적으로 자주 사용되는 비밀번호는 사용할 수 없습니다.<br />
+          숫자로만 이루어진 비밀번호는 사용할 수 없습니다.
+        </p>
+        <div class="d-flex justify-content-between">
+          <a href="{% url 'reviews:index' %}" class="btn btn-sm btn-danger"
+            >메인</a
+          >
+          <input
+            type="submit"
+            value="회원가입"
+            class="btn btn-sm btn-primary"
+          />
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock body %}
+{% block script %}
+(() => {
+  'use strict'
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  const forms = document.querySelectorAll('.needs-validation')
+
+  // Loop over them and prevent submission
+  Array.from(forms).forEach(form => {
+    form.addEventListener('submit', event => {
+      if (!form.checkValidity()) {
+        event.preventDefault()
+        event.stopPropagation()
+      }
+
+      form.classList.add('was-validated')
+    }, false)
+  })
+})()
+{% endblock script %}

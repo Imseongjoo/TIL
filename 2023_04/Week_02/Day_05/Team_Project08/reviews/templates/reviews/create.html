@@ -1,0 +1,83 @@
+{% extends 'base.html' %} 
+{% block title %}리뷰 작성{% endblock title %} 
+{% block style %} {% endblock style %} 
+{% block body %}
+<div class="container m-auto mt-5 col-lg-4 col-sm-6 col-12">
+  <div class="card">
+    <div class="card-body">
+      <form
+        action="{% url 'reviews:create' %}"
+        method="POST"
+        enctype="multipart/form-data"
+        class="needs-validation"
+        novalidate
+      >
+        {% csrf_token %} {% include 'error.html' %}
+        <div class="mb-3">
+          {{ form.title }}
+          <div class="invalid-feedback">제목을 입력하세요</div>
+        </div>
+        <div class="mb-3 d-flex justify-content-between">
+          <div style="width: 85%">
+            {{ form.movie }}
+            <div class="invalid-feedback">영화 제목을 입력하세요</div>
+          </div>
+          {{ form.image }}
+          <div>
+            <label
+              for="{{ form.image.id_for_label }}"
+              class="btn btn-outline-success align-middle"
+              >파일</label
+            >
+          </div>
+        </div>
+        <div class="mb-3">
+          {{ form.content }}
+          <div class="invalid-feedback">내용을 입력하세요</div>
+        </div>
+        <div class="d-flex justify-content-between">
+          <a href="{% url 'reviews:index' %}" class="btn btn-sm btn-danger"
+            >메인</a
+          >
+          <input type="submit" value="작성" class="btn btn-sm btn-primary" />
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock body %} 
+{% block script %}
+(() => {
+  'use strict'
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  const forms = document.querySelectorAll('.needs-validation')
+
+  // Loop over them and prevent submission
+  Array.from(forms).forEach(form => {
+    form.addEventListener('submit', event => {
+      if (!form.checkValidity()) {
+        event.preventDefault()
+        event.stopPropagation()
+      }
+
+      form.classList.add('was-validated')
+    }, false)
+  })
+})()
+
+const title = document.getElementById('id_title')
+const movie = document.getElementById('id_movie')
+const upload = document.getElementById('id_image')
+const content = document.getElementById('id_content')
+
+title.classList.add('form-control')
+movie.classList.add('form-control')
+content.classList.add('form-control')
+
+upload.style.display = 'none'
+
+title.placeholder = '제목'
+movie.placeholder = '영화 제목'
+content.placeholder = '내용'
+{% endblock script %}
