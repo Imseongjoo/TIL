@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>성주의 영화리뷰</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <style>
+    li {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .comment-content {
+      flex: 1;
+    }
+
+    .comment-delete {
+      margin-left: 10px;
+    }
+
+    .comment-delete, .like-button {
+      float: right;
+    }
+  </style>
+  <body>
+    <div class="sticky-top mb-4" style="height: 56px">
+      <nav class="navbar navbar-expand-sm bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand ps-4 fw-bold" href="{% url 'reviews:index' %}"
+            >🎬 성주의 영화리뷰</a
+          >
+          <div class="justify-content-end d-flex align-items-center pe-4">
+            {% if request.user.is_authenticated %}
+            <div class="d-flex align-items-center">
+              <span class="m-2 h5">{{ user }}</span>
+              <a
+                class="btn btn-outline-success m-1"
+                href="{% url 'accounts:update' %}"
+                >정보수정</a
+              >
+              <form action="{% url 'accounts:logout' %}" method="POST">
+                {% csrf_token %}
+                <input
+                  class="btn btn-outline-primary m-1"
+                  type="submit"
+                  value="로그아웃"
+                />
+              </form>
+            </div>
+            {% else %}
+            <div>
+              <a
+                class="btn btn-outline-success m-1"
+                href="{% url 'accounts:login' %}"
+                >로그인</a
+              >
+              <a
+                class="btn btn-outline-primary"
+                href="{% url 'accounts:signup' %}"
+                >회원가입</a
+              >
+            </div>
+            {% endif %}
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <div class="container m-5">
+      <div class="row">
+        <div class="col-md-12">
+          <h2>🎥 리뷰</h2>
+          <br />
+          <h3>제목: {{ review.title }}</h3>
+          <p>작성자: {{ review.user.username }}</p>
+          <p>내용: {{ review.content }}</p>
+
+          {% if review.image_thumbnail %}
+          <img
+            src="{{ review.image_thumbnail.url }}"
+            alt="{{ review.title }}"
+            class="mb-2"
+          />
+          {% endif %}
+
+          <div>작성일: {{ review.created_at }}</div>
+          <div class="mb-2">수정일: {{ review.updated_at }}</div>
+
+          <div class="d-flex justify-content-between align-items-center">
+            {% if request.user == review.user %}
+            <div>
+                <a href="{% url 'reviews:update' review.pk %}" class="btn btn-outline-success m-1">수정</a>
+                <form action="{% url 'reviews:delete' review.pk %}" method="POST" class="d-inline-block">
+                    {% csrf_token %}
+                    <input type="submit" value="삭제" class="btn btn-outline-danger m-1" />
+                </form>
+            </div>
+            {% endif %}
+            <div>
+                {% for emotion in emotions %}
+                  <form action="{% url 'reviews:emotes' review.pk emotion.value %}" method="POST" class="d-inline-block">
+                    {% csrf_token %}
+                  {% if user.is_authenticated %}
+                    {% if emotion.exist %}
+                    <button type="submit" class="btn btn-primary m-1">{{emotion.label}}  {{ emotion.count }}</button>
+                    {% else %}
+                    <button type="submit" class="btn btn-outline-primary m-1">{{emotion.label}}  {{ emotion.count }}</button>
+                    {% endif %}
+                  {% else %}  
+                    {% if emotion.exist %}
+                    <button type="submit" class="btn btn-primary m-1" disabled>{{emotion.label}}  {{ emotion.count }}</button>
+                    {% else %}
+                    <button type="submit" class="btn btn-outline-primary m-1" disabled>{{emotion.label}}  {{ emotion.count }}</button>
+                    {% endif %}
+                  {% endif %}
+                </form>
+                {% endfor %}
+                <a href="{% url 'reviews:index' %}" class="btn btn-outline-primary m-1">뒤로 가기</a>
+            </div>
+          </div>
+        
+          <hr />
+          <h5>댓글 목록</h5>
+          <p>댓글 개수: {{ review.comment_set.count }}</p>
+
+          <ul>
+            {% for comment in comments %}
+              <li class="comment-item mb-1">
+                <div class="comment-author">{{ comment.user.username }}:  {{ comment.content }}</div>
+                <div class="d-flex justify-content-between align-items-center">
+                  {% if user.is_authenticated %}
+                    <form action="{% url 'reviews:like_comment' review_pk=review.pk comment_pk=comment.pk %}" method="POST">
+                      {% csrf_token %}
+                      {% if request.user in comment.like_users.all %}
+                        <button type="submit" class="btn btn-primary btn-sm">👍 {{ comment.like_users.all | length }}</button>
+                      {% else %}
+                        <button type="submit" class="btn btn-outline-primary btn-sm">👍 {{ comment.like_users.all | length }}</button>
+                      {% endif %}
+                    </form>
+                  {% else %}
+                    {% if request.user in comment.like_users.all %}
+                      <button type="submit" class="btn btn-primary btn-sm" disabled>👍 {{ comment.like_users.all | length }}</button>
+                    {% else %}
+                      <button type="submit" class="btn btn-outline-primary btn-sm" disabled>👍 {{ comment.like_users.all | length }}</button>
+                    {% endif %}
+                  {% endif %}
+                  {% if request.user.is_authenticated and request.user == comment.user %}
+                    <form action="{% url 'reviews:comment_delete' review.pk comment.pk %}" method="POST">
+                      {% csrf_token %}
+                      <input class="comment-delete btn btn-outline-danger btn-sm" type="submit" value="삭제" style="margin-right: 5px;" />
+                    </form>
+                  {% endif %}
+                </div>
+              </li>
+            {% endfor %}
+          </ul>
+          <hr />
+
+          <form action="{% url 'reviews:comment_create' review.pk %}" method="POST">
+            {% csrf_token %}
+
+            <div class="form-group mb-2">
+              <label for="{{ comment_form.content.id_for_label }}">댓글</label>
+              {{ comment_form.content }}
+            </div>
+            <button type="submit" class="btn btn-outline-primary mt-1">
+              댓글 작성
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
