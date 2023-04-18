@@ -13,8 +13,10 @@
     />
   </head>
   <style>
-    .btn {
-      margin-right: 5px;
+    hr {
+      border: none;
+      border-top: 1px solid black;
+      width: 50%;
     }
 
     a {
@@ -22,8 +24,9 @@
       font-weight: bold;
       color: black;
     }
+    {% block style %}{% endblock style %}
   </style>
-  <body>
+  <body class="fw-bold">
     <div class="sticky-top mb-4" style="height: 56px">
       <nav class="navbar navbar-expand-sm bg-body-tertiary">
         <div class="container-fluid">
@@ -70,28 +73,9 @@
         </div>
       </nav>
     </div>
-    <div class="m-5">
-      <h2>📝 리뷰 작성</h2>
-      <br />
-      <form
-        action="{% url 'reviews:create' %}"
-        method="POST"
-        enctype="multipart/form-data"
-      >
-        {% csrf_token %} {{ form.as_p }}
-
-        <div class="d-flex mt-3">
-          <button type="submit" class="btn btn-outline-success">작성</button>
-
-          <a href="{% url 'reviews:index' %}">
-            <button type="button" class="btn btn-outline-primary">
-              뒤로 가기
-            </button>
-          </a>
-        </div>
-      </form>
-    </div>
+    {% block body %}{% endblock body %}
     <script
+      {% block script %}{% endblock script %}
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
       crossorigin="anonymous"
