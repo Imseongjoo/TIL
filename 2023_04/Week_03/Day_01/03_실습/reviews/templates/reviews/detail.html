@@ -110,19 +110,19 @@
                 {% for emotion in emotions %}
                   <form action="{% url 'reviews:emotes' review.pk emotion.value %}" method="POST" class="d-inline-block">
                     {% csrf_token %}
-                  {% if user.is_authenticated %}
-                    {% if emotion.exist %}
-                    <button type="submit" class="btn btn-primary m-1">{{emotion.label}}  {{ emotion.count }}</button>
-                    {% else %}
-                    <button type="submit" class="btn btn-outline-primary m-1">{{emotion.label}}  {{ emotion.count }}</button>
+                    {% if user.is_authenticated %}
+                      {% if emotion.exist %}
+                        <button type="submit" class="btn btn-primary m-1">{{emotion.label}}  {{ emotion.count }}</button>
+                      {% else %}
+                        <button type="submit" class="btn btn-outline-primary m-1">{{emotion.label}}  {{ emotion.count }}</button>
+                      {% endif %}
+                    {% else %}  
+                      {% if emotion.exist %}
+                        <button type="submit" class="btn btn-primary m-1" disabled>{{emotion.label}}  {{ emotion.count }}</button>
+                      {% else %}
+                        <button type="submit" class="btn btn-outline-primary m-1" disabled>{{emotion.label}}  {{ emotion.count }}</button>
+                      {% endif %}
                     {% endif %}
-                  {% else %}  
-                    {% if emotion.exist %}
-                    <button type="submit" class="btn btn-primary m-1" disabled>{{emotion.label}}  {{ emotion.count }}</button>
-                    {% else %}
-                    <button type="submit" class="btn btn-outline-primary m-1" disabled>{{emotion.label}}  {{ emotion.count }}</button>
-                    {% endif %}
-                  {% endif %}
                 </form>
                 {% endfor %}
                 <a href="{% url 'reviews:index' %}" class="btn btn-outline-primary m-1">뒤로 가기</a>
