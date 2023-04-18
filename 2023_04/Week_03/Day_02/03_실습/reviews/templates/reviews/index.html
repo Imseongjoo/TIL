@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>성주의 영화리뷰</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+  </head>
+  <style>
+    hr {
+      border: none;
+      border-top: 1px solid black;
+      width: 50%;
+    }
+
+    a {
+      text-decoration: none;
+      font-weight: bold;
+      color: black;
+    }
+  </style>
+  <body class="fw-bold">
+    <div class="sticky-top mb-4" style="height: 56px">
+      <nav class="navbar navbar-expand-sm bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand ps-4 fw-bold" href="{% url 'reviews:index' %}"
+            >🎬 성주의 영화리뷰</a
+          >
+          <div class="justify-content-end d-flex align-items-center pe-4">
+            {% if request.user.is_authenticated %}
+            <div class="d-flex align-items-center">
+              <a
+                href="{% url 'accounts:profile' username=request.user.username %}"
+              >
+                <span class="m-2 h5">{{ user }}</span>
+              </a>
+              <a
+                class="btn btn-outline-success m-1"
+                href="{% url 'accounts:update' %}"
+                >정보수정</a
+              >
+              <form action="{% url 'accounts:logout' %}" method="POST">
+                {% csrf_token %}
+                <input
+                  class="btn btn-outline-primary m-1"
+                  type="submit"
+                  value="로그아웃"
+                />
+              </form>
+            </div>
+            {% else %}
+            <div>
+              <a
+                class="btn btn-outline-success m-1"
+                href="{% url 'accounts:login' %}"
+                >로그인</a
+              >
+              <a
+                class="btn btn-outline-primary"
+                href="{% url 'accounts:signup' %}"
+                >회원가입</a
+              >
+            </div>
+            {% endif %}
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <div class="m-5">
+      <a href="{% url 'reviews:create' %}"
+        ><button type="button" class="btn btn-outline-primary">
+          리뷰 작성
+        </button></a
+      >
+      <hr />
+
+      {% for review in reviews %}
+      <a href="{% url 'reviews:detail' review.pk %}"
+        >제목: {{ review.title }}</a
+      >
+      <hr />
+      {% endfor %}
+    </div>
+
+    {% comment %} 페이지네이션 컴포넌트 시작 {% endcomment %}
+    <ul class="pagination justify-content-center">
+      {% comment %} 이전 페이지 버튼 이전 페이지가 존재할 경우 이전 페이지 버튼
+      활성화 {% endcomment %} {% if articles.has_previous %}
+      <li class="page-item">
+        <a class="page-link" href="?page={{ reviews.previous_page_number }}"
+          >이전</a
+        >
+      </li>
+      {% else %}
+      <li class="page-item disabled">
+        <a class="page-link" tabindex="-1" aria-disabled="true" href="#"
+          >이전</a
+        >
+      </li>
+      {% endif %} {% comment %} 페이지 번호 리스트 생성 반본북 {% endcomment %}
+      {% for page_number in reviews.paginator.page_range %} {% comment %} 페이지
+      번호가 무한히 생성되는 것을 막는 조건문 현재 페이지에서 +- 5 까지 생성 {%
+      endcomment %} {% if page_number >= reviews.number|add:-5 and page_number
+      <= reviews.number|add:5 %} {% if page_number == reviews.number %}
+      <li class="page-item active" aria-current="page">
+        <a class="page-link" href="?page={{ page_number }}"
+          >{{ page_number }}</a
+        >
+      </li>
+      {% else %}
+      <li class="page-item">
+        <a class="page-link" href="?page={{ page_number }}"
+          >{{ page_number }}</a
+        >
+      </li>
+      {% endif %} {% endif %} {% endfor %} {% comment %} 다음 페이지 버튼 다음
+      페이지가 존재할 경우 다음 페이지 버튼 활성화 {% endcomment %} {% if
+      reviews.has_next %}
+      <li class="page-item">
+        <a class="page-link" href="?page={{ reviews.next_page_number }}"
+          >다음</a
+        >
+      </li>
+      {% else %}
+      <li class="page-item disabled">
+        <a class="page-link" tabindex="-1" aria-disabled="true" href="#"
+          >다음</a
+        >
+      </li>
+      {% endif %}
+    </ul>
+    {% comment %} 페이지네이션 컴포넌트 끝 {% endcomment %}
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
