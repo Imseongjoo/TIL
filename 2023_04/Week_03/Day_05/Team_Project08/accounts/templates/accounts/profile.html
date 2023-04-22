@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% block title %}프로필{% endblock title %}
+{% block style %}
+{% endblock style %} 
+{% block body %}
+<h2 class="mb-3">🤖 {{ person.username }}님의 프로필</h2>
+{% if request.user != person %}
+<form action="{% url 'accounts:follow' person.pk %}" method="POST">
+  {% csrf_token %} {% if request.user in person.followers.all %}
+  <button type="submit" class="btn btn-primary my-2" value="언팔로우">
+    언팔로우
+  </button>
+  {% else %}
+  <button type="submit" class="btn btn-outline-primary my-2" value="팔로우">
+    팔로우
+  </button>
+  {% endif %}
+</form>
+{% endif %}
+
+<div class="mt-1"></div>
+팔로잉 : {{ person.followings.all|length }} / 팔로워 : {{ person.followers.all|length }}
+<p>
+  <button
+    class="btn btn-primary"
+    type="button"
+    data-bs-toggle="collapse"
+    data-bs-target="#followings"
+    aria-expanded="false"
+    aria-controls="followings"
+  >
+    팔로잉 목록
+  </button>
+  <button
+    class="btn btn-primary"
+    type="button"
+    data-bs-toggle="collapse"
+    data-bs-target="#followers"
+    aria-expanded="false"
+    aria-controls="followers"
+  >
+    팔로워 목록
+  </button>
+</p>
+<div class="collapse" id="followings">
+  <span>팔로잉</span>
+  <div class="card card-body mb-1" style="width: 200px">
+    {% for following in person.followings.all %}
+    <a href="{% url 'accounts:profile' following.username %}"
+      >{{ following.username }}</a
+    >
+    {% endfor %}
+  </div>
+</div>
+<div class="collapse" id="followers">
+  <span>팔로워</span>
+  <div class="card card-body" style="width: 200px">
+    {% for follower in person.followers.all %}
+    <a href="{% url 'accounts:profile' follower.username %}"
+      >{{ follower.username }}</a
+    >
+    {% endfor %}
+  </div>
+</div>
+{% endblock body %} 

@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}로그인{% endblock title %}
+{% block style %}
+{% endblock style %} 
+{% block body %}
+<h2 class="mb-3">🔓 로그인</h2>
+    <form action="{% url 'accounts:login' %}" method="post">
+      {% csrf_token %} {{ form.as_p }}
+      <input type="submit" value="로그인" class="btn btn-outline-success" />
+    </form>
+{% endblock body %} 

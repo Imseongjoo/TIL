@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title %}밸런스 게임{% endblock title %}
+{% block body %}
+<h2 class="mb-3">🤝 밸런스 게임</h2>
+<a href="{% url 'posts:create' %}">
+  <button class="btn btn-outline-primary mb-3">밸런스 게임 생성</button>
+</a>
+<div class="row">
+  {% for post in posts %}
+  <div class="col-md-3 col-sm-6 p-1">
+    <div class="card mb-1 g-0">
+      <a href="{% url 'posts:detail' post.pk %}">
+        <div
+          class="card-body text-center d-flex flex-column align-items-center"
+        >
+          <div class="mx-1 mb-1">{{ post.title }}</div>
+          <div class="d-flex justify-content-center flex-wrap">
+            <div class="me-3 mb-2" style="font-size: 15px">
+              👍{{ post.like_users.count }}
+            </div>
+            <div class="mb-2" style="font-size: 15px">
+              💬{{ post.comment_set.all|length }}
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock body %}

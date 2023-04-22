@@ -1,0 +1,166 @@
+[
+{
+    "model": "posts.comment",
+    "pk": 22,
+    "fields": {
+        "user": 3,
+        "post": 21,
+        "content": "hi",
+        "like_users": [
+            1,
+            3
+        ]
+    }
+},
+{
+    "model": "posts.comment",
+    "pk": 23,
+    "fields": {
+        "user": 1,
+        "post": 21,
+        "content": "맛있겠다",
+        "like_users": [
+            1,
+            3
+        ]
+    }
+},
+{
+    "model": "posts.comment",
+    "pk": 24,
+    "fields": {
+        "user": 2,
+        "post": 21,
+        "content": "치킨",
+        "like_users": [
+            1,
+            3
+        ]
+    }
+},
+{
+    "model": "posts.comment",
+    "pk": 25,
+    "fields": {
+        "user": 3,
+        "post": 22,
+        "content": "good",
+        "like_users": [
+            3
+        ]
+    }
+},
+{
+    "model": "posts.comment",
+    "pk": 26,
+    "fields": {
+        "user": 3,
+        "post": 23,
+        "content": "hi",
+        "like_users": [
+            1,
+            3
+        ]
+    }
+},
+{
+    "model": "posts.comment",
+    "pk": 27,
+    "fields": {
+        "user": 1,
+        "post": 22,
+        "content": "맛있겠다",
+        "like_users": [
+            3
+        ]
+    }
+},
+{
+    "model": "posts.comment",
+    "pk": 28,
+    "fields": {
+        "user": 2,
+        "post": 22,
+        "content": "역시 아아죠",
+        "like_users": [
+            3
+        ]
+    }
+},
+{
+    "model": "posts.comment",
+    "pk": 29,
+    "fields": {
+        "user": 3,
+        "post": 21,
+        "content": "저녁은 치킨",
+        "like_users": [
+            1,
+            3
+        ]
+    }
+},
+{
+    "model": "posts.comment",
+    "pk": 30,
+    "fields": {
+        "user": 1,
+        "post": 23,
+        "content": "강아지 귀엽다",
+        "like_users": [
+            1,
+            3
+        ]
+    }
+},
+{
+    "model": "posts.comment",
+    "pk": 31,
+    "fields": {
+        "user": 2,
+        "post": 23,
+        "content": "야옹",
+        "like_users": [
+            1,
+            3
+        ]
+    }
+},
+{
+    "model": "posts.comment",
+    "pk": 32,
+    "fields": {
+        "user": 3,
+        "post": 22,
+        "content": "라떼",
+        "like_users": [
+            3
+        ]
+    }
+},
+{
+    "model": "posts.comment",
+    "pk": 33,
+    "fields": {
+        "user": 3,
+        "post": 23,
+        "content": "고양이 최고",
+        "like_users": [
+            1,
+            3
+        ]
+    }
+},
+{
+    "model": "posts.comment",
+    "pk": 34,
+    "fields": {
+        "user": 1,
+        "post": 24,
+        "content": "이제 여름이다",
+        "like_users": [
+            1
+        ]
+    }
+}
+]

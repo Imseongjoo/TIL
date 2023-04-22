@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}{% endblock title %}</title>
+  <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+</head>
+<style>
+  a {
+    text-decoration: none;
+    color: black;
+  }
+{% block style %}{% endblock style %}
+</style>
+<body class="fw-bold">
+  <div class="sticky-top mb-4" style="height: 56px">
+    <nav class="navbar navbar-expand-sm bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand ps-4 fw-bold" href="{% url 'posts:index' %}"
+          ><h4>🤜💥🤛 밸런스 게임</h4></a
+        >
+        <div class="justify-content-end d-flex align-items-center pe-4">
+          {% if request.user.is_authenticated %}
+          <div class="d-flex align-items-center">
+            <a
+              href="{% url 'accounts:profile' username=request.user.username %}"
+            >
+              <span class="m-2 h5">{{ user }}</span>
+            </a>
+            <a
+              class="btn btn-outline-success m-1"
+              href="{% url 'accounts:update' %}"
+              >정보수정</a
+            >
+            <form action="{% url 'accounts:logout' %}" method="POST">
+              {% csrf_token %}
+              <input
+                class="btn btn-outline-primary m-1"
+                type="submit"
+                value="로그아웃"
+              />
+            </form>
+          </div>
+          {% else %}
+          <div>
+            <a
+              class="btn btn-outline-success m-1"
+              href="{% url 'accounts:login' %}"
+              >로그인</a
+            >
+            <a
+              class="btn btn-outline-primary"
+              href="{% url 'accounts:signup' %}"
+              >회원가입</a
+            >
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </nav>
+  </div>
+  <div class="container my-2">
+    <div class="row justify-content-center">
+      <div class="col-10 mt-3 mb-3">{% block body %}{% endblock body %}</div>
+    </div>
+  </div>
+<script
+src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+crossorigin="anonymous">
+</script>
+</body>
+</html>

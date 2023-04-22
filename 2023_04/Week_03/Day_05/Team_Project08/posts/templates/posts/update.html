@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}밸런스 게임 수정{% endblock title %}
+{% block style %}
+{% endblock style %} 
+{% block body %}
+<h2 class="mb-3">🎮 밸런스 게임 수정</h2>
+<form
+  action="{% url 'posts:update' post.pk %}"
+  method="POST"
+  enctype="multipart/form-data"
+>
+  {% csrf_token %} {{form.as_p}}
+  <input type="submit" value="수정" class="btn btn-outline-primary" />
+</form>
+{% endblock body %}

@@ -1,0 +1,89 @@
+[
+{
+    "model": "posts.post",
+    "pk": 21,
+    "fields": {
+        "user": 2,
+        "title": "치킨",
+        "select1_content": "후라이드",
+        "select2_content": "양념",
+        "image1": "image/후라이드.jpg",
+        "image2": "image/양념치킨2.jpg",
+        "like_users": [
+            1,
+            3
+        ],
+        "select1_users": [
+            1
+        ],
+        "select2_users": [
+            2
+        ]
+    }
+},
+{
+    "model": "posts.post",
+    "pk": 22,
+    "fields": {
+        "user": 1,
+        "title": "음료",
+        "select1_content": "아아",
+        "select2_content": "카페라뗴",
+        "image1": "image/아아.jpg",
+        "image2": "image/카페라떼.jpg",
+        "like_users": [
+            2,
+            3
+        ],
+        "select1_users": [
+            2
+        ],
+        "select2_users": [
+            1
+        ]
+    }
+},
+{
+    "model": "posts.post",
+    "pk": 23,
+    "fields": {
+        "user": 3,
+        "title": "동물",
+        "select1_content": "강아지",
+        "select2_content": "고양이",
+        "image1": "image/강아지.jpg",
+        "image2": "image/고양이.jpg",
+        "like_users": [
+            2,
+            3
+        ],
+        "select1_users": [
+            1
+        ],
+        "select2_users": [
+            2,
+            3
+        ]
+    }
+},
+{
+    "model": "posts.post",
+    "pk": 24,
+    "fields": {
+        "user": 1,
+        "title": "소풍",
+        "select1_content": "산",
+        "select2_content": "바다",
+        "image1": "image/산.jpg",
+        "image2": "image/바다.jpg",
+        "like_users": [
+            1,
+            3
+        ],
+        "select1_users": [],
+        "select2_users": [
+            1
+        ]
+    }
+}
+]
